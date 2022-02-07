@@ -1,0 +1,6 @@
+.swiper {
+    height: 100%;
+    --bullet-background: rgb(var(--ion-color-primary-rgb), 1) !important;
+    --bullet-background-active: var(--ion-color-primary);
+    --scroll-bar-background: var(--ion-color-light);
+  }
