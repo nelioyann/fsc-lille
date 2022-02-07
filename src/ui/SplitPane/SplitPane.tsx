@@ -2,7 +2,6 @@ import { IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHead
 import { albumsOutline, appsOutline, calendarOutline, layersOutline } from 'ionicons/icons';
 import React, { HTMLAttributes } from 'react';
 import { Redirect, Route } from 'react-router';
-import Button from '../../components/Buttons/Button';
 import Header from '../../components/Headers/Header';
 import Tag from '../../components/Tag/Tag';
 import { Box, Cluster, Stack } from '../../layouts';
@@ -33,8 +32,8 @@ const SplitPane: React.FC<ISplitPane> = ({ disabled = false, tabs, contentId, wh
         <IonContent >
             <IonSplitPane when={when} {...props} contentId={contentId} disabled={disabled}>
                 <IonMenu contentId={contentId} style={{ "--side-max-width": "15em" }}>
-                    <Header label="FSC 🧠" noBorder color={ColorLabelsEnum.LIGHT} />
-                    <IonContent style={{ "--background": "var(--ion-color-light)" }}>
+                    <Header label="" noBorder color={ColorLabelsEnum.SECONDARY} />
+                    <IonContent style={{ "--background": "var(--ion-color-secondary)" }}>
                         <Stack splitAfter={1}>
                             <IonList lines="none" style={{ "background": "transparent" }}>
                                 {/* <IonListHeader>

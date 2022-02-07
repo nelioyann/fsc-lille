@@ -17,15 +17,15 @@ interface ItemProps{
 const StyledItem = styled(IonItem)<ItemProps>`
     border-radius: ${SpacingEnum.subtleCurve};
     --background-hover-opacity: 0.2;
-    --background-hover: ${ColorVariablesEnum.PRIMARY};
+    --background-hover: ${ColorVariablesEnum.SECONDARY};
     margin: ${SpacingEnum.s0};
-    border: ${SpacingEnum.borderThicc} solid transparent;
+    box-shadow: 0px 0px 0px ${SpacingEnum.borderThicc} var(--background);
 
     ${({ $isActive }) =>
         $isActive &&
         css`
             --color: ${ColorVariablesEnum.PRIMARY};
-            border: ${SpacingEnum.borderThicc} solid ${ColorVariablesEnum.PRIMARY};
+    box-shadow: 0px 0px 0px ${SpacingEnum.borderThicc} ${ColorVariablesEnum.PRIMARY};
             ${LargeButton}{
                 color: ${ColorVariablesEnum.PRIMARY};
             }

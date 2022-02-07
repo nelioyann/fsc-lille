@@ -1,18 +1,18 @@
-/**
- * @param side Which element to treat as the sidebar (all values but "left" are considered" right")
- * @param sideWidth Represents the width of the sidebar adjacent. If not set ( ) it defaults to the sidebar's content width
- * @param contentMin A CSS value. The minimum width of the content element in the horizontal configuration
- * @param space A CSS margin value representing the space between the two elements
- */
+
 
 import styled from "styled-components";
 import { SpacingEnum } from "../theme/globalStyles";
 
 
-interface SidebarProps {
+export interface SidebarProps {
+ 
+    /**@param side Which element to treat as the sidebar (all values but "left" are considered" right") */
     side?: 'left' | 'right';
+    /**@param sideWidth Represents the width of the sidebar adjacent. If not set ( ) it defaults to the sidebar's content width */
     sideWidth?: string;
+    /** @param contentMin A CSS value. The minimum width of the content element in the horizontal configuration. Prefer % values */
     contentMin?: string;
+    /**@param space A CSS margin value representing the space between the two elements */
     space?: string;
     noStretch?: boolean;
 }

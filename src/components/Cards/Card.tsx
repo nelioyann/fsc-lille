@@ -9,6 +9,7 @@ export interface ICard extends HTMLAttributes<HTMLIonCardElement> {
     subtitle?: string;
     bodyText?: string;
     imageUrl?: string;
+    routerLink?: string;
     layout?: "image" | "simple";
     size?: "small" | "full";
 }
@@ -17,11 +18,12 @@ interface CardProps {
     $imageUrl?: string;
     $size?: "small" | "full";
     $layout?: "image" | "simple";
+    routerLink?: string;
 
 }
 
 enum CardSizesEnum {
-    "small" = "20em",
+    "small" = "18em",
     "full" = "100%"
 }
 
@@ -45,6 +47,12 @@ const StyledCard = styled(IonCard) <CardProps>`
         $size !== undefined &&
         css`
             max-width: ${CardSizesEnum[$size]};
+        `
+    }
+    ${({ routerLink }) =>
+        routerLink !== undefined &&
+        css`
+            cursor: pointer;
         `
     }
     ${({ $layout, $imageUrl }) =>
@@ -85,9 +93,9 @@ const CardDefaultProps: ICard = {
     imageUrl: "https://picsum.photos/300"
 }
 
-const Card: React.FC<ICard> = ({ bodyText, layout, title, subtitle, imageUrl, size, ...props }) => {
+const Card: React.FC<ICard> = ({ bodyText, layout, title, subtitle, routerLink, imageUrl, size, ...props }) => {
     return (
-        <StyledCard button={true} mode="ios" $layout={layout} $imageUrl={imageUrl} $size={size} {...props}>
+        <StyledCard routerLink={routerLink} button={true} mode="ios" $layout={layout} $imageUrl={imageUrl} $size={size} {...props}>
             {layout === "simple" && <StyledCardImage src={imageUrl} />}
             {title !== "" && subtitle !== "" && (<StyledCardHeader>
                 {title && <Heading level="4">{title}</Heading>}
