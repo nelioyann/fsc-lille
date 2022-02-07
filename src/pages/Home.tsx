@@ -9,9 +9,10 @@ const Home: React.FC = () => {
     <IonPage>
       <Header label="Accueil" mode="ios" />
       <IonContent fullscreen>
-        <Box>
+        <Box borderWidth="0">
           <Cover minHeight='90vh'>
-            <Heading data-centered="true" level="2">Journée de conférences, stands, animations et ateliers organisée dans une université pour permettre de vulgariser et de présenter différentes activités et des informations sur l’écosystème local en sciences cognitives</Heading>
+            <Heading data-centered="true" level="2">Journée de conférences, stands, animations et ateliers pour permettre de vulgariser et de présenter différentes activités et
+              des informations sur l’écosystème local en sciences cognitives</Heading>
           </Cover>
         </Box>
       </IonContent>

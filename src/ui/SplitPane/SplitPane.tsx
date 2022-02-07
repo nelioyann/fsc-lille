@@ -1,10 +1,11 @@
-import { IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuButton, IonNote, IonPage, IonRouterOutlet, IonSplitPane, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
-import { albumsOutline, appsOutline, layersOutline } from 'ionicons/icons';
+import { IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuButton, IonNote, IonPage, IonRouterLink, IonRouterOutlet, IonSplitPane, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
+import { albumsOutline, appsOutline, calendarOutline, layersOutline } from 'ionicons/icons';
 import React, { HTMLAttributes } from 'react';
 import { Redirect, Route } from 'react-router';
 import Button from '../../components/Buttons/Button';
 import Header from '../../components/Headers/Header';
-import { Stack } from '../../layouts';
+import Tag from '../../components/Tag/Tag';
+import { Box, Cluster, Stack } from '../../layouts';
 import { ColorLabelsEnum } from '../../theme/globalStyles';
 import Tabs, { ITab } from '../Content/Tabs/Tabs';
 import MenuItem from './MenuItem';
@@ -26,24 +27,32 @@ interface ISplitPane extends HTMLAttributes<HTMLIonSplitPaneElement> {
 
 }
 const SplitPane: React.FC<ISplitPane> = ({ disabled = false, tabs, contentId, when = BreakpointsEnum.md, ...props }) => {
-    const {pathname} = useIonRouter().routeInfo;
+    const { pathname } = useIonRouter().routeInfo;
     // console.log(router.routeInfo.pathname);
     return (
         <IonContent >
             <IonSplitPane when={when} {...props} contentId={contentId} disabled={disabled}>
-                <IonMenu contentId={contentId} style={{ "--side-max-width": "15em"}}>
-                    <Header label="FSC 🧠" noBorder color={ColorLabelsEnum.LIGHT}/>
-                    <IonContent style={{"--background": "var(--ion-color-light)"}}>
+                <IonMenu contentId={contentId} style={{ "--side-max-width": "15em" }}>
+                    <Header label="FSC 🧠" noBorder color={ColorLabelsEnum.LIGHT} />
+                    <IonContent style={{ "--background": "var(--ion-color-light)" }}>
                         <Stack splitAfter={1}>
-                        <IonList lines="none" style={{"background": "transparent"}}>
-                            {/* <IonListHeader>
+                            <IonList lines="none" style={{ "background": "transparent" }}>
+                                {/* <IonListHeader>
                                 <IonNote>Molecules</IonNote>
                             </IonListHeader> */}
-                            {tabs.map(({ label, icon, id, path }) => (
-                                <MenuItem key={`menuitem-${id}`} label={label} icon={icon} path={path} isActive={path === pathname}/>
-                            ))}
-                        </IonList>
-                        <p>Socials Icons</p>
+                                {tabs.map(({ label, icon, id, path }) => (
+                                    <MenuItem key={`menuitem-${id}`} label={label} icon={icon} path={path} isActive={path === pathname} />
+                                ))}
+                            </IonList>
+                            <Box borderWidth="0">
+                                <Cluster>
+                                    <IonRouterLink target="_blank" href="https://goo.gl/maps/pv7zghs1zZogd7P27">
+                                        <Tag label="Université Catholique" />
+                                    </IonRouterLink>
+                                    <Tag icon={calendarOutline} label="19 mars 2022" />
+                                </Cluster>
+
+                            </Box>
                         </Stack>
                     </IonContent>
                 </IonMenu>

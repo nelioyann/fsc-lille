@@ -20,7 +20,7 @@ interface CoverProps{
 const Cover = styled.div<CoverProps>`
     display: flex;
     flex-direction: column;
-    min-height: ${props => props.minHeight || "100vh"};
+    min-height: ${props => props.minHeight || "90vh"};
     padding: ${({ noPad, space }) => Boolean(!noPad) ? space || SpacingEnum.s1 : '0px'};
 
 
