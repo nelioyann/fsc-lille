@@ -78,12 +78,12 @@ const HeadingDefaultProps: IHeading = {
 const Heading: React.FC<IHeading> = ({level, color, children, ...props}) => {
     return (
         <>
-        {level === "1" && <Heading1 color={color} >{children}</Heading1>}
-        {level === "2" && <Heading2 color={color} >{children}</Heading2>}
-        {level === "3" && <Heading3 color={color} >{children}</Heading3>}
-        {level === "4" && <Heading4 color={color} >{children}</Heading4>}
-        {level === "5" && <Heading5 color={color} >{children}</Heading5>}
-        {level === "6" && <Heading6 color={color} >{children}</Heading6>}
+        {level === "1" && <Heading1 {...props} color={color} >{children}</Heading1>}
+        {level === "2" && <Heading2 {...props} color={color} >{children}</Heading2>}
+        {level === "3" && <Heading3 {...props} color={color} >{children}</Heading3>}
+        {level === "4" && <Heading4 {...props} color={color} >{children}</Heading4>}
+        {level === "5" && <Heading5 {...props} color={color} >{children}</Heading5>}
+        {level === "6" && <Heading6 {...props} color={color} >{children}</Heading6>}
         </>
         
     )
