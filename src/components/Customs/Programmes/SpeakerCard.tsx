@@ -19,7 +19,7 @@ const SpeakerCard: React.FC<ISpeakerCard> = ({ ...speaker}) => {
     console.log("Speaker from card", speaker);
     return (
         <Card 
-        routerLink={`/intervenants/${speaker.id}`}
+        routerLink={`/tabs/intervenants/${speaker.id}`}
         imageUrl={speaker.photoUrl} title={`${speaker.firstName} ${speaker.lastName}`} subtitle={`${speaker.role}`}/>
 
     )

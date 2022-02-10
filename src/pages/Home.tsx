@@ -33,9 +33,9 @@ const Home: React.FC = () => {
             <Stack >
               <Heading level="3">Les thématiques abordées</Heading>
               <Switcher space={SpacingEnum.s0}>
-                <Card size="full" routerLink="/programme" imageUrl={Chairs} title="Conférences" subtitle=" " />
-                <Card size="full" routerLink="/programme" imageUrl={Chairs} title="Conférences" subtitle=" " />
-                <Card size="full" routerLink="/programme" imageUrl={Rubix} title="Animations" subtitle=" " />
+                <Card size="full" routerLink="/tabs/programmes" imageUrl={Chairs} title="Conférences" subtitle=" " />
+                <Card size="full" routerLink="/tabs/programmes" imageUrl={Chairs} title="Conférences" subtitle=" " />
+                <Card size="full" routerLink="/tabs/programmes" imageUrl={Rubix} title="Animations" subtitle=" " />
               </Switcher>
             </Stack>
           </Stack>

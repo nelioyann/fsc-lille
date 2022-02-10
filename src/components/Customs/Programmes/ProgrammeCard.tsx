@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import { Stack } from '../../../layouts';
 import Heading from '../../Headings/Heading';
 
-const StyledCard = styled(IonCard)``
+const StyledCard = styled(IonCard)`
+margin: 0;`
 export interface IProgrammeCard {
     id: string;
     title: string;
@@ -15,7 +16,7 @@ export interface IProgrammeCard {
 }
 const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id, ...props }) => {
     return (
-        <StyledCard mode="ios" button={true} routerLink={ `/programme/${ id }`} {...props}>
+        <StyledCard button={true} routerLink={`/tabs/programmes/${id}`} {...props}>
             <Stack space="0">
                 <IonCardHeader>
                     <IonAvatar>

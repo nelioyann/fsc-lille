@@ -24,55 +24,71 @@ import './theme/variables.css';
 import './theme/fonts.css';
 import Tabs, { ITab } from './ui/Content/Tabs/Tabs';
 import { calendarOutline, homeOutline, mailOutline, peopleOutline } from 'ionicons/icons';
-import SplitPane, { BreakpointsEnum } from './ui/SplitPane/SplitPane';
+import MainRoutes, { BreakpointsEnum } from './ui/SplitPane/MainRoutes';
 import Programme from './pages/Programme';
 import Contact from './pages/Contact';
 import Intervenants from './pages/Intervenants';
+import Intervenant from './pages/Intervenant';
 
 
 setupIonicReact();
 
-const tabs: ITab[] = [
+export const tabs: ITab[] = [
   {
     id: 'accueil',
-    path: '/accueil',
+    path: '/tabs/accueil',
     label: 'Accueil',
     icon: homeOutline,
-    component: Home,
+    Component: Home,
     isTab: true,
   },
   {
-    id: 'programme',
-    path: '/programme',
-    label: 'Programme',
+    id: 'programmes',
+    path: '/tabs/programmes',
+    label: 'Programmes',
     icon: calendarOutline,
-    component: Programme,
+    Component: Programme,
     isTab: true,
   },
   {
     id: 'contact',
-    path: '/contact',
+    path: '/tabs/contact',
     label: 'Contact',
     icon: mailOutline,
-    component: Contact,
+    Component: Contact,
     isTab: true,
   },
   {
     id: 'intervenants',
-    path: '/intervenants',
+    path: '/tabs/intervenants',
     label: 'Intervenants',
     icon: peopleOutline,
-    component: Intervenants,
+    Component: Intervenants,
+    isTab: true,
+  }
+  ,
+  {
+    id: 'intervenant',
+    path: '/tabs/intervenants/:id',
+    label: 'Intervenant',
+    icon: peopleOutline,
+    Component: Intervenant,
     isTab: false,
   },
-  ]
+
+  {
+    id: 'programme',
+    path: '/tabs/programmes/:id',
+    label: 'Programme',
+    icon: peopleOutline,
+    Component: Intervenant,
+    isTab: false,
+  },
+]
 const App: React.FC = () => {
   return (
     <IonApp>
-      <IonReactRouter>
-        <SplitPane contentId="side" when={BreakpointsEnum.md} tabs={tabs} />
-        <Tabs tabs={tabs} contentId="tabs" when={BreakpointsEnum.md} />
-      </IonReactRouter>
+        <MainRoutes contentId="main" when={BreakpointsEnum.md} tabs={tabs} />
     </IonApp>
   )
 }
