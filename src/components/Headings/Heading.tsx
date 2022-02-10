@@ -1,10 +1,11 @@
 import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
-import { ColoredProps, ColorLabelsEnum } from '../../theme/globalStyles';
+import { ColoredProps, ColorLabelsEnum, FontTypeEnum, FontWeightEnum } from '../../theme/globalStyles';
 
 
 const Heading1 = styled.h1<ColoredProps>`
-    font-weight: var(--font-bold);
+    font-family: ${FontTypeEnum['SANS-SERIF']};
+    font-weight: ${FontWeightEnum.BOLD};
     color: ${props => props.color ? `var(--ion-color-${props.color})` : `var(--ion-color-dark)`};
     font-size: 3.5rem;
     line-height: 105%;

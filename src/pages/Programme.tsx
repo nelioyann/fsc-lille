@@ -1,20 +1,29 @@
 import { IonContent, IonIcon, IonPage } from '@ionic/react';
 import { hourglassOutline } from 'ionicons/icons';
 import React from 'react';
+import ProgrammeCard from '../components/Customs/Programmes/ProgrammeCard';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
-import { Center, Cover } from '../layouts';
+import { getEvents } from '../data/agenda';
+import { Box, Center, Cover, Stack } from '../layouts';
 
 const Programme = () => {
+    const events = getEvents()
     return (
         <IonPage>
-            <Header label="Programme" mode="ios"/>
+            <Header noBorder label="Programme" />
             <IonContent>
-                <Cover>
-                    <Center data-centered>
-                        <Heading level="4">En préparation...</Heading>
-                    </Center>
-                </Cover>
+                <Box borderWidth="0">
+                    {events?.length > 0
+                        ? (
+                            <Stack>
+                                <ProgrammeCard title="title" description="Ceci est une description" date="12h - 14h" id="1" />
+                            </Stack>
+                        )
+                        : (
+                            <p>Empty</p>
+                        )}
+                </Box>
             </IonContent>
         </IonPage>
     )

@@ -2,6 +2,12 @@ import { HTMLAttributes } from "react";
 import styled, { createGlobalStyle, css } from "styled-components";
 // import { ButtonProps } from "../components/Buttons/Button";
 
+
+export enum FontTypeEnum{
+    "SERIF" = "'Bitter', serif",
+    "SANS-SERIF" = "'Zen Maru Gothic', sans-serif"
+}
+
 export enum SpacingEnum {
     "measure" = "var(--measure)",
     "borderThin" = "var(--border-thin)",

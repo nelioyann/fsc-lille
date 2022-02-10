@@ -8,12 +8,14 @@ export interface BoxProps{
     padding?: string;
     /**Whether to apply an inverted theme. Only recommended for greyscale designs. */
     invert?: boolean;
+    /**Max content */
+    maxContent?: boolean
 }
 
 const BoxDefaultProps :BoxProps = {
     padding: SpacingEnum.s1,
     borderWidth: SpacingEnum.borderThin,
-    invert: false
+    invert: false,
     
 }
 
@@ -30,6 +32,10 @@ const Box = styled.div<BoxProps>`
     ${({invert}) => invert && css`
         background-color: ${ColorVariablesEnum.DARK};
         color: ${ColorVariablesEnum.LIGHT};
+            
+    `}
+    ${({maxContent}) => maxContent && css`
+        width: max-content !important;
             
     `}
 

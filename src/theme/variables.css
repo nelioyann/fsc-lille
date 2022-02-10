@@ -242,3 +242,34 @@ http://ionicframework.com/docs/theming/ */
   --border-thin: 1px;
   --border-thicc: 0.2em;
 }
+/* ::-webkit-scrollbar {
+  width: 0.3em;
+  z-index: 99;
+} */
+/* Track */
+/* Handle */
+/* Handle on hover */
+
+ion-content::part(scroll)::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+ion-content::part(scroll)::-webkit-scrollbar-track {
+  background: black;
+  display: none;
+}
+
+ion-content::part(scroll)::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 5px;
+}
+ion-content::part(scroll)::-webkit-scrollbar-thumb:hover {
+  background: white;
+}
+
+ion-content::part(scroll){
+ /* display: none !important; */
+ scrollbar-color: #6969dd #e0e0e0;
+    scrollbar-width: thin;
+}
+

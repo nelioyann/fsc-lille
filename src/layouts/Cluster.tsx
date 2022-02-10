@@ -14,12 +14,15 @@ export interface ClusterProps {
     justify?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly";
     /**A CSS gap value. The minimum space between the clustered child elements. */
     space?: string;
+    /**Add a with to children elements */
+    intrinsicWidth?: boolean;
 }
 
 const ClusterDefaultProps: ClusterProps = {
     align: "flex-start",
     justify: "flex-start",
-    space: "0"
+    space: "0",
+    intrinsicWidth: false
 }
 
 const Cluster = styled.div<ClusterProps>`
@@ -27,8 +30,16 @@ const Cluster = styled.div<ClusterProps>`
         flex-wrap: wrap;
         align-items: ${props => props.align || ClusterDefaultProps.align};
         justify-content: ${props => props.justify || ClusterDefaultProps.justify};
-        gap: ${props => props.space || ClusterDefaultProps.space}
-    
+        gap: ${props => props.space || ClusterDefaultProps.space};
+        ${({ intrinsicWidth }) =>
+        intrinsicWidth &&
+        css`
+            > *{
+                width: 100%;
+            }
+        `
+    }
+
 
 `
 Cluster.defaultProps = ClusterDefaultProps;

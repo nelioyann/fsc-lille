@@ -14,36 +14,31 @@ import Button from '../components/Buttons/Button';
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <Header label="Accueil" mode="ios" />
-      <IonContent fullscreen>
+      <Header label="Accueil" noBorder />
+      <IonContent >
         <Box borderWidth="0">
-          <Sidebar contentMin="70%" sideWidth="15em" space={SpacingEnum.s1} noStretch>
-            <Center gutters="0" >
-              <Cover noPad minHeight='90vh'>
-                <Stack data-centered="true">
-                  <SvgIcon size="clamp(5em, 100%, 15em)" Icon={Logo} />
-                  <Heading level="1" color={ColorLabelsEnum.PRIMARY}>
-                    Forum des Sciences Cognitives de Lille
-                  </Heading>
-                  <Heading level="3">
-                    Retrouvez nous le 19 Mars, à l'Université Catholique de Lille
-                  </Heading>
-                  <Label size="large">
-                    Pour une journée de vulgarisation des sciences cognitives, rythmée par des conférences, des stands, des animations ludiques, des débats, des présentations de métiers et des posters scientifiques.
-                  </Label>
-                </Stack>
-                <Button label="Inscrivez vous" color={ColorLabelsEnum.PRIMARY} />
-              </Cover>
-            </Center>
-            <Cover minHeight='90vh'>
-              <Switcher space="0">
-                <Card size="full" routerLink="/programme" imageUrl={Chairs} title="Conférences" subtitle=" " />
-                {/* Photo by <a href="https://unsplash.com/@everhooder?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ål nik</a> on <a href="https://unsplash.com/s/photos/conference?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*/}
-                <Card size="full" routerLink="/programme" imageUrl={Rubix} title="Animations" subtitle=" " />
-                {/* Photo by <a href="https://unsplash.com/@olav_ahrens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olav Ahrens Røtne</a> on <a href="https://unsplash.com/s/photos/quiz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */}
-              </Switcher>
+          <Stack >
+            <Cover noPad minHeight='75vh'>
+              <Stack data-centered="true">
+                <Heading level="1">
+                  Forum des Sciences Cognitives
+                </Heading>
+                <Heading level="2">Lille, 2022</Heading>
+                <Label size="large">
+                  Retrouvez nous pour une journée de vulgarisation des sciences cognitives, rythmée par des conférences, des stands, des animations ludiques et des débats.
+                </Label>
+              </Stack>
+              <Button expand="block" size="large" label="Inscrivez vous, c'est gratuit" color={ColorLabelsEnum.PRIMARY} />
             </Cover>
-          </Sidebar>
+            <Stack >
+              <Heading level="3">Les thématiques abordées</Heading>
+              <Switcher space={SpacingEnum.s0}>
+                <Card size="full" routerLink="/programme" imageUrl={Chairs} title="Conférences" subtitle=" " />
+                <Card size="full" routerLink="/programme" imageUrl={Chairs} title="Conférences" subtitle=" " />
+                <Card size="full" routerLink="/programme" imageUrl={Rubix} title="Animations" subtitle=" " />
+              </Switcher>
+            </Stack>
+          </Stack>
         </Box>
       </IonContent>
     </IonPage>
@@ -51,3 +46,5 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+{/* Photo by <a href="https://unsplash.com/@everhooder?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ål nik</a> on <a href="https://unsplash.com/s/photos/conference?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*/ }
+{/* Photo by <a href="https://unsplash.com/@olav_ahrens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olav Ahrens Røtne</a> on <a href="https://unsplash.com/s/photos/quiz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */ }

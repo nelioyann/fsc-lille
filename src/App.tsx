@@ -23,10 +23,11 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import './theme/fonts.css';
 import Tabs, { ITab } from './ui/Content/Tabs/Tabs';
-import { calendarOutline, homeOutline, mailOutline } from 'ionicons/icons';
+import { calendarOutline, homeOutline, mailOutline, peopleOutline } from 'ionicons/icons';
 import SplitPane, { BreakpointsEnum } from './ui/SplitPane/SplitPane';
 import Programme from './pages/Programme';
 import Contact from './pages/Contact';
+import Intervenants from './pages/Intervenants';
 
 
 setupIonicReact();
@@ -55,6 +56,14 @@ const tabs: ITab[] = [
     icon: mailOutline,
     component: Contact,
     isTab: true,
+  },
+  {
+    id: 'intervenants',
+    path: '/intervenants',
+    label: 'Intervenants',
+    icon: peopleOutline,
+    component: Intervenants,
+    isTab: false,
   },
   ]
 const App: React.FC = () => {

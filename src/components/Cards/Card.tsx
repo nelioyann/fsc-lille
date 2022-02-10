@@ -43,6 +43,7 @@ const StyledCard = styled(IonCard) <CardProps>`
     background: transparent;
     box-shadow: none;
     border-radius: 1em; 
+    margin: 0;
     ${({ $size }) =>
         $size !== undefined &&
         css`

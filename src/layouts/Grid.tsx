@@ -11,10 +11,11 @@ import { SpacingEnum } from "../theme/globalStyles";
 interface GridProps{
     min?: string;
     space?: string;
+    fillMode?: "auto-fit" | "auto-fill";
 }
 const Grid = styled.div<GridProps>`
     display: grid;
-    grid-template-columns: repeat(auto-fit,
+    grid-template-columns: repeat(${props => props.fillMode || "auto-fill"},
             minmax(min(${props => props.min || "20ch"}, 100%), 1fr)) ;
     gap: ${(props) => props.space || SpacingEnum.s1};
 `
