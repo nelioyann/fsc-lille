@@ -19,15 +19,17 @@ const StyledItem = styled(IonItem)<ItemProps>`
     --background-hover-opacity: 0.2;
     --background-hover: ${ColorVariablesEnum.SECONDARY};
     margin: ${SpacingEnum.s0};
-    box-shadow: 0px 0px 0px ${SpacingEnum.borderThicc} var(--background);
+    /* box-shadow: 0px 0px 0px ${SpacingEnum.borderThicc} var(--background); */
+    transition: all 300ms;
 
     ${({ $isActive }) =>
         $isActive &&
         css`
-            --color: ${ColorVariablesEnum.PRIMARY};
-    box-shadow: 0px 0px 0px ${SpacingEnum.borderThicc} ${ColorVariablesEnum.PRIMARY};
+            --color: ${ColorVariablesEnum.LIGHT};
+            --background: ${ColorVariablesEnum.PRIMARY};
+            /* box-shadow: 0px 0px 0px ${SpacingEnum.borderThicc} ${ColorVariablesEnum.PRIMARY}; */
             ${LargeButton}{
-                color: ${ColorVariablesEnum.PRIMARY};
+                color: ${ColorVariablesEnum.LIGHT};
             }
         `
     }
@@ -38,7 +40,9 @@ const MenuItem: React.FC<IMenuItem> = ({path = "", isActive,  icon = appsOutline
     return (
         <StyledItem detail={false} $isActive={isActive} mode="ios" routerLink={path} shape="round" button={true} {...props}>
             <IonIcon style={{ marginRight: "0.5em" }} icon={icon} />
-            <LargeButton>{label}</LargeButton>
+            <LargeButton>
+                {label}
+                </LargeButton>
         </StyledItem>
     )
 };

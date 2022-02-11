@@ -9,6 +9,7 @@ import Heading from '../components/Headings/Heading';
 import { getSpeaker } from '../data/speakers';
 import { Box, Center, Cluster, Stack } from '../layouts';
 import { Label } from '../theme/globalStyles';
+import Content from '../ui/Content/Content';
 
 const Intervenant = () => {
     const { id } = useParams<{ id: string }>();
@@ -16,9 +17,8 @@ const Intervenant = () => {
     console.log("Speaker from Intervenant ", speaker);
     return (
         <IonPage>
-            <Header noBorder label="Intervenant" withBackButton={true} />
-            <IonContent>
-                <Box >
+            <Header label="Intervenant" withBackButton={true} />
+            <Content>
                     {speaker ? (<Stack>
                         {/* <Center> */}
                             <Box maxContent>
@@ -41,8 +41,7 @@ const Intervenant = () => {
                             <Heading level="2">Intervenant</Heading>
                         </Stack>
                     )}
-                </Box>
-            </IonContent>
+            </Content>
         </IonPage>
     )
 };

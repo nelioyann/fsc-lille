@@ -10,15 +10,15 @@ import { Box, Cluster, Cover, Stack } from '../layouts';
 import { SpacingEnum } from '../theme/globalStyles';
 import CascBanner from "../data/images/casc_banner.jpg"
 import Card from '../components/Cards/Card';
+import Content from '../ui/Content/Content';
 
 
 const Contact = () => {
     return (
         <IonPage>
             <Header label="Contactez-nous" />
-            <IonContent>
-                <Box borderWidth="0">
-                    <Cover minHeight="80vh">
+            <Content>
+                    <Cover minHeight="80vh" noPad>
                         <Stack space={SpacingEnum.s3}>
                             
                             <Box borderWidth="0" padding="0">
@@ -46,8 +46,7 @@ const Contact = () => {
                             </Box>
                         </Stack>
                     </Cover>
-                </Box>
-            </IonContent>
+            </Content>
         </IonPage>
     )
 };

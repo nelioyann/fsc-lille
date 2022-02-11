@@ -10,13 +10,13 @@ import Card from '../components/Cards/Card';
 import Chairs from "../data/images/chair_room.jpg"
 import Rubix from "../data/images/rubix.jpg"
 import Button from '../components/Buttons/Button';
+import Content from '../ui/Content/Content';
 
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <Header label="Accueil" noBorder />
-      <IonContent >
-        <Box borderWidth="0">
+      <Header label="Bienvenue"  />
+      <Content >
           <Stack >
             <Cover noPad minHeight='75vh'>
               <Stack data-centered="true">
@@ -39,8 +39,7 @@ const Home: React.FC = () => {
               </Switcher>
             </Stack>
           </Stack>
-        </Box>
-      </IonContent>
+      </Content>
     </IonPage>
   );
 };

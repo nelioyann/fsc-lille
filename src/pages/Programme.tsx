@@ -6,14 +6,14 @@ import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
 import { getEvents } from '../data/agenda';
 import { Box, Center, Cover, Stack } from '../layouts';
+import Content from '../ui/Content/Content';
 
 const Programme = () => {
     const events = getEvents()
     return (
         <IonPage>
-            <Header noBorder label="Programme" />
-            <IonContent>
-                <Box borderWidth="0">
+            <Header label="Programme" />
+            <Content>
                     {events?.length > 0
                         ? (
                             <Stack>
@@ -23,8 +23,7 @@ const Programme = () => {
                         : (
                             <p>Empty</p>
                         )}
-                </Box>
-            </IonContent>
+            </Content>
         </IonPage>
     )
 };

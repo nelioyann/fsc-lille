@@ -5,39 +5,36 @@ import { getEvent } from '../data/agenda';
 import { getSpeakerImage, getSpeakerSummary } from '../data/speakers';
 import { Box, Center } from '../layouts';
 import { useParams } from 'react-router';
+import Content from '../ui/Content/Content';
 
 const ProgrammeItem: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const event = getEvent(id);
     return (
         <IonPage>
-            <Header noBorder label={event.title} backButtonLink="/programme" withBackButton={true} />
-            <IonContent>
+            <Header  label={event.title} backButtonLink="/programme" withBackButton={true} />
+            <Content>
                 <Box borderWidth="0">
-                    {/* <Center intrinsic={true}> */}
-                        <Box borderWidth="0">
-                            <IonAvatar>
-                                {/* getSpeakerImage(id) */}
-                                <img src={getSpeakerImage(event.speakerId)} />
-                            </IonAvatar>
-                            <Heading level="2">{event.title}</Heading>
-                            <Heading level="3">{getSpeakerSummary(event.speakerId)}</Heading>
-                        </Box>
-                        <Box borderWidth="0">
-                            <Heading level="4">Description</Heading>
-                            <IonItem lines="none">
-                                {event.description}
-                            </IonItem>
-                        </Box>
-                        <Box borderWidth="0">
-                            <Heading level="4">Quand ?</Heading>
-                            <IonItem lines="none">
-                                {event.date}
-                            </IonItem>
-                        </Box>
-                    {/* </Center> */}
+                    <IonAvatar>
+                        {/* getSpeakerImage(id) */}
+                        <img src={getSpeakerImage(event.speakerId)} />
+                    </IonAvatar>
+                    <Heading level="2">{event.title}</Heading>
+                    <Heading level="3">{getSpeakerSummary(event.speakerId)}</Heading>
                 </Box>
-            </IonContent>
+                <Box borderWidth="0">
+                    <Heading level="4">Description</Heading>
+                    <IonItem lines="none">
+                        {event.description}
+                    </IonItem>
+                </Box>
+                <Box borderWidth="0">
+                    <Heading level="4">Quand ?</Heading>
+                    <IonItem lines="none">
+                        {event.date}
+                    </IonItem>
+                </Box>
+            </Content>
         </IonPage>
     )
 };

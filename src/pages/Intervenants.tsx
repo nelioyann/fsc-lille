@@ -5,6 +5,7 @@ import Header from '../components/Headers/Header';
 import { getSpeakers } from '../data/speakers';
 import { Box, Cluster, Grid } from '../layouts';
 import { SpacingEnum } from '../theme/globalStyles';
+import Content from '../ui/Content/Content';
 import Intervenant from './Intervenant';
 
 const Intervenants = () => {
@@ -14,14 +15,12 @@ const Intervenants = () => {
 
     return (
         <IonPage>
-            <Header noBorder label="Intervenants"/>
-            <IonContent>
-                <Box borderWidth="0">
+            <Header label="Intervenants"/>
+            <Content>
                     <Cluster intrinsicWidth space={SpacingEnum.s1}>
                         {speakers.map(speaker=> <SpeakerCard key={`spekerCard_${speaker.id}`} {...speaker} />)}
                     </Cluster>
-                </Box>
-            </IonContent>
+            </Content>
         </IonPage>
     )
 };

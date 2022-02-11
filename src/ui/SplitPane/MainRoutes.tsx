@@ -33,6 +33,7 @@ const MainRoutes: React.FC<IMainRoutes> = ({ disabled = false, tabs, contentId =
 
     return (
         <IonReactRouter>
+            <IonContent>
                 <IonSplitPane contentId={contentId} disabled={disabled}>
                     {/* Side Menu */}
                     <Menu tabs={tabs} contentId={contentId} />
@@ -51,7 +52,8 @@ const MainRoutes: React.FC<IMainRoutes> = ({ disabled = false, tabs, contentId =
                         })}
                     </IonRouterOutlet>
                 </IonSplitPane>
-                <Tabs when={when} tabs={tabs}/>
+            </IonContent>
+            <Tabs when={when} tabs={tabs} />
         </IonReactRouter>
     )
 };

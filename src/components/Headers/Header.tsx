@@ -4,6 +4,7 @@ import { IonBackButton, IonButton, IonButtons, IonHeader, IonIcon, IonTitle, Ion
 import Heading from "../Headings/Heading";
 import { ColorLabelsEnum } from "../../theme/globalStyles";
 import IconButton from "../Buttons/IconButton";
+import styled from "styled-components";
 
 interface HeaderProps {
     label?: string;
@@ -16,10 +17,15 @@ interface HeaderProps {
     iconTargetLink?: string;
     mode?: "ios" | "md"
 }
+const StyledToolBar = styled(IonToolbar)`
+    width: clamp(15em, 100%, 70em); //set on higher styled component
+    margin: 0px auto !important;
+
+`
 const Header: React.FC<HeaderProps> = ({ color, mode = "md", noBorder = false, label, icon, iconSlot = "end", iconTargetLink, withBackButton = false, backButtonLink = undefined }) => {
     return (
         <IonHeader mode={mode} className={noBorder ? "ion-no-border" : ""}>
-            <IonToolbar color={color} >
+            <StyledToolBar color={color} >
                 {/* Left side */}
                 {withBackButton && <IonButtons slot="start">
                     <IonBackButton color="dark" text="" defaultHref={backButtonLink} />
@@ -36,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ color, mode = "md", noBorder = false, l
                     <IonButtons slot={iconSlot}>
                         <IconButton icon={icon} fill="clear" color={ColorLabelsEnum.DARK} routerLink={iconTargetLink}/>
                     </IonButtons>}
-            </IonToolbar>
+            </StyledToolBar>
         </IonHeader>
     );
 };
