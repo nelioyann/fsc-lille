@@ -32,24 +32,23 @@ const Home: React.FC = () => {
         <Stack >
           <Cover noPad minHeight='80vh'>
             <Stack data-centered="true">
-              <Sidebar >
+              <Sidebar side="left">
+                <StyledLottiePlayer   {...playerOptions} src={OpticalIllusion} />
                 <Stack>
                   <Heading level="1">
-                    Forum des Sciences Cognitives de Lille (2022)
+                    Forum des Sciences Cognitives de Lille
                   </Heading>
                   <Heading level="2" color={ColorLabelsEnum.TERTIARY}>“Méfions-nous des apparences, quelle réalité percevons-nous ?”.</Heading>
                   <Label size="large">
                     Retrouvez nous pour une journée de vulgarisation des sciences cognitives, rythmée par des conférences, des animations et des stands de vulgarisation.
                   </Label>
+              <Box padding="0" borderWidth="0">
+                <Button expand={undefined} size="large" label="Inscrivez vous, c'est gratuit" color={ColorLabelsEnum.PRIMARY} />
+              </Box>
                 </Stack>
                 {/* <Box> */}
-                  <StyledLottiePlayer   {...playerOptions} src={OpticalIllusion} />
-                {/* </Box> */}
-              </Sidebar>
-              <Box padding="0" borderWidth="0">
 
-            <Button expand={undefined} size="large" label="Inscrivez vous, c'est gratuit" color={ColorLabelsEnum.PRIMARY} />
-              </Box>
+              </Sidebar>
             </Stack>
           </Cover>
           <Stack >

@@ -17,7 +17,11 @@ const Programme = () => {
                     {events?.length > 0
                         ? (
                             <Stack>
-                                <ProgrammeCard title="title" description="Ceci est une description" date="12h - 14h" id="1" />
+                            <Heading level="2">Conférences</Heading>
+                            <Heading level="3">Perception</Heading>
+                            <Stack>
+                                {events.map(event => <ProgrammeCard key={`programmeCard_${event.id}`} {...event} />)}
+                            </Stack>
                             </Stack>
                         )
                         : (
