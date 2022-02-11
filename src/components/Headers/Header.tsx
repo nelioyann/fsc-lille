@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ color, mode = "md", noBorder = false, l
 
                 {/* Center side */}
                 {label && <IonTitle slot="">
-                    <Heading level="4" style={{ margin: "auto", textAlign: "center" }}>{label}</Heading>
+                    <Heading level="4" >{label}</Heading>
                 </IonTitle>}
 
                 {/* Right side */}

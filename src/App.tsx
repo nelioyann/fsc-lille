@@ -29,6 +29,7 @@ import Programme from './pages/Programme';
 import Contact from './pages/Contact';
 import Intervenants from './pages/Intervenants';
 import Intervenant from './pages/Intervenant';
+import ProgrammeItem from './pages/ProgrammeItem';
 
 
 setupIonicReact();
@@ -81,7 +82,7 @@ export const tabs: ITab[] = [
     path: '/tabs/programmes/:id',
     label: 'Programme',
     icon: peopleOutline,
-    Component: Intervenant,
+    Component: ProgrammeItem,
     isTab: false,
   },
 ]
