@@ -17,9 +17,9 @@ const Intervenants = () => {
         <IonPage>
             <Header label="Intervenants"/>
             <Content>
-                    <Cluster intrinsicWidth space={SpacingEnum.s1}>
+                    <Grid min="18em" space={SpacingEnum.s1}>
                         {speakers.map(speaker=> <SpeakerCard key={`spekerCard_${speaker.id}`} {...speaker} />)}
-                    </Cluster>
+                    </Grid>
             </Content>
         </IonPage>
     )

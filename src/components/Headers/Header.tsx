@@ -22,7 +22,7 @@ const StyledToolBar = styled(IonToolbar)`
     margin: 0px auto !important;
 
 `
-const Header: React.FC<HeaderProps> = ({ color, mode = "md", noBorder = false, label, icon, iconSlot = "end", iconTargetLink, withBackButton = false, backButtonLink = undefined }) => {
+const Header: React.FC<HeaderProps> = ({ color, mode = "md", noBorder = false, label, icon, iconSlot = "end", iconTargetLink, withBackButton = false, backButtonLink = "/tabs/accueil" }) => {
     return (
         <IonHeader mode={mode} className={noBorder ? "ion-no-border" : ""}>
             <StyledToolBar color={color} >

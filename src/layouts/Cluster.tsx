@@ -14,7 +14,7 @@ export interface ClusterProps {
     justify?: "flex-start" | "flex-end" | "center" | "space-between" | "space-around" | "space-evenly";
     /**A CSS gap value. The minimum space between the clustered child elements. */
     space?: string;
-    /**Add a with to children elements */
+    /**Add a wdith to children elements */
     intrinsicWidth?: boolean;
 }
 
