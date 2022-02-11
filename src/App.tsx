@@ -88,7 +88,7 @@ export const tabs: ITab[] = [
 const App: React.FC = () => {
   return (
     <IonApp>
-        <MainRoutes contentId="main" when={BreakpointsEnum.md} tabs={tabs} />
+        <MainRoutes when={BreakpointsEnum.md} tabs={tabs} />
     </IonApp>
   )
 }

@@ -24,30 +24,34 @@ export enum BreakpointsEnum {
 
 interface IMainRoutes {
     when?: BreakpointsEnum;
-    contentId: string;
+    contentId?: string;
     tabs: ITab[];
     disabled?: boolean;
 
 }
-const MainRoutes: React.FC<IMainRoutes> = ({ disabled = false, tabs, contentId, when = BreakpointsEnum.md }) => {
+const MainRoutes: React.FC<IMainRoutes> = ({ disabled = false, tabs, contentId = "main", when = BreakpointsEnum.md }) => {
 
     return (
         <IonReactRouter>
-            <IonContent>
                 <IonSplitPane contentId={contentId} disabled={disabled}>
                     {/* Side Menu */}
                     <Menu tabs={tabs} contentId={contentId} />
-                    {/* the main content */}
+                    {/* Main router Outlet */}
                     <IonRouterOutlet id={contentId}>
-                        <Route path="/tabs">
-                            <Tabs tabs={tabs} when={when} />
-                        </Route>
                         <Route exact path="/">
                             <Redirect to="/tabs/accueil" />
                         </Route>
+                        {tabs.map(({ path, Component, id, isTab }) => {
+                            if (isTab) {
+                                return (<Route key={`route-${id}`} path={path} exact={true} render={() => <Component />} />)
+                            }
+                            else {
+                                return (<Route key={`route-${id}`} path={path} exact={true} component={Component} />)
+                            }
+                        })}
                     </IonRouterOutlet>
                 </IonSplitPane>
-            </IonContent>
+                <Tabs when={when} tabs={tabs}/>
         </IonReactRouter>
     )
 };

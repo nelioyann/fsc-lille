@@ -19,32 +19,32 @@ export interface ITab {
 interface ITabs {
     tabs: ITab[];
     contentId?: string;
-    when: BreakpointsEnum;
+    when?: BreakpointsEnum;
     noBorder?: boolean;
 }
 
-const Tabs: React.FC<ITabs> = ({ tabs, contentId = "tabs", when, noBorder }) => {
+const Tabs: React.FC<ITabs> = ({ tabs, contentId = "tabs", when = BreakpointsEnum.md, noBorder }) => {
 
     return (
-        <IonTabs>
-            <IonRouterOutlet id={contentId}>
+        <IonTabs className={`ion-hide-${when}-up`}>
+            <IonRouterOutlet>
                 <Redirect exact path="/tabs" to="/tabs/accueil" />
                 {/* Using the render method prop cuts down the number of renders your components will have due to route changes.
                 Use the component prop when your component depends on the RouterComponentProps passed in automatically. */}
                 {tabs.map(({ path, Component, id, isTab }) => {
-                    if (isTab) { 
-                        return(<Route key={`route-${id}`} path={path} exact={true} render={() => <Component />} />) 
+                    if (isTab) {
+                        return (<Route key={`route-${id}`} path={path} exact={true} render={() => <Component />} />)
                     }
                     else {
-                        return (<Route key={`route-${id}`} path={path} exact={true} component={Component} />) 
+                        return (<Route key={`route-${id}`} path={path} exact={true} component={Component} />)
                     }
                 })}
             </IonRouterOutlet>
-            <IonTabBar className={`ion-hide-${when}-up `} slot="bottom" style={{ "--border": noBorder ? "none" : "" }}>
+            <IonTabBar slot="bottom" style={{ "--border": noBorder ? "none" : "" }}>
                 {tabs.map(tab => {
                     if (tab.isTab) {
                         return (
-                            <IonTabButton key={tab.id} layout="icon-top" tab={tab.id} href={tab.path}>
+                            <IonTabButton key={`tabButton_${tab.id}`} layout="icon-top" tab={tab.id} href={tab.path}>
                                 <IonIcon icon={tab.icon} />
                                 <IonLabel>{tab.label}</IonLabel>
                             </IonTabButton>
