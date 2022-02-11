@@ -25,13 +25,13 @@ const Box = styled.div<BoxProps>`
     /* ↓ For high contrast mode */
     outline: ${BoxDefaultProps.borderWidth} solid transparent;
     outline-offset: calc(${BoxDefaultProps.borderWidth} * -1);
-    /* background-color: ${ColorVariablesEnum.LIGHT}; */
+    background-color: ${ColorVariablesEnum.LIGHT};
     color: ${ColorVariablesEnum.DARK};
     display: block;
 
     ${({invert}) => invert && css`
-        background-color: ${ColorVariablesEnum.DARK};
-        color: ${ColorVariablesEnum.LIGHT};
+        /* background-color: ${ColorVariablesEnum.DARK}; */
+        filter: invert(100%);
             
     `}
     ${({maxContent}) => maxContent && css`

@@ -52,14 +52,6 @@ export const tabs: ITab[] = [
     isTab: true,
   },
   {
-    id: 'contact',
-    path: '/tabs/contact',
-    label: 'Contact',
-    icon: mailOutline,
-    Component: Contact,
-    isTab: true,
-  },
-  {
     id: 'intervenants',
     path: '/tabs/intervenants',
     label: 'Intervenants',
@@ -68,6 +60,14 @@ export const tabs: ITab[] = [
     isTab: true,
   }
   ,
+  {
+    id: 'contact',
+    path: '/tabs/contact',
+    label: 'Contact',
+    icon: mailOutline,
+    Component: Contact,
+    isTab: true,
+  },
   {
     id: 'intervenant',
     path: '/tabs/intervenants/:id',

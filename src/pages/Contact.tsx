@@ -7,7 +7,7 @@ import Textarea from '../components/Forms/Input/Textarea';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
 import { Box, Cluster, Cover, Stack } from '../layouts';
-import { SpacingEnum } from '../theme/globalStyles';
+import { Label, SpacingEnum } from '../theme/globalStyles';
 import CascBanner from "../data/images/casc_banner.jpg"
 import Card from '../components/Cards/Card';
 import Content from '../ui/Content/Content';
@@ -21,29 +21,30 @@ const Contact = () => {
                     <Cover minHeight="80vh" noPad>
                         <Stack space={SpacingEnum.s3}>
                             
-                            <Box borderWidth="0" padding="0">
+                            <Stack>
                                 <Heading level="4">Suivez les dernières informations sur le forum</Heading>
                                 <Cluster>
-                                    <Button icon={logoTwitter} label="Twitter" />
-                                    <Button icon={logoFacebook} label="Facebook" />
+                                    <Button fill="outline" icon={logoTwitter} label="Twitter" />
+                                    <Button fill="outline" icon={logoFacebook} label="Facebook" />
                                 </Cluster>
-                            </Box>
-                            <Box borderWidth="0" padding="0">
+                            </Stack>
+                            <Stack>
                                 <Heading level="4">Prenez contact pour en savoir plus</Heading>
                                 <form>
-                                    <Stack space={SpacingEnum['s-3']}>
+                                    <Stack space={SpacingEnum['s-1']}>
                                         <Input label="Votre adresse mail" name="email" />
                                         <Textarea label="Votre message" name="message" />
-                                    </Stack>
                                     <Button label="Envoyer" />
+                                    </Stack>
                                 </form>
-                            </Box>
-                            <Box borderWidth="0" padding="0">
+                            </Stack>
+                            <Stack>
                                 <Heading level="4">A propos de CASC</Heading>
+                                <Label>CASC est une association qui réunit les futur(e)s, ancien(ne)s et actuel(le)s étudiant(e)s en Sciences Cognitives et qui a pour but de promouvoir les sciences cognitives, en particulier en région Hauts de France.</Label>
                                 <IonCard>
                                     <img src={CascBanner}/>
                                 </IonCard>
-                            </Box>
+                            </Stack>
                         </Stack>
                     </Cover>
             </Content>

@@ -11,34 +11,56 @@ import Chairs from "../data/images/chair_room.jpg"
 import Rubix from "../data/images/rubix.jpg"
 import Button from '../components/Buttons/Button';
 import Content from '../ui/Content/Content';
+import OpticalIllusion from "../data/lotties/optical-illusion.json"
+import { Player } from '@lottiefiles/react-lottie-player';
+import styled from 'styled-components';
 
+const StyledLottiePlayer = styled(Player)`
+    max-width: 20em;
+    max-height: 20em;
+`
+const playerOptions = {
+  autoplay: true,
+  loop: true,
+  keepLastFrame: true,
+}
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <Header label="Bienvenue"  />
+      <Header label="Accueil" />
       <Content >
-          <Stack >
-            <Cover noPad minHeight='75vh'>
-              <Stack data-centered="true">
-                <Heading level="1">
-                  Forum des Sciences Cognitives
-                </Heading>
-                <Heading level="2">Lille, 2022</Heading>
-                <Label size="large">
-                  Retrouvez nous pour une journée de vulgarisation des sciences cognitives, rythmée par des conférences, des stands, des animations ludiques et des débats.
-                </Label>
-              </Stack>
-              <Button expand="block" size="large" label="Inscrivez vous, c'est gratuit" color={ColorLabelsEnum.PRIMARY} />
-            </Cover>
-            <Stack >
-              <Heading level="3">Les thématiques abordées</Heading>
-              <Switcher space={SpacingEnum.s0}>
-                <Card size="full" routerLink="/tabs/programmes" imageUrl={Chairs} title="Conférences" subtitle=" " />
-                <Card size="full" routerLink="/tabs/programmes" imageUrl={Chairs} title="Conférences" subtitle=" " />
-                <Card size="full" routerLink="/tabs/programmes" imageUrl={Rubix} title="Animations" subtitle=" " />
-              </Switcher>
+        <Stack >
+          <Cover noPad minHeight='80vh'>
+            <Stack data-centered="true">
+              <Sidebar >
+                <Stack>
+                  <Heading level="1">
+                    Forum des Sciences Cognitives de Lille (2022)
+                  </Heading>
+                  <Heading level="2" color={ColorLabelsEnum.TERTIARY}>“Méfions-nous des apparences, quelle réalité percevons-nous ?”.</Heading>
+                  <Label size="large">
+                    Retrouvez nous pour une journée de vulgarisation des sciences cognitives, rythmée par des conférences, des animations et des stands de vulgarisation.
+                  </Label>
+                </Stack>
+                {/* <Box> */}
+                  <StyledLottiePlayer   {...playerOptions} src={OpticalIllusion} />
+                {/* </Box> */}
+              </Sidebar>
+              <Box padding="0" borderWidth="0">
+
+            <Button expand={undefined} size="large" label="Inscrivez vous, c'est gratuit" color={ColorLabelsEnum.PRIMARY} />
+              </Box>
             </Stack>
+          </Cover>
+          <Stack >
+            <Heading level="3">Les thématiques abordées</Heading>
+            <Switcher space={SpacingEnum.s0}>
+              <Card size="full" routerLink="/tabs/programmes" imageUrl={Chairs} title="Conférences" subtitle=" " />
+              <Card size="full" routerLink="/tabs/programmes" imageUrl={Chairs} title="Conférences" subtitle=" " />
+              <Card size="full" routerLink="/tabs/programmes" imageUrl={Rubix} title="Animations" subtitle=" " />
+            </Switcher>
           </Stack>
+        </Stack>
       </Content>
     </IonPage>
   );

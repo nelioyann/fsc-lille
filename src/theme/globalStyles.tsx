@@ -108,21 +108,21 @@ export const Label = styled.p<ParagraphProps>`
     ${({ size }) =>
         size === "small" &&
         css`
-            font-size: 0.875rem !important;
+            font-size: 1rem !important;
             font-weight: ${FontWeightEnum.REGULAR};
             `
     }
     ${({ size }) =>//useless FIXME:
         size === "default" &&
         css`
-            font-size: 1rem !important;
+            font-size: 1.125rem !important;
             font-weight: ${FontWeightEnum.REGULAR};
         `
     }
     ${({ size }) =>
         size === "large" &&
         css`
-            font-size: 1.125rem !important;
+            font-size: 1.250rem !important;
             font-weight: ${FontWeightEnum.BOLD};
 
         `
