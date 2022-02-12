@@ -21,15 +21,17 @@ const StyledItem = styled(IonItem)<ItemProps>`
     margin: ${SpacingEnum.s0};
     /* box-shadow: 0px 0px 0px ${SpacingEnum.borderThicc} var(--background); */
     transition: all 300ms;
-
+    &:focus, &:focus-within{
+    box-shadow: 0 0 0 0.15rem ${ColorVariablesEnum.SECONDARY}, 0 0 0 0.35rem ${ColorVariablesEnum.PRIMARY};
+  }
     ${({ $isActive }) =>
         $isActive &&
         css`
-            --color: ${ColorVariablesEnum.LIGHT};
-            --background: ${ColorVariablesEnum.PRIMARY};
-            /* box-shadow: 0px 0px 0px ${SpacingEnum.borderThicc} ${ColorVariablesEnum.PRIMARY}; */
+            --color: ${ColorVariablesEnum.PRIMARY};
+            /* --background: ${ColorVariablesEnum.PRIMARY}; */
+            box-shadow: 0 0 0 0.15rem ${ColorVariablesEnum.SECONDARY}, 0 0 0 0.35rem ${ColorVariablesEnum.PRIMARY};
             ${LargeButton}{
-                color: ${ColorVariablesEnum.LIGHT};
+                color: ${ColorVariablesEnum.PRIMARY};
             }
         `
     }

@@ -48,7 +48,6 @@ const Input: React.FC<IInput> = ({label,...props}) => {
         <StyledItem lines="none">
             <IonLabel position="stacked">
                 <Label size="large">
-
                 {label}
                 </Label>
                 </IonLabel>

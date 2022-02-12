@@ -33,8 +33,10 @@ const MainRoutes: React.FC<IMainRoutes> = ({ disabled = false, tabs, contentId =
 
     return (
         <IonReactRouter>
+            {/* Wrapping the splitPane in a IonContent 
+            produce a better display (less shadows, better header background) */}
             <IonContent>
-                <IonSplitPane contentId={contentId} disabled={disabled}>
+                <IonSplitPane when={when} contentId={contentId} disabled={disabled}>
                     {/* Side Menu */}
                     <Menu tabs={tabs} contentId={contentId} />
                     {/* Main router Outlet */}

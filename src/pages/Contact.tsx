@@ -1,5 +1,5 @@
 import { IonPage, IonContent, IonCard } from '@ionic/react';
-import { logoFacebook, logoTwitter } from 'ionicons/icons';
+import { logoFacebook, logoLinkedin, logoTwitter } from 'ionicons/icons';
 import React from 'react';
 import Button from '../components/Buttons/Button';
 import Input from '../components/Forms/Input/Input';
@@ -22,28 +22,22 @@ const Contact = () => {
                         <Stack space={SpacingEnum.s3}>
                             
                             <Stack>
+                            <Heading level="4">Une question ? Contactez l'association CASC</Heading>
+                                <Label>CASC est une association qui réunit les futur(e)s, ancien(ne)s et actuel(le)s étudiant(e)s en Sciences Cognitives et qui a pour but de promouvoir les sciences cognitives, en particulier en région Hauts de France.</Label>
+                                <Button label="Envoyer un mail..."/>
                                 <Heading level="4">Suivez les dernières informations sur le forum</Heading>
-                                <Cluster>
-                                    <Button fill="outline" icon={logoTwitter} label="Twitter" />
-                                    <Button fill="outline" icon={logoFacebook} label="Facebook" />
+                                <Cluster space={SpacingEnum.s0}>
+                                    <Button href="https://twitter.com/Podcasc" fill="outline" icon={logoTwitter} label="Twitter" />
+                                    <Button href="https://www.facebook.com/CASC.association" fill="outline" icon={logoFacebook} label="Facebook" />
+                                    <Button href="https://www.linkedin.com/company/casc-asso/" fill="outline" icon={logoLinkedin} label="LinkedIn" />
                                 </Cluster>
                             </Stack>
+
                             <Stack>
-                                <Heading level="4">Prenez contact pour en savoir plus</Heading>
-                                <form>
-                                    <Stack space={SpacingEnum['s-1']}>
-                                        <Input label="Votre adresse mail" name="email" />
-                                        <Textarea label="Votre message" name="message" />
-                                    <Button label="Envoyer" />
-                                    </Stack>
-                                </form>
-                            </Stack>
-                            <Stack>
-                                <Heading level="4">A propos de CASC</Heading>
-                                <Label>CASC est une association qui réunit les futur(e)s, ancien(ne)s et actuel(le)s étudiant(e)s en Sciences Cognitives et qui a pour but de promouvoir les sciences cognitives, en particulier en région Hauts de France.</Label>
-                                <IonCard>
+                                
+                                <Box borderWidth="0" padding="0">
                                     <img src={CascBanner}/>
-                                </IonCard>
+                                </Box>
                             </Stack>
                         </Stack>
                     </Cover>

@@ -1,6 +1,7 @@
 import { IonButton, IonIcon, IonSpinner } from "@ionic/react";
 import React, { HTMLAttributes } from "react";
-import { ButtonText, ColorLabelsEnum } from "../../theme/globalStyles";
+import styled from "styled-components";
+import { ButtonText, ColorLabelsEnum, ColorVariablesEnum, SpacingEnum } from "../../theme/globalStyles";
 
 interface IButton extends HTMLAttributes<HTMLIonButtonElement> {
   /**
@@ -17,6 +18,10 @@ interface IButton extends HTMLAttributes<HTMLIonButtonElement> {
   fill?: "clear" | "outline" | "solid";
   iconSlot?: "start" | "end";
   color?: ColorLabelsEnum;
+  type?: "button" | "reset" | "submit";
+  routerLink?: string;
+  href?: string;
+
 }
 
 const ButtonDefaultProps: IButton = {
@@ -27,7 +32,18 @@ const ButtonDefaultProps: IButton = {
   iconSlot: "start",
   mode: "ios",
   expand: undefined,
+  type: "button"
 }
+
+const StyledButton = styled(IonButton)`
+  border-radius: ${SpacingEnum.subtleCurve};
+  transition: box-shadow 300ms;
+
+  &:focus, &:focus-within{
+    box-shadow: 0 0 0 0.15rem ${ColorVariablesEnum.LIGHT}, 0 0 0 0.35rem ${ColorVariablesEnum.PRIMARY};
+  }
+`
+
 const Button: React.FC<IButton> = ({
   isLoading,
   fill,
@@ -36,10 +52,13 @@ const Button: React.FC<IButton> = ({
   shape,
   iconSlot,
   label,
+  type,
+  routerLink,
+  href,
   ...props
 }) => {
   return (
-    <IonButton disabled={isLoading} style={{ position: "relative"}} fill={fill} shape={shape} color={color}  {...props}>
+    <StyledButton target="_blank" href={href} routerLink={routerLink} type={type} disabled={isLoading} style={{ position: "relative"}} fill={fill} shape={shape} color={color}  {...props}>
       {isLoading
         && (
           <div style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -53,7 +72,7 @@ const Button: React.FC<IButton> = ({
           {label}
         </ButtonText>}
       </>
-    </IonButton>
+    </StyledButton>
   );
 };
 

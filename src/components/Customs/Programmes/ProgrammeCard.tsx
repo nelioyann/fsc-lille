@@ -6,7 +6,10 @@ import { Stack } from '../../../layouts';
 import Heading from '../../Headings/Heading';
 
 const StyledCard = styled(IonCard)`
-margin: 0;`
+margin-left: 0;
+margin-right: 0;
+
+`
 export interface IProgrammeCard {
     id: string;
     title: string;
@@ -24,7 +27,7 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
                         <img src={getSpeakerImage(id)} />
                     </IonAvatar>
                     {title && title !== "" && <IonCardTitle>{title}</IonCardTitle>}
-                    {description && description !== "" && <IonCardSubtitle>{description}</IonCardSubtitle>}
+                    {/* {description && description !== "" && <IonCardSubtitle>{description}</IonCardSubtitle>} */}
                 </IonCardHeader>
                 <IonCardContent>
                     {date}

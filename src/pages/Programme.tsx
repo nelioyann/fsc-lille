@@ -6,6 +6,7 @@ import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
 import { getEvents } from '../data/agenda';
 import { Box, Center, Cover, Stack } from '../layouts';
+import { SpacingEnum } from '../theme/globalStyles';
 import Content from '../ui/Content/Content';
 
 const Programme = () => {
@@ -19,7 +20,7 @@ const Programme = () => {
                             <Stack>
                             <Heading level="2">Conférences</Heading>
                             <Heading level="3">Perception</Heading>
-                            <Stack>
+                            <Stack space={SpacingEnum.s0}>
                                 {events.map(event => <ProgrammeCard key={`programmeCard_${event.id}`} {...event} />)}
                             </Stack>
                             </Stack>

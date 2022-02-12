@@ -6,13 +6,13 @@ import {ReactComponent as Book} from '../../data/icons/book-open.svg'
 interface ISvgIcon {
     Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
     size?: string;
-    color?: ColorVariablesEnum;
+    color?: string;
     padding?: SpacingEnum;
 }
 interface StyledIconProps {
     $size?: string;
     $padding?: SpacingEnum;
-    $color?: ColorVariablesEnum;
+    $color?: string;
 }
 const SvgContainer = styled.span<StyledIconProps>`
     height: auto;
@@ -23,7 +23,7 @@ const SvgContainer = styled.span<StyledIconProps>`
     & svg{
         height: ${props => (props.$size ? `${props.$size}` : "100%")};
         width: ${props => (props.$size ? `${props.$size}` : "100%")};
-        stroke: ${props => (props.$color ? `${props.$color}` : "currentColor")};
+        stroke: ${props => (props.$color ? `${props.$color}` : "inherit")};
 }
 `
 const SvgIconDefaultProps: ISvgIcon = {
