@@ -35,7 +35,6 @@ const TagDefaultProps: ITag = {
     outline: true,
     label: "Restaurant",
     color: ColorLabelsEnum.PRIMARY,
-    icon: pin,
     withCloseIcon: false,
     disabled: false
 }

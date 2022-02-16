@@ -5,7 +5,7 @@ import Header from '../../components/Headers/Header';
 import Heading from '../../components/Headings/Heading';
 import Tag from '../../components/Tag/Tag';
 import { Stack, Box, Cluster } from '../../layouts';
-import { ColorLabelsEnum, ColorVariablesEnum } from '../../theme/globalStyles';
+import { ColorLabelsEnum, ColorVariablesEnum, Label } from '../../theme/globalStyles';
 import { ITab } from '../Content/Tabs/Tabs';
 import MenuItem from './MenuItem';
 
@@ -17,7 +17,7 @@ const Menu: React.FC<IMenu> = ({ contentId, tabs }) => {
     const { pathname } = useIonRouter().routeInfo;
     let pathnames = pathname.split("/");
     return (
-        <IonMenu contentId={contentId} style={{ "--side-max-width": "15em" }}>
+        <IonMenu contentId={contentId} >
             <Header label="" noBorder color={ColorLabelsEnum.SECONDARY} />
             <IonContent style={{ "--background": ColorVariablesEnum.SECONDARY }}>
                 <Stack splitAfter={1}>
@@ -31,15 +31,18 @@ const Menu: React.FC<IMenu> = ({ contentId, tabs }) => {
                         })}
                     </IonList>
 
-                    <Box borderWidth="0" style={{ "background": ColorVariablesEnum.SECONDARY }}>
+                    {/* <Box borderWidth="0" style={{ "background": ColorVariablesEnum.SECONDARY }}>
                         <Stack>
-                            <Heading level="5">Informations</Heading>
-                            {/* <IonRouterLink target="_blank" href="https://goo.gl/maps/pv7zghs1zZogd7P27"> */}
+                            <Heading level="5">Campus de la catho</Heading>
+                            <Label>
+                            JUNIA HEI - 13 rue de Toul - Lille
+                            </Label>
+                            <IonRouterLink target="_blank" href="https://goo.gl/maps/pv7zghs1zZogd7P27">
                             <Tag color={ColorLabelsEnum.DARK} icon={mapOutline} label="Institut Catholique" />
-                            {/* </IonRouterLink> */}
+                            </IonRouterLink>
                             <Tag color={ColorLabelsEnum.DARK} icon={calendarOutline} label="19 mars 2022" />
                         </Stack>
-                    </Box>
+                    </Box> */}
                 </Stack>
             </IonContent>
         </IonMenu>

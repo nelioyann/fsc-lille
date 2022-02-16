@@ -10,6 +10,7 @@ export interface ICard extends HTMLAttributes<HTMLIonCardElement> {
     bodyText?: string;
     imageUrl?: string;
     routerLink?: string;
+    href?: string;
     layout?: "image" | "simple";
     size?: "small" | "full";
 }
@@ -42,7 +43,7 @@ const StyledCardContent = styled(IonCardContent)`
 const StyledCard = styled(IonCard) <CardProps>`
     background: transparent;
     box-shadow: none;
-    border-radius: 1em; 
+    
     margin: 0;
     ${({ $size }) =>
         $size !== undefined &&
@@ -63,6 +64,7 @@ const StyledCard = styled(IonCard) <CardProps>`
             background-image: ${`url(${$imageUrl})`};
             background-repeat: no-repeat;
             background-size: cover;
+            border-radius: 1em; 
             * {
                     color: ${ColorVariablesEnum.LIGHT};
             }

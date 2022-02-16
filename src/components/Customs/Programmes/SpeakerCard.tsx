@@ -16,7 +16,6 @@ export interface ISpeaker  {
 interface ISpeakerCard extends ISpeaker{
 }
 const SpeakerCard: React.FC<ISpeakerCard> = ({ ...speaker}) => {
-    console.log("Speaker from card", speaker);
     return (
         <Card 
         routerLink={`/tabs/intervenants/${speaker.id}`} size="full"

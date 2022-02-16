@@ -1,33 +1,41 @@
-import { IonContent, IonIcon, IonPage } from '@ionic/react';
+import { IonContent, IonIcon, IonPage, useIonRouter } from '@ionic/react';
 import { hourglassOutline } from 'ionicons/icons';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router';
+import Button from '../components/Buttons/Button';
 import ProgrammeCard from '../components/Customs/Programmes/ProgrammeCard';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
-import { getEvents } from '../data/agenda';
+import { EventThemesEnum, getEvents } from '../data/agenda';
 import { Box, Center, Cover, Stack } from '../layouts';
 import { SpacingEnum } from '../theme/globalStyles';
 import Content from '../ui/Content/Content';
 
 const Programme = () => {
-    const events = getEvents()
+    const events = getEvents();
     return (
         <IonPage>
             <Header label="Programme" />
             <Content>
-                    {events?.length > 0
-                        ? (
-                            <Stack>
+                {events?.length > 0
+                    ? (
+                        <Stack id="hello">
                             <Heading level="2">Conférences</Heading>
-                            <Heading level="3">Perception</Heading>
-                            <Stack space={SpacingEnum.s0}>
-                                {events.map(event => <ProgrammeCard key={`programmeCard_${event.id}`} {...event} />)}
+                            {/* <Button target="_self" href="/tabs/programmes/#mouvement" label="Mouvement"/> */}
+                            <Stack space={SpacingEnum.s4}>
+                                {(Object.keys(EventThemesEnum) as Array<keyof typeof EventThemesEnum>).map((key) => {
+                                    return (
+                                        <Stack id={key.toLowerCase()} key={`ThemeGroup_${key}`}>
+                                            <Heading  level="3">{EventThemesEnum[key]}</Heading>
+                                            {events.filter(event => event.theme === key).map(event => <ProgrammeCard key={`programmeCard_${event.id}`} {...event} />)}
+                                        </Stack>)
+                                })}
                             </Stack>
-                            </Stack>
-                        )
-                        : (
-                            <p>Empty</p>
-                        )}
+                        </Stack>
+                    )
+                    : (
+                        <p>Empty</p>
+                    )}
             </Content>
         </IonPage>
     )
