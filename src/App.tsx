@@ -89,7 +89,8 @@ export const tabs: ITab[] = [
 const App: React.FC = () => {
   return (
     <IonApp>
-        <MainRoutes when={BreakpointsEnum.md} tabs={tabs} />
+        {/* <MainRoutes when={BreakpointsEnum.md} tabs={tabs} /> */}
+        <IonLoading isOpen={true}/>
     </IonApp>
   )
 }
