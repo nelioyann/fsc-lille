@@ -1,4 +1,4 @@
-import { IonCard, IonContent, IonItem, IonList, IonListHeader, IonPage } from '@ionic/react';
+import { IonCard, IonContent, IonItem, IonList, IonListHeader, IonModal, IonPage } from '@ionic/react';
 // import { SpacingEnum } from '../theme/globalStyles';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
@@ -18,12 +18,15 @@ import styled from 'styled-components';
 import { ReactComponent as France } from "../data/icons/France.svg"
 import PartenairesSlides from '../components/Customs/Partenaires/PartenairesSlides';
 import Tag from '../components/Tag/Tag';
-import { calendar, pin } from 'ionicons/icons';
+import { calendar, map, pin } from 'ionicons/icons';
+import Modal from '../components/Modal/Modal';
+import { useEffect } from 'react';
 
 
 const StyledLottiePlayer = styled(Player)`
     max-width: 20em;
     max-height: 20em;
+    width: 100%;
 `
 const playerOptions = {
   autoplay: true,
@@ -31,39 +34,47 @@ const playerOptions = {
   keepLastFrame: true,
 }
 const Home: React.FC = () => {
+  useEffect(() => {
+    console.log("Home")
+  }, [])
   return (
     <IonPage>
-      <Header label="Accueil" />
-      <Content >
+      {/* <Header label="Accueil" icon={map} /> */}
+      <Content>
         <Stack space={SpacingEnum.s5}>
-          <Cover noPad minHeight='60vh'>
-            <Box borderWidth="0" padding="0">
-              <Tag icon={pin} label="Conference • Campus de La Catho, JUNIA HEI - 13 rue de Toul" disabled />
-            </Box>
-            <Stack data-centered="true">
-              <Sidebar contentMin="60%" >
-                <Stack space={SpacingEnum.s3}>
-                  <Heading level="1">
-                    Forum des Sciences Cognitives de Lille
-                  </Heading>
-                  {/* <Heading level="2" color={ColorLabelsEnum.TERTIARY}>“Méfions-nous des apparences, quelle réalité percevons-nous ?”.</Heading> */}
-                  <Label size="large">
-                    Retrouvez nous pour une journée de vulgarisation des sciences cognitives, rythmée par des conférences, des animations et des stands de vulgarisation.
-                  </Label>
-                  <Switcher space={SpacingEnum.s2}>
-                    <Button href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand="block" size="large" label="Réserver ma place" color={ColorLabelsEnum.PRIMARY} />
-                    <Button routerLink="/tabs/programmes" expand="block" size="large" label="Découvrir le programme" fill="outline" color={ColorLabelsEnum.PRIMARY} />
-                  </Switcher>
-                </Stack>
-                <StyledLottiePlayer   {...playerOptions} src={OpticalIllusion} />
-                {/* <Box> */}
-              </Sidebar>
-            </Stack>
-            {/* <Box borderWidth="0" padding="0">
-              <Tag icon={calendar} label="Le 19 Mars, 2022" disabled />
-            </Box> */}
-          </Cover>
-          <Stack space={SpacingEnum.s3}>
+            <Cover noPad minHeight='80vh'>
+              <Box borderWidth="0" padding="0">
+                <Label size="large">
+                  CASC et la FRESCO présentent la première édition du
+                </Label>
+              </Box>
+
+              <Stack data-centered="true">
+                <Sidebar  sideWidth="20em" >
+                  <Stack space={SpacingEnum.s3}>
+                    <Heading level="1">
+                    FORUM DES SCIENCES COGNITIVES DE LILLE
+                    </Heading>
+                    {/* <Heading level="2" color={ColorLabelsEnum.TERTIARY}>“Méfions-nous des apparences, quelle réalité percevons-nous ?”.</Heading> */}
+                    <Label size="large">
+                      Retrouvez nous pour une journée de vulgarisation des sciences cognitives, rythmée par des conférences, des animations et des stands de vulgarisation.
+                    </Label>
+                    <Cluster space={SpacingEnum.s2}>
+                      <Button href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand="block" size="large" label="Réserver ma place" color={ColorLabelsEnum.TERTIARY} />
+                      <Button routerLink="/tabs/programmes" expand="block" size="large" label="Découvrir le programme" fill="outline" color={ColorLabelsEnum.TERTIARY} />
+                    </Cluster>
+                  </Stack>
+                  <StyledLottiePlayer {...playerOptions} src={OpticalIllusion} />
+                  {/* <Box> */}
+                </Sidebar>
+              </Stack>
+              <Box borderWidth="0" padding="0">
+                <Label size="large" color={ColorVariablesEnum.PRIMARY}>
+                  Samedi 19 mars 2022, 10h -18h — HEI JUNIA
+                </Label>
+              </Box>
+            </Cover>
+          {/* <Stack space={SpacingEnum.s3}>
             <Heading level="3">Thématique</Heading>
             <IonList>
               <IonListHeader>
@@ -79,21 +90,17 @@ const Home: React.FC = () => {
                 Quelle contribution des approches expérimentales et artistiques
               </IonItem>
             </IonList>
-            {/* <Box borderWidth="0" padding="0">
-              <Card size="small" layout="image" routerLink="/tabs/programmes/#mouvement" imageUrl={Chairs} title="Perception" subtitle=" " />
-            </Box> */}
           </Stack>
           <Stack space={SpacingEnum.s3}>
             <Heading level="3">Une journée de vulgarisation 🧠</Heading>
             <IonCard mode="ios" className="ion-padding-vertical">
-
-            <Sidebar side="left" sideWidth="15em">
-              <SvgIcon Icon={France} />
+              <Sidebar side="left" sideWidth="15em">
+                <SvgIcon Icon={France} />
                 <Label>Pour la première fois en France, 7 Forums des sciences cognitives auront lieu durant l’année universitaire !
                   La journée est rythmée par des conférences, des stands, des animations ludiques, des débats,
                   des présentations de métiers et des posters scientifiques.
                 </Label>
-            </Sidebar>
+              </Sidebar>
             </IonCard>
           </Stack>
 
@@ -120,8 +127,9 @@ const Home: React.FC = () => {
             <Box borderWidth="0" padding="0">
               <PartenairesSlides />
             </Box>
-          </Stack>
+          </Stack> */}
         </Stack>
+        {/* <Modal isOpen={true} Children={<Box>Hey</Box>}/> */}
       </Content>
     </IonPage>
   );

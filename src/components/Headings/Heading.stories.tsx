@@ -6,8 +6,7 @@ export default {
     component: Heading,
     args: {
         children: "Almost before we knew it, we had left the ground.",
-        level: "4",
-        color: "primary"
+        level: "4"
     }
 } as ComponentMeta<typeof Heading>
 

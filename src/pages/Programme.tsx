@@ -19,8 +19,8 @@ const Programme = () => {
             <Content>
                 {events?.length > 0
                     ? (
-                        <Stack id="hello">
-                            <Heading level="2">Conférences</Heading>
+                        <Stack id="hello" space={SpacingEnum.s4}>
+                            <Heading level="2">Mini-conférences</Heading>
                             {/* <Button target="_self" href="/tabs/programmes/#mouvement" label="Mouvement"/> */}
                             <Stack space={SpacingEnum.s4}>
                                 {(Object.keys(EventThemesEnum) as Array<keyof typeof EventThemesEnum>).map((key) => {

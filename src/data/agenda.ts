@@ -1,31 +1,31 @@
 const events = [
     {
         id: "1",
-        speakerId: "1",
-        title: "Illusion d'optique",
+        speakersId: ["bVictor"],
+        title: "Les limites de la perception visuelle",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "12h - 13h",
+        date: "11h",
         theme: "INFLUENCE"
     },
     {
         id: "2",
-        speakerId: "1",
-        title: "Le biais de positivité",
+        speakersId: ["1"],
+        title: "La conscience du temps nous fait positiver",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "13h - 14h",
+        date: "11h",
         theme: "INFLUENCE"
     },
     {
         id: "3",
-        speakerId: "1",
+        speakersId: ["vMathilde", "cSylvie"],
         title: "Le goût de la bière et la musique",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
+        date: "11h",
         theme: "INFLUENCE"
     },
     {
         id: "4",
-        speakerId: "1",
+        speakersId: ["1"],
         title: "Atelier biais",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
         date: "14h - 15h",
@@ -33,57 +33,57 @@ const events = [
     },
     {
         id: "5",
-        speakerId: "1",
-        title: "Stress hydrique et perception de la météo",
+        speakersId: ["kJerome"],
+        title: "Perception de la météo et stress hydrique",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
+        date: "12h",
         theme: "SOCIETE"
     },
     {
         id: "6",
-        speakerId: "1",
+        speakersId: ["dLaure"],
         title: "Ecologie et action ",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
+        date: "12h",
         theme: "SOCIETE"
     },
     {
         id: "7",
-        speakerId: "1",
-        title: "ECOPOSS",
+        speakersId: ["gPierre"],
+        title: "ECOPOSS : agir pour un futur désirable",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
+        date: "12h",
         theme: "SOCIETE"
     },
     {
         id: "8",
-        speakerId: "1",
+        speakersId: ["dYvonne"],
         title: "Musique et illusion dans l’effort physique",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
+        description: "S’engager dans la pratique d’une séance de sport requiert la capacité de gérer l’effort physique et mentale associée à l’exercice. Nous présenterons comment la musique permet de donner l’illusion de bouger plus rapidement ou plus lentement en fonction de l’énergie sonore perçue.",
+        date: "14h",
         theme: "MOUVEMENT"
     },
     {
         id: "9",
-        speakerId: "1",
-        title: "Perception du mouvement par les robots",
+        speakersId: ["iNacim"],
+        title: "Perception artificielle et mouvement",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
+        date: "14h",
         theme: "MOUVEMENT"
     },
     {
         id: "10",
-        speakerId: "1",
-        title: "Perception de la gestuelle musicale en musique électronique",
+        speakersId: ["bFlorent"],
+        title: "Perception de la gestuelle dans la musique électronique",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
+        date: "14h",
         theme: "MOUVEMENT"
     }
     ,
     {
         id: "11",
-        speakerId: "1",
-        title: "Vulgarisation scientifique par l’expérimentation",
+        speakersId: ["bVictor"],
+        title: "L’ XPERIUM la vulgarisation scientifique par l’expérimentation",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
         date: "14h - 15h",
         theme: "EXPERIMENTATION"
@@ -91,7 +91,7 @@ const events = [
     ,
     {
         id: "12",
-        speakerId: "1",
+        speakersId: ["pEric"],
         title: "Les collaborations artistes/laboratoires dans la création contemporaine",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
         date: "14h - 15h",
@@ -100,8 +100,8 @@ const events = [
     ,
     {
         id: "13",
-        speakerId: "1",
-        title: "Création entre électrophysiologie et robotique",
+        speakersId: ["zFabien"],
+        title: "Spider and I : robot, émotion et électrophysiologie",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
         date: "14h - 15h",
         theme: "EXPERIMENTATION"
@@ -110,7 +110,7 @@ const events = [
 
 export interface IEvent  {
     id: string;
-    speakerId: string[];
+    speakersId: string[];
     title: string;
     description: string;
     date: string;

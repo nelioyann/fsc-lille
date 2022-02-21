@@ -3,12 +3,15 @@ import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
 import { getEvent } from '../data/agenda';
 import { getSpeakerImage, getSpeakerSummary } from '../data/speakers';
-import { Box, Center, Stack } from '../layouts';
+import { Box, Center, Cover, Stack } from '../layouts';
 import { useParams } from 'react-router';
 import Content from '../ui/Content/Content';
 import Card from '../components/Cards/Card';
 import styled from 'styled-components';
 import { Label, SpacingEnum } from '../theme/globalStyles';
+import Tag from '../components/Tag/Tag';
+import Button from '../components/Buttons/Button';
+import { arrowForwardOutline } from 'ionicons/icons';
 
 
 const StyledThumbnail = styled(IonThumbnail)`
@@ -21,29 +24,35 @@ const ProgrammeItem: React.FC = () => {
     const event = getEvent(id);
     return (
         <IonPage>
-            <Header backButtonLink="/tabs/programme" withBackButton={true} />
+            <Header backButtonText="Programme" backButtonLink="/tabs/programmes" withBackButton={true} />
             <Content>
-                <Stack space={SpacingEnum.s3}>
+                {event ? (
+                <Cover noPad minHeight='50vh'>
                     <Box borderWidth="0" padding="0">
-                        <StyledThumbnail >
+                        {/* TODO: <StyledThumbnail >
                             <img src={getSpeakerImage(event.speakerId)} />
                         </StyledThumbnail>
-                        <Label>{getSpeakerSummary(event.speakerId)}</Label>
+                        <Label>{getSpeakerSummary(event.speakerId)}</Label> */}
                         <Heading level="2">{event.title}</Heading>
+                        <Tag label={event.date}/>
                     </Box>
-                    <Stack>
+                    <Stack data-centered>
                         <Heading level="4">Description</Heading>
-                        <IonItem lines="none">
+                        <Label size="large">
                             {event.description}
-                        </IonItem>
+                        </Label>
                     </Stack>
                     <Box borderWidth="0" padding="0">
-                        <Heading level="4">Quand ?</Heading>
-                        <IonItem lines="none">
-                            {event.date}
-                        </IonItem>
+                        Dans le même thème with useRouter
+                        <Button routerLink={`/tabs/programmes/${(parseInt(id)+1).toString()}`} iconSlot="end" icon={arrowForwardOutline} label="Suivant"/>
                     </Box>
-                </Stack>
+                </Cover>):
+                
+                (
+                    <Cover>
+                        <Center>Cet évènement semble ne pas exister</Center>
+                    </Cover>
+                )}
             </Content>
         </IonPage>
     )

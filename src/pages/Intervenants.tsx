@@ -9,6 +9,7 @@ import Content from '../ui/Content/Content';
 import Intervenant from './Intervenant';
 
 const Intervenants = () => {
+    // const speakers = getSpeakers();
     const speakers = getSpeakers();
     const [selectedSpeaker, setSelectedSpeaker] = useState<ISpeaker>()
     // const [presentSpeaker, dismissSpeaker] = useIonModal(Intervenant);
@@ -18,7 +19,7 @@ const Intervenants = () => {
             <Header label="Intervenants"/>
             <Content>
                     <Grid min="14em" space={SpacingEnum.s1}>
-                        {speakers.map(speaker=> <SpeakerCard key={`spekerCard_${speaker.id}`} {...speaker} />)}
+                        {/* {speakers.map(speaker=> <SpeakerCard key={`spekerCard_${speaker.id}`} {...speaker} />)} */}
                     </Grid>
             </Content>
         </IonPage>

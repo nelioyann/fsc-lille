@@ -1,13 +1,15 @@
-import { IonMenu, IonContent, IonList, IonRouterLink, useIonRouter } from '@ionic/react';
+import { IonMenu, IonContent, IonList, IonRouterLink, useIonRouter, IonListHeader } from '@ionic/react';
 import { calendarOutline, mapOutline } from 'ionicons/icons';
 import React from 'react';
 import Header from '../../components/Headers/Header';
 import Heading from '../../components/Headings/Heading';
 import Tag from '../../components/Tag/Tag';
 import { Stack, Box, Cluster } from '../../layouts';
-import { ColorLabelsEnum, ColorVariablesEnum, Label } from '../../theme/globalStyles';
+import { ColorLabelsEnum, ColorVariablesEnum, Label, SpacingEnum } from '../../theme/globalStyles';
 import { ITab } from '../Content/Tabs/Tabs';
 import MenuItem from './MenuItem';
+import {ReactComponent as Logo} from "../../data/icons/Logo.svg"
+import SvgIcon from '../../components/SvgIcon/SvgIcon';
 
 interface IMenu {
     contentId: string;
@@ -16,12 +18,19 @@ interface IMenu {
 const Menu: React.FC<IMenu> = ({ contentId, tabs }) => {
     const { pathname } = useIonRouter().routeInfo;
     let pathnames = pathname.split("/");
+    let sidebarBackground = ColorLabelsEnum.SECONDARY;
     return (
         <IonMenu contentId={contentId} >
-            <Header label="" noBorder color={ColorLabelsEnum.SECONDARY} />
-            <IonContent style={{ "--background": ColorVariablesEnum.SECONDARY }}>
+
+            <IonContent 
+            // style={{ "--background": sidebarBackground }}
+            >
+                <Header noBorder label="FSC Lille"/>
                 <Stack splitAfter={1}>
                     <IonList lines="none" style={{ "background": "transparent" }}>
+                        <IonListHeader mode="ios">
+                            Menu
+                        </IonListHeader>
                         {tabs.map(({ label, icon, id, path, isTab }) => {
                             if (isTab) {
                                 return (

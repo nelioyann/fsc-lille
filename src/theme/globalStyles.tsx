@@ -66,7 +66,7 @@ const GlobalStyle = createGlobalStyle`
 export default GlobalStyle;
 
 export interface ColoredProps {
-    color?: ColorLabelsEnum ;
+    color?: ColorVariablesEnum ;
 }
 
 
@@ -99,12 +99,12 @@ interface HeadingsProps extends HTMLAttributes<HTMLHeadingElement>{
 
 export const Label = styled.p<ParagraphProps>`
     font-size: 1rem !important;
-    /* ${({ color }) =>
-        color &&
+    ${({ color }) =>
+        color !== undefined &&
         css`
-            color: ${color => color ? `var(--ion-color-${color})` : `var(--ion-color-dark-shade)`};
+            color: ${color};
         `
-    } */
+    }
     ${({ size }) =>
         size === "small" &&
         css`

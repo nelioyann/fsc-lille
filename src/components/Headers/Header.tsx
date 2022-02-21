@@ -13,7 +13,8 @@ interface HeaderProps {
     noBorder?: boolean;
     iconSlot?: "start" | "end" | "";
     withBackButton?: boolean;
-    backButtonLink?: string
+    backButtonLink?: string;
+    backButtonText?: string;
     iconTargetLink?: string;
     mode?: "ios" | "md"
 }
@@ -22,13 +23,13 @@ const StyledToolBar = styled(IonToolbar)`
     margin: 0px auto !important;
 
 `
-const Header: React.FC<HeaderProps> = ({ color, mode = "md", noBorder = false, label, icon, iconSlot = "end", iconTargetLink, withBackButton = false, backButtonLink = "/tabs/accueil" }) => {
+const Header: React.FC<HeaderProps> = ({ color, mode = "md", noBorder = false, label, icon, iconSlot = "end", iconTargetLink, withBackButton = false, backButtonLink = "/tabs/accueil", backButtonText = "" }) => {
     return (
         <IonHeader mode={mode} className={noBorder ? "ion-no-border" : ""}>
             <StyledToolBar color={color} >
                 {/* Left side */}
                 {withBackButton && <IonButtons slot="start">
-                    <IonBackButton color="dark" text="" defaultHref={backButtonLink} />
+                    <IonBackButton color="dark" text={backButtonText} defaultHref={backButtonLink} />
                 </IonButtons>}
 
                 {/* Center side */}

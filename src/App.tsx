@@ -46,20 +46,20 @@ export const tabs: ITab[] = [
   {
     id: 'programmes',
     path: '/tabs/programmes',
-    label: 'Programmes',
+    label: 'Au programme',
     icon: calendarOutline,
     Component: Programme,
     isTab: true,
   },
-  {
-    id: 'intervenants',
-    path: '/tabs/intervenants',
-    label: 'Intervenants',
-    icon: peopleOutline,
-    Component: Intervenants,
-    isTab: true,
-  }
-  ,
+  // {
+  //   id: 'intervenants',
+  //   path: '/tabs/intervenants',
+  //   label: 'Intervenants',
+  //   icon: peopleOutline,
+  //   Component: Intervenants,
+  //   isTab: true,
+  // }
+  // ,
   {
     id: 'contact',
     path: '/tabs/contact',
@@ -89,8 +89,7 @@ export const tabs: ITab[] = [
 const App: React.FC = () => {
   return (
     <IonApp>
-        {/* <MainRoutes when={BreakpointsEnum.md} tabs={tabs} /> */}
-        <IonLoading isOpen={true}/>
+        <MainRoutes when={BreakpointsEnum.md} tabs={tabs} />
     </IonApp>
   )
 }

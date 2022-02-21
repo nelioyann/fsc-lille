@@ -37,24 +37,26 @@ const MainRoutes: React.FC<IMainRoutes> = ({ disabled = false, tabs, contentId =
 
     return (
         <IonReactRouter>
+            <IonContent>
             {/* Wrapping the splitPane in a IonContent 
             produce a better display (less shadows, better header background) */}
-            <IonContent>
                 <StyledSplitPane when={when} contentId={contentId} disabled={disabled}>
                     {/* Side Menu */}
                     <Menu tabs={tabs} contentId={contentId} />
                     {/* Main router Outlet */}
+                    {/* Using the render method prop cuts down the number of renders your components will have due to route changes.
+                        Use the component prop when your component depends on the RouterComponentProps passed in automatically. */}
                     <IonRouterOutlet id={contentId}>
                         <Route exact path="/">
                             <Redirect to="/tabs/accueil" />
                         </Route>
                         {tabs.map(({ path, Component, id, isTab }) => {
-                            if (isTab) {
+                            // if (isTab) {
                                 return (<Route key={`route-${id}`} path={path} exact={true} render={() => <Component />} />)
-                            }
-                            else {
-                                return (<Route key={`route-${id}`} path={path} exact={true} component={Component} />)
-                            }
+                            // }
+                            // else {
+                            //     return (<Route key={`route-${id}`} path={path} exact={true} component={Component} />)
+                            // }
                         })}
                     </IonRouterOutlet>
                 </StyledSplitPane>

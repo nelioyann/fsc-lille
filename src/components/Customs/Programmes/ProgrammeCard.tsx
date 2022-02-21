@@ -14,7 +14,7 @@ margin-right: 0;
 `
 export interface IProgrammeCard {
     id: string;
-    speakerId: string;
+    speakersId: string[];
     title: string;
     description?: string;
     date?: string;
@@ -29,14 +29,14 @@ let EventsThemeColorEnum: { [x: string]: ColorLabelsEnum | undefined; } = {
     "MOUVEMENT" : ColorLabelsEnum.WARNING
 }
 
-const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id, speakerId,theme, ...props }) => {
+const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id, speakersId,theme, ...props }) => {
     return (
-        <StyledCard mode="ios" button={true} routerLink={`/tabs/programmes/${id}`} {...props}>
+        <StyledCard style={{borderLeft: `3px solid var(--ion-color-${EventsThemeColorEnum[theme]})`}} mode="ios" button={true} routerLink={`/tabs/programmes/${id}`} {...props}>
             <Stack space="0">
                 <IonCardHeader>
-                    <IonAvatar>
+                    {/* <IonAvatar>
                         <img src={getSpeakerImage(speakerId)} />
-                    </IonAvatar>
+                    </IonAvatar> */}
                     {title && title !== "" && <IonCardTitle>{title}</IonCardTitle>}
                     {/* {description && description !== "" && <IonCardSubtitle>{description}</IonCardSubtitle>} */}
                 </IonCardHeader>

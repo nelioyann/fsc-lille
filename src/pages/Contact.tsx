@@ -26,7 +26,7 @@ const Contact = () => {
                             <Label>CASC est une association qui réunit les futur(e)s, ancien(ne)s et actuel(le)s étudiant(e)s en Sciences Cognitives et qui a pour but de promouvoir les sciences cognitives, en particulier en région Hauts de France.</Label>
                             <Box borderWidth="0" padding="0">
 
-                            <Button fill="outline" href="mailto:contact@fsc-lille.com" label="Send an email tocontact@fsc-lille.com" />
+                            <Button fill="outline" href="mailto:contact@fsc-lille.com" label="Envoyer un email à contact@fsc-lille.com ..." />
                             </Box>
                             <Heading level="4">Suivez les dernières informations sur le forum</Heading>
                             <Cluster space={SpacingEnum.s0}>
