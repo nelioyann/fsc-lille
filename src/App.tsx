@@ -51,15 +51,15 @@ export const tabs: ITab[] = [
     Component: Programme,
     isTab: true,
   },
-  // {
-  //   id: 'intervenants',
-  //   path: '/tabs/intervenants',
-  //   label: 'Intervenants',
-  //   icon: peopleOutline,
-  //   Component: Intervenants,
-  //   isTab: true,
-  // }
-  // ,
+  {
+    id: 'intervenants',
+    path: '/tabs/intervenants',
+    label: 'Intervenants',
+    icon: peopleOutline,
+    Component: Intervenants,
+    isTab: true,
+  }
+  ,
   {
     id: 'contact',
     path: '/tabs/contact',

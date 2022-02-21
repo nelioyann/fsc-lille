@@ -19,7 +19,7 @@ const Intervenants = () => {
             <Header label="Intervenants"/>
             <Content>
                     <Grid min="14em" space={SpacingEnum.s1}>
-                        {/* {speakers.map(speaker=> <SpeakerCard key={`spekerCard_${speaker.id}`} {...speaker} />)} */}
+                        {speakers.map(speaker=> <SpeakerCard key={`speakerCard_${speaker.id}`} {...speaker} />)}
                     </Grid>
             </Content>
         </IonPage>

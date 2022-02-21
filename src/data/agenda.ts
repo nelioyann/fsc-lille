@@ -119,7 +119,7 @@ export interface IEvent  {
 
 export enum EventThemesEnum  {
     "INFLUENCE" = "La perception sous influence ! ",
-    "MOUVEMENT" = "La perception du mouvement humain",
+    "MOUVEMENT" = "Au-delà du mouvement",
     "SOCIETE" = "Environnement et société : améliorer la perception pour passer à l’action",
     "EXPERIMENTATION" = "Regards croisés sur l’expérimentation citoyenne et artistique"
 }
