@@ -51,12 +51,12 @@ const MainRoutes: React.FC<IMainRoutes> = ({ disabled = false, tabs, contentId =
                             <Redirect to="/tabs/accueil" />
                         </Route>
                         {tabs.map(({ path, Component, id, isTab }) => {
-                            // if (isTab) {
+                            if (isTab) {
                                 return (<Route key={`route-${id}`} path={path} exact={true} render={() => <Component />} />)
-                            // }
-                            // else {
-                            //     return (<Route key={`route-${id}`} path={path} exact={true} component={Component} />)
-                            // }
+                            }
+                            else {
+                                return (<Route key={`route-${id}`} path={path} exact={true} component={Component} />)
+                            }
                         })}
                     </IonRouterOutlet>
                 </StyledSplitPane>

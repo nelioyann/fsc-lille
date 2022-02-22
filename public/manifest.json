@@ -47,5 +47,13 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "description": "Rejoignez nous pour une journée de conférences accessibles sur les thèmes suivants : perception du mouvement, perception des sens, et comment percevoir de manière plus positive notre environnement.",
+  "screenshots": [
+    {
+      "src": "assets/screenshots/home.png",
+      "sizes": "1242x2688",
+      "type": "image/png"
+    }
+  ]
 }

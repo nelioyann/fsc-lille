@@ -85,7 +85,7 @@ const events = [
         speakersId: ["bVictor"],
         title: "L’ XPERIUM la vulgarisation scientifique par l’expérimentation",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
+        date: "15h",
         theme: "EXPERIMENTATION"
     }
     ,
@@ -94,7 +94,7 @@ const events = [
         speakersId: ["pEric"],
         title: "Les collaborations artistes/laboratoires dans la création contemporaine",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
+        date: "15h",
         theme: "EXPERIMENTATION"
     }
     ,
@@ -103,7 +103,7 @@ const events = [
         speakersId: ["zFabien"],
         title: "Spider and I : robot, émotion et électrophysiologie",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
+        date: "15h",
         theme: "EXPERIMENTATION"
     }
 ]

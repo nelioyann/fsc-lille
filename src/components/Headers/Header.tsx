@@ -16,6 +16,7 @@ interface HeaderProps {
     backButtonLink?: string;
     backButtonText?: string;
     iconTargetLink?: string;
+    iconOnclickHandler?: () => any;
     mode?: "ios" | "md"
 }
 const StyledToolBar = styled(IonToolbar)`
@@ -23,7 +24,7 @@ const StyledToolBar = styled(IonToolbar)`
     margin: 0px auto !important;
 
 `
-const Header: React.FC<HeaderProps> = ({ color, mode = "md", noBorder = false, label, icon, iconSlot = "end", iconTargetLink, withBackButton = false, backButtonLink = "/tabs/accueil", backButtonText = "" }) => {
+const Header: React.FC<HeaderProps> = ({ color, mode = "md", iconOnclickHandler = () => console.log("Clicked icon header"), noBorder = false, label, icon, iconSlot = "end", iconTargetLink, withBackButton = false, backButtonLink = "/tabs/accueil", backButtonText = "" }) => {
     return (
         <IonHeader mode={mode} className={noBorder ? "ion-no-border" : ""}>
             <StyledToolBar color={color} >
@@ -41,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ color, mode = "md", noBorder = false, l
 
                 {icon &&
                     <IonButtons slot={iconSlot}>
-                        <IconButton icon={icon} fill="clear" color={ColorLabelsEnum.DARK} routerLink={iconTargetLink}/>
+                        <IconButton onClick={() => iconOnclickHandler()} icon={icon} fill="clear" color={ColorLabelsEnum.DARK} routerLink={iconTargetLink}/>
                     </IonButtons>}
             </StyledToolBar>
         </IonHeader>
