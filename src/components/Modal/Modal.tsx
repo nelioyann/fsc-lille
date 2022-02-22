@@ -5,8 +5,9 @@ import Content from '../../ui/Content/Content'
 interface IModal {
     Children: ReactComponentOrElement;
     isOpen: boolean;
+    dismissHandler: () => void
 }
-const Modal: React.FC<IModal> = ({ Children, isOpen, ...props }) => {
+const Modal: React.FC<IModal> = ({ Children, isOpen, dismissHandler, ...props }) => {
 
 
 
@@ -14,24 +15,30 @@ const Modal: React.FC<IModal> = ({ Children, isOpen, ...props }) => {
 
     }
     const handleDismiss = () => {
+        dismissHandler();
         dismiss();
     }
 
-    const [present, dismiss] = useIonModal(Children, {
+    const modalOptions = {
         onDismiss: handleDismiss,
-        swipeToClose:true
+        swipeToClose:true,
+        initialBreakpoint:0.5,
+        breakpoints: [0, 0.5, 1]
+    }
+    const [present, dismiss] = useIonModal(Children, {
+        modalOptions
     })
 
     useEffect(() => {
-        console.log("happening", Children)
         if (isOpen) {
+            console.log("happening", Children)
             present()
         };
         return () =>{
             console.log("clenaing up")
             handleDismiss()
         }
-    }, [])
+    }, [isOpen])
     return null
 }
 

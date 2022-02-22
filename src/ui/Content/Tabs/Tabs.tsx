@@ -40,7 +40,7 @@ const Tabs: React.FC<ITabs> = ({ tabs, contentId = "tabs", when = BreakpointsEnu
                     }
                 })}
             </IonRouterOutlet>
-            <IonTabBar slot="bottom" style={{ "--border": noBorder ? "none" : "" }}>
+            <IonTabBar color="primary" slot="bottom" style={{ "--border": noBorder ? "none" : "" }}>
                 {tabs.map(tab => {
                     if (tab.isTab) {
                         return (
