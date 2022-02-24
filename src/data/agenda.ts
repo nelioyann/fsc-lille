@@ -1,4 +1,4 @@
-const events = [
+const events: IEvent[] = [
     {
         id: "1",
         speakersId: ["bVictor"],
@@ -25,14 +25,6 @@ const events = [
     },
     {
         id: "4",
-        speakersId: ["1"],
-        title: "Atelier biais",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
-        date: "14h - 15h",
-        theme: "INFLUENCE"
-    },
-    {
-        id: "5",
         speakersId: ["kJerome"],
         title: "Perception de la météo et stress hydrique",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
@@ -40,7 +32,7 @@ const events = [
         theme: "SOCIETE"
     },
     {
-        id: "6",
+        id: "5",
         speakersId: ["dLaure"],
         title: "Ecologie et action ",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
@@ -48,7 +40,7 @@ const events = [
         theme: "SOCIETE"
     },
     {
-        id: "7",
+        id: "6",
         speakersId: ["gPierre"],
         title: "ECOPOSS : agir pour un futur désirable",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
@@ -56,7 +48,7 @@ const events = [
         theme: "SOCIETE"
     },
     {
-        id: "8",
+        id: "7",
         speakersId: ["dYvonne"],
         title: "Musique et illusion dans l’effort physique",
         description: "S’engager dans la pratique d’une séance de sport requiert la capacité de gérer l’effort physique et mentale associée à l’exercice. Nous présenterons comment la musique permet de donner l’illusion de bouger plus rapidement ou plus lentement en fonction de l’énergie sonore perçue.",
@@ -64,7 +56,7 @@ const events = [
         theme: "MOUVEMENT"
     },
     {
-        id: "9",
+        id: "8",
         speakersId: ["iNacim"],
         title: "Perception artificielle et mouvement",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
@@ -72,7 +64,7 @@ const events = [
         theme: "MOUVEMENT"
     },
     {
-        id: "10",
+        id: "9",
         speakersId: ["bFlorent"],
         title: "Perception de la gestuelle dans la musique électronique",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
@@ -81,7 +73,7 @@ const events = [
     }
     ,
     {
-        id: "11",
+        id: "10",
         speakersId: ["bVictor"],
         title: "L’ XPERIUM la vulgarisation scientifique par l’expérimentation",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
@@ -90,7 +82,7 @@ const events = [
     }
     ,
     {
-        id: "12",
+        id: "11",
         speakersId: ["pEric"],
         title: "Les collaborations artistes/laboratoires dans la création contemporaine",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
@@ -99,7 +91,7 @@ const events = [
     }
     ,
     {
-        id: "13",
+        id: "12",
         speakersId: ["zFabien"],
         title: "Spider and I : robot, émotion et électrophysiologie",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
@@ -124,4 +116,5 @@ export enum EventThemesEnum  {
     "EXPERIMENTATION" = "Regards croisés sur l’expérimentation citoyenne et artistique"
 }
 export const getEvents = () => events;
-export const getEvent = (id: string) => events.filter(event => event.id === id )[0];
+export const getEvent = (id: string) => events.find(event => event.id === id );
+// export const filterEvents = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE", id: string) => events.filter(event.theme === theme)

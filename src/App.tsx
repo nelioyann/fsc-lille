@@ -23,7 +23,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import './theme/fonts.css';
 import Tabs, { ITab } from './ui/Content/Tabs/Tabs';
-import { calendarOutline, homeOutline, mailOutline, peopleOutline } from 'ionicons/icons';
+import { calendar, home, mail, people } from 'ionicons/icons';
 import MainRoutes, { BreakpointsEnum } from './ui/SplitPane/MainRoutes';
 import Programme from './pages/Programme';
 import Contact from './pages/Contact';
@@ -39,7 +39,7 @@ export const tabs: ITab[] = [
     id: 'accueil',
     path: '/tabs/accueil',
     label: 'Accueil',
-    icon: homeOutline,
+    icon: home,
     Component: Home,
     isTab: true,
   },
@@ -47,7 +47,7 @@ export const tabs: ITab[] = [
     id: 'programmes',
     path: '/tabs/programmes',
     label: 'Au programme',
-    icon: calendarOutline,
+    icon: calendar,
     Component: Programme,
     isTab: true,
   },
@@ -55,7 +55,7 @@ export const tabs: ITab[] = [
     id: 'intervenants',
     path: '/tabs/intervenants',
     label: 'Intervenants',
-    icon: peopleOutline,
+    icon: people,
     Component: Intervenants,
     isTab: true,
   }
@@ -64,7 +64,7 @@ export const tabs: ITab[] = [
     id: 'contact',
     path: '/tabs/contact',
     label: 'Contact',
-    icon: mailOutline,
+    icon: mail,
     Component: Contact,
     isTab: true,
   },
@@ -72,7 +72,7 @@ export const tabs: ITab[] = [
     id: 'intervenant',
     path: '/tabs/intervenants/:id',
     label: 'Intervenant',
-    icon: peopleOutline,
+    icon: people,
     Component: Intervenant,
     isTab: false,
   },
@@ -81,7 +81,7 @@ export const tabs: ITab[] = [
     id: 'programme',
     path: '/tabs/programmes/:id',
     label: 'Programme',
-    icon: peopleOutline,
+    icon: people,
     Component: ProgrammeItem,
     isTab: false,
   },

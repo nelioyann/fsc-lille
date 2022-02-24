@@ -59,15 +59,17 @@ const Home: React.FC = () => {
                   </Heading>
                   {/* <Heading level="2" color={ColorLabelsEnum.TERTIARY}>“Méfions-nous des apparences, quelle réalité percevons-nous ?”.</Heading> */}
                   <Label size="large">
-                    Retrouvez nous pour une journée de vulgarisation des sciences cognitives, rythmée par des conférences, des animations et des stands de vulgarisation.
+                    Le FSC-Lille est une conférence d'une journée consacrée aux sciences cognitives. L'événement aura lieu le 19 mars 2022 à Lille.
                   </Label>
                 </Stack>
-                <StyledLottiePlayer {...playerOptions} src={OpticalIllusion} />
+                {/* <StyledLottiePlayer {...playerOptions} src={OpticalIllusion} /> */}
+                <SvgIcon padding={SpacingEnum.s5} size="100%" Icon={Logo} />
+                
                 {/* <Box> */}
               </Sidebar>
               <Cluster space={SpacingEnum['s-5']}>
-                <Button href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand="block" size="large" label="Réservez votre place" color={ColorLabelsEnum.TERTIARY} />
-                <Button routerLink="/tabs/programmes" expand="block" size="large" label="Découvrez le programme" fill="outline" color={ColorLabelsEnum.TERTIARY} />
+                <Button icon={ticketOutline} href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand="block" size="large" label="Réservez votre place" color={ColorLabelsEnum.TERTIARY} />
+                {/* <Button routerLink="/tabs/programmes" expand="block" size="large" label="Découvrez le programme" fill="outline" color={ColorLabelsEnum.TERTIARY} /> */}
               </Cluster>
             </Stack>
             <Cluster>

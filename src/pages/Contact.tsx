@@ -11,6 +11,7 @@ import { Label, SpacingEnum } from '../theme/globalStyles';
 import CascBanner from "../data/images/casc_banner.jpg"
 import Card from '../components/Cards/Card';
 import Content from '../ui/Content/Content';
+import PartenairesSlides from '../components/Customs/Partenaires/PartenairesSlides';
 
 
 const Contact = () => {
@@ -23,9 +24,8 @@ const Contact = () => {
 
                         <Stack>
                             <Heading level="4">Une question ? Contactez l'association CASC</Heading>
-                            <Label>CASC est une association qui réunit les futur(e)s, ancien(ne)s et actuel(le)s étudiant(e)s en Sciences Cognitives et qui a pour but de promouvoir les sciences cognitives, en particulier en région Hauts de France.</Label>
+                            <Label>Pour toute question concernant l'événement, envoyez un mail</Label>
                             <Box borderWidth="0" padding="0">
-
                                 <Button fill="outline" href="mailto:contact@fsc-lille.com" label="Envoyer un email..." />
                             </Box>
                             <Heading level="4">Suivez les dernières informations sur le forum</Heading>
@@ -63,6 +63,7 @@ const Contact = () => {
                                 pas tout à fait, voire pas du tout, … la réalité !
 
                             </Label>
+                            <Heading level="4">FSC 2.0</Heading>
                             <Label>
                                 Autour de cette thématique, le FSC-Lille propose de retrouver en un lieu unique la richesse
                                 des travaux des laboratoires des Hauts de France, la variété des formations universitaires et
@@ -72,6 +73,7 @@ const Contact = () => {
                                 perception souvent biaisée que nous avons de notre environnement et sur les conséquences
                                 de nos actions ou de nos inactions !
                             </Label>
+                            <Heading level="4">FSC-Lille #2 (2023)</Heading>
                             <Label>
                                 Le FSC-Lille est aussi une occasion pour les professionnel.le.s et scientifiques de se retrouver
                                 pour échanger simplement, en buvant un café ou en dégustant un des plats frais et locaux
@@ -84,6 +86,13 @@ const Contact = () => {
                             {/* <Box borderWidth="0" padding="0">
                                 <img src={CascBanner} />
                             </Box> */}
+                        </Stack>
+
+                        <Stack space={SpacingEnum.s3}>
+                            <Heading level="3">Partenaires</Heading>
+                            <Box borderWidth="0" padding="0">
+                                <PartenairesSlides />
+                            </Box>
                         </Stack>
                     </Stack>
                 </Cover>

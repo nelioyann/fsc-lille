@@ -1,7 +1,7 @@
-import { IonAvatar, IonContent, IonItem, IonPage, IonThumbnail } from '@ionic/react';
+import { IonAvatar, IonContent, IonItem, IonPage, IonThumbnail, useIonRouter } from '@ionic/react';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
-import { getEvent } from '../data/agenda';
+import { EventThemesEnum, getEvent } from '../data/agenda';
 import { getSpeakerImage, getSpeakerSummary } from '../data/speakers';
 import { Box, Center, Cluster, Cover, Stack } from '../layouts';
 import { useParams } from 'react-router';
@@ -12,6 +12,7 @@ import { ColorVariablesEnum, Label, SpacingEnum } from '../theme/globalStyles';
 import Tag from '../components/Tag/Tag';
 import Button from '../components/Buttons/Button';
 import { arrowForwardOutline } from 'ionicons/icons';
+import ProgrammesSlider from '../components/Customs/Programmes/ProgrammesSlider';
 
 
 const StyledThumbnail = styled(IonThumbnail)`
@@ -28,9 +29,10 @@ const ProgrammeItem: React.FC = () => {
             <Header backButtonText="Programme" backButtonLink="/tabs/programmes" withBackButton={true} />
             <Content>
                 {event ? (
-                    <Cover noPad minHeight='50vh'>
-                        <Stack>
-                            <Cluster>
+                    <Cover noPad minHeight='80vh'>
+
+                        <Stack data-centered>
+                        <Cluster>
                                 {event?.speakersId.map(speakerId => (
                                     <div key={`programmeItem_${speakerId}`} >
                                         <StyledThumbnail >
@@ -40,19 +42,19 @@ const ProgrammeItem: React.FC = () => {
                                     </div>
                                 ))}
                             </Cluster>
-                            <Heading level="2">{event.title}</Heading>
-                            <Tag label={event.date} />
-                        </Stack>
-                        <Stack data-centered>
-                            <Heading level="4">Description</Heading>
+                            <Heading level="3">{event.title}</Heading>
+                            <Box padding='0' borderWidth='0'>
+                                <Tag label={event.date} />
+                            </Box>
+                            {/* <Heading level="4">Description</Heading> */}
                             <Label size="large">
                                 {event.description}
                             </Label>
                         </Stack>
-                        <Box borderWidth="0" padding="0">
-                            Dans le même thème with useRouter
-                            <Button routerLink={`/tabs/programmes/${(parseInt(id) + 1).toString()}`} iconSlot="end" icon={arrowForwardOutline} label="Suivant" />
-                        </Box>
+                        <Stack >
+                            <Heading level='5'>Dans la même catégorie</Heading>
+                            <ProgrammesSlider id={event.id} theme={event.theme} />
+                        </Stack>
                     </Cover>) :
 
                     (

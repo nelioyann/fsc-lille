@@ -26,8 +26,13 @@ interface ITabs {
 const Tabs: React.FC<ITabs> = ({ tabs, contentId = "tabs", when = BreakpointsEnum.md, noBorder }) => {
 
     return (
-        <IonTabs className={`ion-hide-${when}-up`}>
+        <IonTabs
+        // className={`ion-hide-${when}-up`}
+        >
             <IonRouterOutlet>
+                <Route exact path="/">
+                    <Redirect to="/tabs/accueil" />
+                </Route>
                 <Redirect exact path="/tabs" to="/tabs/accueil" />
                 {/* Using the render method prop cuts down the number of renders your components will have due to route changes.
                 Use the component prop when your component depends on the RouterComponentProps passed in automatically. */}
