@@ -1,12 +1,12 @@
 import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
-import { ColoredProps, ColorLabelsEnum, FontTypeEnum, FontWeightEnum } from '../../theme/globalStyles';
+import { ColoredProps, ColorVariablesEnum, FontTypeEnum, FontWeightEnum } from '../../theme/globalStyles';
 
 
 const Heading1 = styled.h1<ColoredProps>`
     font-family: ${FontTypeEnum['SANS-SERIF']};
     font-weight: ${FontWeightEnum.BOLD};
-    color: ${props => props.color ? `var(--ion-color-${props.color})` : `var(--ion-color-dark)`};
+    color: ${props => props.color ? `${props.color}` : `var(--ion-color-dark)`};
     font-size: 3.5rem;
     line-height: 105%;
     letter-spacing: -1px;
@@ -16,7 +16,7 @@ const Heading1 = styled.h1<ColoredProps>`
 `
 const Heading2 = styled.h2<ColoredProps>`
     font-weight: var(--font-bold);
-    color: ${props => props.color ? `var(--ion-color-${props.color})` : `var(--ion-color-dark)`};
+    color: ${props => props.color ? `${props.color}` : `var(--ion-color-dark)`};
     font-size: 2.5rem;
     line-height: 115%;
     letter-spacing: -1px;
@@ -26,7 +26,7 @@ const Heading2 = styled.h2<ColoredProps>`
 `
 const Heading3 = styled.h3<ColoredProps>`
     font-weight: var(--font-bold);
-    color: ${props => props.color ? `var(--ion-color-${props.color})` : `var(--ion-color-dark)`};
+    color: ${props => props.color ? `${props.color}` : `var(--ion-color-dark)`};
     font-size: 2rem;
     line-height: 130%;
     letter-spacing: -1px;
@@ -37,10 +37,9 @@ const Heading3 = styled.h3<ColoredProps>`
 
 const Heading4 = styled.h4<ColoredProps>`
     font-weight: var(--font-bold);
-    color: ${props => props.color ? `var(--ion-color-${props.color})` : `var(--ion-color-dark)`};
+    color: ${props => props.color ? `${props.color}` : `var(--ion-color-dark)`};
     padding: 0;
     margin: 0;
-    /* margin: 2rem 0 1rem; */
     white-space: normal;
     font-size: 1.5rem;
     line-height: 133%;
@@ -48,7 +47,7 @@ const Heading4 = styled.h4<ColoredProps>`
 `
 const Heading5 = styled.h5<ColoredProps>`
     font-weight: var(--font-bold);
-    color: ${props => props.color ? `var(--ion-color-${props.color})` : `var(--ion-color-dark)`};
+    color: ${props => props.color ? `${props.color}` : `var(--ion-color-dark)`};
     font-size: 1.25rem;
     line-height: 130%;
     white-space: normal;
@@ -57,7 +56,7 @@ const Heading5 = styled.h5<ColoredProps>`
 `
 const Heading6 = styled.h6<ColoredProps>`
     font-weight: var(--font-bold);
-    color: ${props => props.color ? `var(--ion-color-${props.color})` : `var(--ion-color-dark)`};
+    color: ${props => props.color ? `${props.color}` : `var(--ion-color-dark)`};
     font-size: 1rem;
     line-height: 130%;
     white-space: normal;
@@ -68,13 +67,13 @@ const Heading6 = styled.h6<ColoredProps>`
 interface IHeading extends HTMLAttributes<HTMLHeadingElement>{
     children: string;
     level: "1" | "2" | "3" | "4" | "5" | "6" ;
-    color?: ColorLabelsEnum ;
+    color?: ColorVariablesEnum ;
 }
 
 const HeadingDefaultProps: IHeading = {
     children: "", 
     level: "4",
-    color: ColorLabelsEnum.DARK
+    color: ColorVariablesEnum.DARK
 }
 const Heading: React.FC<IHeading> = ({level, color, children, ...props}) => {
     return (

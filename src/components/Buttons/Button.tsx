@@ -21,6 +21,7 @@ interface IButton extends HTMLAttributes<HTMLIonButtonElement> {
   type?: "button" | "reset" | "submit";
   routerLink?: string;
   href?: string;
+  target?: "_blank"| "_self"| "_parent"| "_top"
 
 }
 
@@ -32,7 +33,8 @@ const ButtonDefaultProps: IButton = {
   iconSlot: "start",
   mode: "ios",
   expand: undefined,
-  type: "button"
+  type: "button",
+  target: "_blank"
 }
 
 const StyledButton = styled(IonButton)`
@@ -54,11 +56,12 @@ const Button: React.FC<IButton> = ({
   label,
   type,
   routerLink,
+  target,
   href,
   ...props
 }) => {
   return (
-    <StyledButton target="_blank" href={href} routerLink={routerLink} type={type} disabled={isLoading} style={{ position: "relative"}} fill={fill} shape={shape} color={color}  {...props}>
+    <StyledButton target={target} href={href} routerLink={routerLink} type={type} disabled={isLoading} style={{ position: "relative"}} fill={fill} shape={shape} color={color}  {...props}>
       {isLoading
         && (
           <div style={{ position: "absolute", top: "0", left: "0", width: "100%", height: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>

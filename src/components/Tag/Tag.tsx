@@ -11,6 +11,7 @@ export interface ITag extends HTMLAttributes<HTMLIonChipElement> {
     disabled?: boolean;
     /**Text label shown in the tag */
     label?: string;
+    href?: string;
     icon?: string;
     /**Show a close Icon  */
     withCloseIcon?: boolean;
@@ -35,7 +36,6 @@ const TagDefaultProps: ITag = {
     outline: true,
     label: "Restaurant",
     color: ColorLabelsEnum.PRIMARY,
-    icon: pin,
     withCloseIcon: false,
     disabled: false
 }

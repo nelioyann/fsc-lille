@@ -23,7 +23,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import './theme/fonts.css';
 import Tabs, { ITab } from './ui/Content/Tabs/Tabs';
-import { calendarOutline, homeOutline, mailOutline, peopleOutline } from 'ionicons/icons';
+import { calendar, home, informationCircle, mail, people } from 'ionicons/icons';
 import MainRoutes, { BreakpointsEnum } from './ui/SplitPane/MainRoutes';
 import Programme from './pages/Programme';
 import Contact from './pages/Contact';
@@ -39,15 +39,15 @@ export const tabs: ITab[] = [
     id: 'accueil',
     path: '/tabs/accueil',
     label: 'Accueil',
-    icon: homeOutline,
+    icon: home,
     Component: Home,
     isTab: true,
   },
   {
     id: 'programmes',
     path: '/tabs/programmes',
-    label: 'Programmes',
-    icon: calendarOutline,
+    label: 'Au programme',
+    icon: calendar,
     Component: Programme,
     isTab: true,
   },
@@ -55,7 +55,7 @@ export const tabs: ITab[] = [
     id: 'intervenants',
     path: '/tabs/intervenants',
     label: 'Intervenants',
-    icon: peopleOutline,
+    icon: people,
     Component: Intervenants,
     isTab: true,
   }
@@ -64,7 +64,7 @@ export const tabs: ITab[] = [
     id: 'contact',
     path: '/tabs/contact',
     label: 'Contact',
-    icon: mailOutline,
+    icon: informationCircle,
     Component: Contact,
     isTab: true,
   },
@@ -72,7 +72,7 @@ export const tabs: ITab[] = [
     id: 'intervenant',
     path: '/tabs/intervenants/:id',
     label: 'Intervenant',
-    icon: peopleOutline,
+    icon: people,
     Component: Intervenant,
     isTab: false,
   },
@@ -81,7 +81,7 @@ export const tabs: ITab[] = [
     id: 'programme',
     path: '/tabs/programmes/:id',
     label: 'Programme',
-    icon: peopleOutline,
+    icon: people,
     Component: ProgrammeItem,
     isTab: false,
   },
@@ -89,8 +89,7 @@ export const tabs: ITab[] = [
 const App: React.FC = () => {
   return (
     <IonApp>
-        {/* <MainRoutes when={BreakpointsEnum.md} tabs={tabs} /> */}
-        <IonLoading isOpen={true}/>
+        <MainRoutes when={BreakpointsEnum.md} tabs={tabs} />
     </IonApp>
   )
 }

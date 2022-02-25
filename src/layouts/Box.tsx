@@ -25,7 +25,7 @@ const Box = styled.div<BoxProps>`
     /* ↓ For high contrast mode */
     outline: ${BoxDefaultProps.borderWidth} solid transparent;
     outline-offset: calc(${BoxDefaultProps.borderWidth} * -1);
-    background-color: ${ColorVariablesEnum.LIGHT};
+    /* background-color: ${ColorVariablesEnum.LIGHT}; */
     color: ${ColorVariablesEnum.DARK};
     display: block;
 

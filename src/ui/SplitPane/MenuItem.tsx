@@ -11,10 +11,10 @@ interface IMenuItem extends HTMLAttributes<HTMLIonItemElement> {
     isActive?: boolean;
 }
 
-interface ItemProps{
+interface ItemProps {
     $isActive?: boolean;
 }
-const StyledItem = styled(IonItem)<ItemProps>`
+const StyledItem = styled(IonItem) <ItemProps>`
     border-radius: ${SpacingEnum.subtleCurve};
     --background-hover-opacity: 0.2;
     --background-hover: ${ColorVariablesEnum.SECONDARY};
@@ -22,14 +22,14 @@ const StyledItem = styled(IonItem)<ItemProps>`
     /* box-shadow: 0px 0px 0px ${SpacingEnum.borderThicc} var(--background); */
     transition: all 300ms;
     &:focus, &:focus-within{
-    box-shadow: 0 0 0 0.15rem ${ColorVariablesEnum.SECONDARY}, 0 0 0 0.35rem ${ColorVariablesEnum.PRIMARY};
+    box-shadow: 0 0 0 0.15rem ${ColorVariablesEnum.PRIMARY};
   }
     ${({ $isActive }) =>
         $isActive &&
         css`
             --color: ${ColorVariablesEnum.PRIMARY};
-            /* --background: ${ColorVariablesEnum.PRIMARY}; */
-            box-shadow: 0 0 0 0.15rem ${ColorVariablesEnum.SECONDARY}, 0 0 0 0.35rem ${ColorVariablesEnum.PRIMARY};
+            --background: var(--background-hover);
+            box-shadow: 0 0 0 0.15rem ${ColorVariablesEnum.PRIMARY};
             ${LargeButton}{
                 color: ${ColorVariablesEnum.PRIMARY};
             }
@@ -38,13 +38,13 @@ const StyledItem = styled(IonItem)<ItemProps>`
 
 `
 
-const MenuItem: React.FC<IMenuItem> = ({path = "", isActive,  icon = appsOutline, label = "Menu Item", ...props }) => {
+const MenuItem: React.FC<IMenuItem> = ({ path = "", isActive, icon = appsOutline, label = "Menu Item", ...props }) => {
     return (
         <StyledItem detail={false} $isActive={isActive} mode="ios" routerLink={path} shape="round" button={true} {...props}>
             <IonIcon style={{ marginRight: "0.5em" }} icon={icon} />
             <LargeButton>
                 {label}
-                </LargeButton>
+            </LargeButton>
         </StyledItem>
     )
 };

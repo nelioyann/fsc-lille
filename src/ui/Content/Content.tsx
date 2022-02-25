@@ -13,7 +13,9 @@ const PageContentWrapper = styled(Box)`
 
 const StyledContent = styled(IonContent) <{ onDesktop: boolean }>`
     --background: ${ColorVariablesEnum.LIGHT};
-
+    ${PageContentWrapper}{
+    padding-bottom: 10em;
+    }
     ${({ onDesktop }) =>
         onDesktop &&
         css`
@@ -24,7 +26,6 @@ const StyledContent = styled(IonContent) <{ onDesktop: boolean }>`
     ${PageContentWrapper}{
         height: 100vh;
         overflow: auto;
-        padding-bottom: 10em;
         padding-top: 5em;
         /* Reserves the scrollbar space to avoid visual shifts */
         scrollbar-gutter: stable;
@@ -35,7 +36,6 @@ const StyledContent = styled(IonContent) <{ onDesktop: boolean }>`
         background: ${ColorVariablesEnum.LIGHT};
         box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
         border-radius: 5px;
-
         }
 
         &::-webkit-scrollbar-thumb {
@@ -64,7 +64,7 @@ interface IContainer extends BoxProps {
 const Content: React.FC<IContainer> = ({ children, ...props }) => {
 
     return (
-        <StyledContent onDesktop={isPlatform('desktop')}>
+        <StyledContent fullscreen onDesktop={isPlatform('desktop')}>
             <PageContentWrapper {...props} borderWidth="0">
                 <PageContentInner>
                     {children}

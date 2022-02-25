@@ -13,7 +13,11 @@ const CircularLogo = styled(Box)`
     border-radius: 50%;
     background: white;
 `
-
+const StyledSplitPane = styled(IonSplitPane)`
+    /* --side-max-width: 5em; */
+    /* --side-min-width: 5em; */
+    --side-max-width: 15em;
+`
 export enum BreakpointsEnum {
     "xs" = "xs",
     "sm" = "sm",
@@ -33,14 +37,16 @@ const MainRoutes: React.FC<IMainRoutes> = ({ disabled = false, tabs, contentId =
 
     return (
         <IonReactRouter>
+            {/* <IonContent> */}
             {/* Wrapping the splitPane in a IonContent 
             produce a better display (less shadows, better header background) */}
-            <IonContent>
-                <IonSplitPane when={when} contentId={contentId} disabled={disabled}>
+                {/* <StyledSplitPane when={when} contentId={contentId} disabled={disabled}> */}
                     {/* Side Menu */}
-                    <Menu tabs={tabs} contentId={contentId} />
+                    {/* <Menu tabs={tabs} contentId={contentId} /> */}
                     {/* Main router Outlet */}
-                    <IonRouterOutlet id={contentId}>
+                    {/* Using the render method prop cuts down the number of renders your components will have due to route changes.
+                        Use the component prop when your component depends on the RouterComponentProps passed in automatically. */}
+                    {/* <IonRouterOutlet id={contentId}>
                         <Route exact path="/">
                             <Redirect to="/tabs/accueil" />
                         </Route>
@@ -53,8 +59,8 @@ const MainRoutes: React.FC<IMainRoutes> = ({ disabled = false, tabs, contentId =
                             }
                         })}
                     </IonRouterOutlet>
-                </IonSplitPane>
-            </IonContent>
+                </StyledSplitPane>
+            </IonContent> */}
             <Tabs when={when} tabs={tabs} />
         </IonReactRouter>
     )
