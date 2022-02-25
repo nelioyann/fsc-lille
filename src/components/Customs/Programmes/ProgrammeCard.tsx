@@ -37,7 +37,7 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
     const router = useIonRouter();
 
     return (
-        <StyledCard style={{borderLeft: `3px solid var(--ion-color-${EventsThemeColorEnum[theme]})`}} mode="ios" button={true} onClick={ ()=> router.push(`/tabs/programmes/${id}`, "forward", "pop")} {...props}>
+        <StyledCard style={{borderLeft: `3px solid var(--ion-color-${EventsThemeColorEnum[theme]})`}} mode="ios" button={true} onClick={ ()=> router.push(`/tabs/programmes/${id}`, "forward", "replace")} {...props}>
             <Stack space="0">
                 <IonCardHeader>
                     <Cluster>

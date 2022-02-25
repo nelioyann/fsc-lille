@@ -18,7 +18,7 @@ const speakers: ISpeaker[] = [
         lastName: 'Lenne',
         role: 'Chercheur',
         companyId: "psycos",
-        photoUrl: "https://via.placeholder.com/100",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/",
         biography: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur"
@@ -30,7 +30,7 @@ const speakers: ISpeaker[] = [
         lastName: "Degraeve",
         role: 'Director',
         companyId: "psycos",
-        photoUrl: "https://via.placeholder.com/100",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/",
         biography: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur"
@@ -42,7 +42,7 @@ const speakers: ISpeaker[] = [
         lastName: "Vandenberghe",
         role: 'Chercheur',
         companyId: "isa",
-        photoUrl: "https://via.placeholder.com/100",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/",
         biography: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur"
@@ -54,7 +54,7 @@ const speakers: ISpeaker[] = [
         lastName: "Chollet",
         role: 'Chercheur',
         companyId: "isa",
-        photoUrl: "https://via.placeholder.com/100",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/",
         biography: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur"
@@ -90,7 +90,7 @@ const speakers: ISpeaker[] = [
         lastName: "Berthaut",
         role: 'Chercheur',
         companyId: "junia",
-        photoUrl: "https://via.placeholder.com/100",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/",
         biography: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur"
@@ -114,7 +114,7 @@ const speakers: ISpeaker[] = [
         lastName: "Huyghe",
         role: 'Chercheur',
         companyId: "",
-        photoUrl: "https://via.placeholder.com/100",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/",
         biography: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur"
@@ -126,7 +126,7 @@ const speakers: ISpeaker[] = [
         lastName: "Prigent",
         role: 'Chercheur',
         companyId: "junia",
-        photoUrl: "https://via.placeholder.com/100",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/",
         biography: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur"
@@ -138,7 +138,7 @@ const speakers: ISpeaker[] = [
         lastName: "Klimsza",
         role: 'Chercheur',
         companyId: "mel",
-        photoUrl: "https://via.placeholder.com/100",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/",
         biography: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur"
@@ -150,7 +150,7 @@ const speakers: ISpeaker[] = [
         lastName: "Dobigny",
         role: 'Chercheur',
         companyId: "mel",
-        photoUrl: "https://via.placeholder.com/100",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/",
         biography: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur"
@@ -162,7 +162,7 @@ const speakers: ISpeaker[] = [
         lastName: "Giorgini",
         role: 'Chercheur',
         companyId: "icl",
-        photoUrl: "https://via.placeholder.com/100",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "https://twitter.com/",
         linkedin: "https://www.linkedin.com/in/",
         biography: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur"

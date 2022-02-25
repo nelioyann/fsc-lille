@@ -13,6 +13,7 @@ const PageContentWrapper = styled(Box)`
 
 const StyledContent = styled(IonContent) <{ onDesktop: boolean }>`
     --background: ${ColorVariablesEnum.LIGHT};
+    padding-bottom: 5em;
 
     ${({ onDesktop }) =>
         onDesktop &&

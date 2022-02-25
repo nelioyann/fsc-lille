@@ -63,14 +63,14 @@ const Home: React.FC = () => {
                   </Label>
                 </Stack>
                 {/* <StyledLottiePlayer {...playerOptions} src={OpticalIllusion} /> */}
-                <SvgIcon padding={SpacingEnum.s5} size="100%" Icon={Logo} />
+                <SvgIcon padding={SpacingEnum.s5} size="clamp(5em, 70vw, 20em )" Icon={Logo} />
                 
                 {/* <Box> */}
               </Sidebar>
               <Cluster space={SpacingEnum['s-5']}>
                 <Button icon={ticketOutline} href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand="block" size="large" label="Réservez votre place" color={ColorLabelsEnum.TERTIARY} />
-                {/* <Button routerLink="/tabs/programmes" expand="block" size="large" label="Découvrez le programme" fill="outline" color={ColorLabelsEnum.TERTIARY} /> */}
-                <Button routerLink="/tabs/programmes" expand="block" size="large" label="Ajouter au calendrier" fill="clear" color={ColorLabelsEnum.TERTIARY} />
+                <Button routerLink="/tabs/programmes" expand="block" size="large" label="Découvrez le programme" fill="outline" color={ColorLabelsEnum.TERTIARY} />
+                {/* <Button routerLink="/tabs/programmes" expand="block" size="large" label="Ajouter au calendrier" fill="clear" color={ColorLabelsEnum.TERTIARY} /> */}
               </Cluster>
             </Stack>
             <Cluster>
