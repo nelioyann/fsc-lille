@@ -131,7 +131,18 @@ const speakers: ISpeaker[] = [
         linkedin: "",
         biography: ""
     }
-    
+    // ,
+    // {
+    //     id: "dLaure",
+    //     firstName: 'Laure',
+    //     lastName: "Dobigny",
+    //     role: '',
+    //     companyId: "MEL",
+    //     photoUrl: "/assets/speakers/FSC.png",
+    //     twitter: "",
+    //     linkedin: "",
+    //     biography: ""
+    // }
     ,
     {
         id: "hCatherine",
