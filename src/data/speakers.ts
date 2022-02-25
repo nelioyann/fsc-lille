@@ -197,9 +197,9 @@ const speakers: ISpeaker[] = [
 export const getSpeakers = () => speakers;
 export const getSpeaker = (id: string) => speakers.find(speaker => speaker.id === id );
 export const getSpeakerImage = (id: string) => speakers.filter(speaker => speaker.id === id )[0]?.photoUrl || "/assets/speakers/FSC.png";
-export const getSpeakerSummary = (id: string) => {
+export const getSpeakerSummary = (id: string, full = false) => {
         let {firstName, lastName, role, companyId} = speakers.filter(speaker => speaker.id === id )[0];
+        if (full) return `${firstName} ${lastName}, ${role}, getCompanyName${companyId}`
         return `${firstName} ${lastName}`
-        // return `${firstName} ${lastName}, ${role}, getCompanyName${companyId}`
 };
 

@@ -69,7 +69,7 @@ const events: IEvent[] = [
         id: "9",
         speakersId: ["bFlorent"],
         title: "Perception de la gestuelle dans la musique électronique",
-        description: "",
+        description: "Lors de concerts de musique électronique, il est souvent difficile de comprendre ce que font exactement les musiciens : Quel est le lien entres les gestes qu'ils effectuent et la musique produite ? Quelle est leur implication réelle dans la performance ? Nous présenterons ici des travaux cherchant à évaluer ce que perçoivent et comprennent les spectateurs et proposant des techniques de visualisation en réalité augmentée pour enrichir leur expérience.",
         date: "14h",
         theme: "MOUVEMENT",
     },

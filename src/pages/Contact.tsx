@@ -46,10 +46,7 @@ const Contact = () => {
                                 outils de la recherche, et des nombreuses questions passionnantes autour du fonctionnement
                                 de notre cerveau.
                             </Label>
-                            <Button label="Kit de communication" href="https://www.dropbox.com/sh/zqvc4cjrbxuu3w0/AAA22cYM5u15A3XXiuofWyCpa?dl=0" />
-                            {/* <Box borderWidth="0" padding="0">
-                                <img src={CascBanner} />
-                            </Box> */}
+
 
                             <Label>
                                 Avant une 2e édition hébergée par l’Université de Lille en 2023 consacrée à la réalité virtuelle,
