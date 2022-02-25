@@ -32,17 +32,25 @@ const ProgrammeItem: React.FC = () => {
                     <Cover noPad minHeight='80vh'>
 
                         <Stack data-centered>
-                        <Cluster>
-                                {event?.speakersId.map(speakerId => (
-                                    <div key={`programmeItem_${speakerId}`} >
-                                        <StyledThumbnail >
-                                            <img src={getSpeakerImage(speakerId)} />
-                                        </StyledThumbnail>
-                                        {/* <Label>{getSpeakerSummary(speakerId)}</Label> */}
-                                    </div>
-                                ))}
-                            </Cluster>
-                            <Heading level="3">{event.title}</Heading>
+                            <Box borderWidth='0' padding='0'>
+
+                                <Cluster>
+                                    {event?.speakersId.map(speakerId => (
+                                        <div key={`programmeItem_Image${speakerId}`} >
+                                            <StyledThumbnail >
+                                                <img src={getSpeakerImage(speakerId)} />
+                                            </StyledThumbnail>
+                                        </div>
+                                    ))}
+                                </Cluster>
+                                <Stack>
+                                    {event?.speakersId.map(speakerId => (
+                                        <Label size="large" key={`programmeItem_Summary${speakerId}`}>{getSpeakerSummary(speakerId)}</Label>
+                                    ))}
+
+                                </Stack>
+                            </Box>
+                            <Heading level="3" color={ColorVariablesEnum.TERTIARY}>{event.title}</Heading>
                             <Box padding='0' borderWidth='0'>
                                 <Tag label={event.date} />
                             </Box>

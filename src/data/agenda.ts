@@ -3,13 +3,13 @@ const events: IEvent[] = [
         id: "1",
         speakersId: ["bVictor"],
         title: "Les limites de la perception visuelle",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
+        description: "Vous vous êtes sans doute déjà trouvés face à une illusion d'optique qui vous a fait douter de votre vue. Quelle est la science derrière ces illusions ? Et comment perçoit-on une image ? Vous vous doutez probablement que c'est grâce à vos yeux, mais en êtes-vous sûrs ? Les yeux ne sont que le point de départ de notre système visuel et si vous souhaiter en savoir plus, venez découvrir comment vos yeux et votre cerveau perçoivent le monde qui vous entoure.",
         date: "11h",
         theme: "INFLUENCE"
     },
     {
         id: "2",
-        speakersId: ["1"],
+        speakersId: ["lBruno", "dBeatrice"],
         title: "La conscience du temps nous fait positiver",
         description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
         date: "11h",
@@ -94,7 +94,7 @@ const events: IEvent[] = [
         id: "12",
         speakersId: ["zFabien"],
         title: "Spider and I : robot, émotion et électrophysiologie",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias odio repudiandae earum temporibus fugit placeat voluptate esse, nemo impedit velit labore, ut consequuntur porro vitae assumenda officia blanditiis possimus?",
+        description: "Fabien Zocco présentera le projet de sculpture Spider and I, réalisé en collaboration avec le laboratoire de sciences cognitives SCAlab (Lille), mettant en jeu un robot araignée répondant en direct aux émotions de l'artiste.",
         date: "15h",
         theme: "EXPERIMENTATION"
     }

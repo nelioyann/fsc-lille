@@ -15,8 +15,8 @@ const Programme = () => {
     const events = getEvents();
     return (
         <IonPage>
-            <Header label="Programme" />
             <Content>
+            <Header mode="ios" label="Programme" />
                 {events?.length > 0
                     ? (
                         <Stack id="hello" space={SpacingEnum.s2}>

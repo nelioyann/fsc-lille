@@ -40,9 +40,14 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
         <StyledCard style={{borderLeft: `3px solid var(--ion-color-${EventsThemeColorEnum[theme]})`}} mode="ios" button={true} onClick={ ()=> router.push(`/tabs/programmes/${id}`, "forward", "pop")} {...props}>
             <Stack space="0">
                 <IonCardHeader>
-                    {/* <IonAvatar>
-                        <img src={getSpeakerImage(speakerId)} />
-                    </IonAvatar> */}
+                    <Cluster>
+                    {speakersId.map(speakerId => (
+                        <IonAvatar key={`programmeCard_speaker${speakerId}`}>
+                            <img src={getSpeakerImage(speakerId)} />
+                        </IonAvatar>
+                    ))}
+
+                    </Cluster>
                     {title && title !== "" && <IonCardTitle>{title}</IonCardTitle>}
                     {/* {description && description !== "" && <IonCardSubtitle>{description}</IonCardSubtitle>} */}
                 </IonCardHeader>

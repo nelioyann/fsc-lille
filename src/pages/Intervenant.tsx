@@ -20,7 +20,7 @@ const Intervenant = () => {
             <Header label="Intervenant" withBackButton={true} />
             <Content>
                 {speaker ? (<Stack>
-                    <Box maxContent>
+                    <Box maxContent padding='0'>
                         <IonAvatar>
                             <img src={speaker.photoUrl} alt={`${speaker.firstName} ${speaker.lastName}`} />
                         </IonAvatar>

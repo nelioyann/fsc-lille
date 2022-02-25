@@ -40,7 +40,7 @@ const Home: React.FC = () => {
   }, [])
   return (
     <IonPage>
-      <Header label="Accueil" icon={locationOutline} iconOnclickHandler={() => setShowModal(true)} />
+      <Header  label="FSC-Lille #1" icon={locationOutline} iconOnclickHandler={() => setShowModal(true)} />
       <Content>
         <Stack space={SpacingEnum.s5}>
           <Cover noPad minHeight='80vh'>
@@ -70,6 +70,7 @@ const Home: React.FC = () => {
               <Cluster space={SpacingEnum['s-5']}>
                 <Button icon={ticketOutline} href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand="block" size="large" label="Réservez votre place" color={ColorLabelsEnum.TERTIARY} />
                 {/* <Button routerLink="/tabs/programmes" expand="block" size="large" label="Découvrez le programme" fill="outline" color={ColorLabelsEnum.TERTIARY} /> */}
+                <Button routerLink="/tabs/programmes" expand="block" size="large" label="Ajouter au calendrier" fill="clear" color={ColorLabelsEnum.TERTIARY} />
               </Cluster>
             </Stack>
             <Cluster>
@@ -141,7 +142,7 @@ const Home: React.FC = () => {
           onDidDismiss={() => setShowModal(false)}
         >
           <IonPage>
-            <Header label="ACCÈS À HEI" mode="ios" icon={close} iconOnclickHandler={() => setShowModal(false)} />
+            <Header label="Se rendre au Forum" mode="ios" icon={close} iconOnclickHandler={() => setShowModal(false)} />
             <Content>
               <Heading level="4">Comment accéder au lieu</Heading>
               <Label size="large">
@@ -172,9 +173,9 @@ const Home: React.FC = () => {
                 <IonItem>
                   Les lignes L5 et la ligne 18 desservent l’arrêt “Université Catholique de Lille”, située à 3 minutes à pied de l’école. Arrêt situé face à la gare Lille Flandres et sur les grands axes.
                 </IonItem>
-                <IonItem>
+                {/* <IonItem>
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6442132342295!2d3.0429153157380493!3d50.633725879501085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d579573550df%3A0xaa9c89af983f58e9!2sJunia%20Hei%20Lille%20-%20School%20D&#39;ing%C3%A9nieur%20Lille!5e0!3m2!1sen!2sfr!4v1645571926708!5m2!1sen!2sfr" height="450" style={{ "border": 0, width: "100%" }} loading="lazy"></iframe>
-                </IonItem>
+                </IonItem> */}
               </IonList>
             </Content>
           </IonPage>
