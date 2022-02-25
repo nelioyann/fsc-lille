@@ -13,7 +13,7 @@ import '@ionic/react/css/ionic-swiper.css';
 import { IonicSlides } from '@ionic/react';
 import Card from '../../Cards/Card';
 import ProgrammeCard from './ProgrammeCard';
-import { EventThemesEnum, getEvents } from '../../../data/agenda';
+import { EventThemesEnum, getEvents } from '../../../data/events';
 import { Stack } from '../../../layouts';
 
 interface IProgrammesSlider {

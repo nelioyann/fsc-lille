@@ -12,7 +12,7 @@ export interface IPartenairesSlide {
 const PartenairesSlide:React.FC<IPartenairesSlide> = ({title, imageUrl}) => {
   return (
 
-    <Card style={{width: "100%"}} imageUrl={imageUrl} title=""/>
+    <Card style={{width: "100%"}} imageUrl={imageUrl} header={false}/>
   )
 }
 

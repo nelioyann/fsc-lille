@@ -29,37 +29,52 @@ export interface IPartenairesSlides {
 }
 
 const options = {
-    autoplay: {delay: 10000},
+    autoplay: { delay: 10000 },
     keyboard: true,
     pagination: false,
     scrollbar: false,
     zoom: true,
-    slidesPerView: 3.5,
-    spaceBetween: 8,
+    breakpoints: {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 1.5,
+            spaceBetween: 10
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 2.5,
+            spaceBetween: 20
+        },
+        // when window width is >= 640px
+        640: {
+            slidesPerView: 4.5,
+            spaceBetween: 30
+        }
+    },
     watchSlidesProgress: false,
 }
 
 const slidesContent = [{
-    title: "1. Look around in awe",
+    title: "",
     imageUrl: mel
 }
-, {
-    title: "2. Hold your heart with care.",
+    , {
+    title: "",
     imageUrl: anthropoLab
 }, {
-    title: "3. Cry your heart out",
+    title: "",
     imageUrl: cristal
 }, {
-    title: "2. Hold your heart with care.",
+    title: "",
     imageUrl: fresnoy
 }, {
-    title: "3. Cry your heart out",
+    title: "",
     imageUrl: scalab
 }, {
-    title: "2. Hold your heart with care.",
+    title: "",
     imageUrl: univCatho
 }, {
-    title: "3. Cry your heart out",
+    title: "",
     imageUrl: univLille
 }
 ]
@@ -79,7 +94,7 @@ const PartenairesSlides: React.FC<IPartenairesSlides> = ({ }) => {
         <Swiper onSwiper={(swiper) => { setSwiperInstance(swiper) }} modules={SwiperModules} {...options}>
             {slidesContent.map(({ title, imageUrl }, index) => (
                 <SwiperSlide key={`slide_${index}`}>
-                    <PartenairesSlide title={title} imageUrl={imageUrl}/>
+                    <PartenairesSlide title={title} imageUrl={imageUrl} />
                 </SwiperSlide>
             ))}
         </Swiper>

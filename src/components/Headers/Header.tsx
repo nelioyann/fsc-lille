@@ -24,7 +24,7 @@ const StyledToolBar = styled(IonToolbar)`
     margin: 0px auto !important;
 
 `
-const Header: React.FC<HeaderProps> = ({ color = ColorLabelsEnum.LIGHT, mode = "md", iconOnclickHandler = () => console.log("Clicked icon header"), noBorder = false, label, icon, iconSlot = "end", iconTargetLink, withBackButton = false, backButtonLink = "/tabs/accueil", backButtonText = "" }) => {
+const Header: React.FC<HeaderProps> = ({ color = ColorLabelsEnum.LIGHT, mode = "md", iconOnclickHandler = () => console.log("Clicked icon header"), noBorder = false, label, icon, iconSlot = "end", iconTargetLink, withBackButton = false, backButtonLink = "/tabs/accueil", backButtonText = "", children }) => {
     return (
         <IonHeader style={{backgroundColor: ColorVariablesEnum.LIGHT}} mode={mode} className={noBorder ? "ion-no-border" : ""}>
             <StyledToolBar color={color} >
@@ -37,6 +37,8 @@ const Header: React.FC<HeaderProps> = ({ color = ColorLabelsEnum.LIGHT, mode = "
                 {label && <IonTitle slot="">
                     <Heading level="4" >{label}</Heading>
                 </IonTitle>}
+
+                {children}
 
                 {/* Right side */}
 

@@ -8,6 +8,7 @@ export interface ICard extends HTMLAttributes<HTMLIonCardElement> {
     title?: string;
     subtitle?: string;
     bodyText?: string;
+    header?: boolean;
     imageUrl?: string;
     routerLink?: string;
     href?: string;
@@ -75,7 +76,7 @@ const StyledCard = styled(IonCard) <CardProps>`
                 padding: ${SpacingEnum.s0};
                 position: absolute;
                 bottom: 0;
-                background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.8) 100%);
+                background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
                 
             }
             ${StyledCardContent}{
@@ -90,20 +91,23 @@ const StyledCard = styled(IonCard) <CardProps>`
 `
 const CardDefaultProps: ICard = {
     layout: "image",
-    title: "Your title",
-    subtitle: "Your subtitle",
+    header: true,
+    title: "",
+    subtitle: "",
     size: "small",
     imageUrl: "https://picsum.photos/300"
 }
 
-const Card: React.FC<ICard> = ({ bodyText, layout, title, subtitle, routerLink, imageUrl, size, ...props }) => {
+const Card: React.FC<ICard> = ({ bodyText, layout, header, title, subtitle, routerLink, imageUrl, size, ...props }) => {
     return (
         <StyledCard routerLink={routerLink} button={true} mode="ios" $layout={layout} $imageUrl={imageUrl} $size={size} {...props}>
             {layout === "simple" && <StyledCardImage src={imageUrl} />}
-            {title !== "" && subtitle !== "" && (<StyledCardHeader>
-                {title && <Heading level="4">{title}</Heading>}
-                {subtitle && <Heading level="6">{subtitle}</Heading>}
-            </StyledCardHeader>)}
+            {header && (
+                <StyledCardHeader>
+                    {title && title !== "" && <Heading level="4">{title}</Heading>}
+                    {subtitle && subtitle !== "" && <Heading level="6">{subtitle}</Heading>}
+                </StyledCardHeader>
+            )}
             {bodyText && <StyledCardContent>
                 <Label>
                     {bodyText}

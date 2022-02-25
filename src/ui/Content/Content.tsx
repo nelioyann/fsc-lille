@@ -13,7 +13,7 @@ const PageContentWrapper = styled(Box)`
 
 const StyledContent = styled(IonContent) <{ onDesktop: boolean }>`
     --background: ${ColorVariablesEnum.LIGHT};
-    padding-bottom: 5em;
+    padding-bottom: 10em;
 
     ${({ onDesktop }) =>
         onDesktop &&
@@ -65,7 +65,7 @@ interface IContainer extends BoxProps {
 const Content: React.FC<IContainer> = ({ children, ...props }) => {
 
     return (
-        <StyledContent onDesktop={isPlatform('desktop')}>
+        <StyledContent fullscreen onDesktop={isPlatform('desktop')}>
             <PageContentWrapper {...props} borderWidth="0">
                 <PageContentInner>
                     {children}

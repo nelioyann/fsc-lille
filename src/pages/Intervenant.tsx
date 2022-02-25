@@ -25,14 +25,14 @@ const Intervenant = () => {
                             <img src={speaker.photoUrl} alt={`${speaker.firstName} ${speaker.lastName}`} />
                         </IonAvatar>
                     </Box>
-                    <Box padding="0" borderWidth="0">
+                    {/* <Box padding="0" borderWidth="0">
                         <Heading level="4">{`${speaker.firstName} ${speaker.lastName}`}</Heading>
                         <Label>{speaker.biography}</Label>
                     </Box>
                     <Cluster>
                         {speaker.twitter && <Button icon={logoTwitter} label="Twitter" />}
                         {speaker.linkedin && <Button icon={logoLinkedin} label="LinkedIn" />}
-                    </Cluster>
+                    </Cluster> */}
                     {/* <iframe style={{minHeight: "600px"}} src="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" /> */}
                 </Stack>) : (
                     <Stack>

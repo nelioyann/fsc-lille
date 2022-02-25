@@ -11,6 +11,7 @@ export interface ITag extends HTMLAttributes<HTMLIonChipElement> {
     disabled?: boolean;
     /**Text label shown in the tag */
     label?: string;
+    href?: string;
     icon?: string;
     /**Show a close Icon  */
     withCloseIcon?: boolean;

@@ -9,7 +9,7 @@ ion-tab-bar {
   border-radius: 1em;
   justify-content: space-between;
   gap: 0.5em;
-  background: rgba(255, 255, 255, 0.604);
+  background: rgba(0, 0, 0, 0.604);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(5px);
   border: 1px solid hsla(0, 0%, 93%);
@@ -27,9 +27,9 @@ ion-tab-button {
   );
   color: var(--ion-color-medium);
   --color-focused: var(--ion-color-secondary);
-  --color-selected: var(--ion-color-primary);
+  --color-selected: var(--ion-color-tertiary);
 }
 
 ion-tab-button.tab-selected {
-  color: var(--ion-color-primary);
+  color: var(--ion-color-tertiary);
 }

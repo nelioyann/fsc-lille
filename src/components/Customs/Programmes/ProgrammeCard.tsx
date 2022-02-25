@@ -2,7 +2,7 @@ import { IonAvatar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, Ion
 import React from 'react';
 import styled from 'styled-components';
 import { getSpeakerImage } from '../../../data/speakers';
-import { Cluster, Stack } from '../../../layouts';
+import { Box, Cluster, Stack } from '../../../layouts';
 import { ColorLabelsEnum, ColorVariablesEnum, Label } from '../../../theme/globalStyles';
 import Heading from '../../Headings/Heading';
 import Tag from '../../Tag/Tag';
@@ -26,37 +26,40 @@ export interface IProgrammeCard {
     theme: string;
 }
 
-let EventsThemeColorEnum: { [x: string]: ColorLabelsEnum | undefined; } = {
-    "INFLUENCE" : ColorLabelsEnum.SECONDARY,
-    "SOCIETE" : ColorLabelsEnum.SUCCESS,
-    "EXPERIMENTATION" : ColorLabelsEnum.TERTIARY,
-    "MOUVEMENT" : ColorLabelsEnum.WARNING
+export let EventsThemeColorEnum: { [x: string]: ColorLabelsEnum | undefined; } = {
+    "INFLUENCE": ColorLabelsEnum.SECONDARY,
+    "SOCIETE": ColorLabelsEnum.SUCCESS,
+    "EXPERIMENTATION": ColorLabelsEnum.TERTIARY,
+    "MOUVEMENT": ColorLabelsEnum.WARNING
 }
 
-const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id, speakersId,theme, ...props }) => {
+const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id, speakersId, theme, ...props }) => {
     const router = useIonRouter();
 
     return (
-        <StyledCard style={{borderLeft: `3px solid var(--ion-color-${EventsThemeColorEnum[theme]})`}} mode="ios" button={true} onClick={ ()=> router.push(`/tabs/programmes/${id}`, "forward", "replace")} {...props}>
+        <StyledCard style={{ borderLeft: `3px solid var(--ion-color-${EventsThemeColorEnum[theme]})` }} mode="ios" button={true} onClick={() => router.push(`/tabs/programmes/${id}`, "forward", "replace")} {...props}>
             <Stack space="0">
                 <IonCardHeader>
-                    <Cluster>
-                    {speakersId.map(speakerId => (
-                        <IonAvatar key={`programmeCard_speaker${speakerId}`}>
-                            <img src={getSpeakerImage(speakerId)} />
-                        </IonAvatar>
-                    ))}
+                    <Cluster justify='space-between' align='center'>
+                        <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date} />
+                        <Cluster>
+                            {speakersId.map(speakerId => (
+                                <IonAvatar key={`programmeCard_speaker${speakerId}`}>
+                                    <img src={getSpeakerImage(speakerId)} />
+                                </IonAvatar>
+                            ))}
+                        </Cluster>
 
                     </Cluster>
                     {title && title !== "" && <IonCardTitle>{title}</IonCardTitle>}
                     {/* {description && description !== "" && <IonCardSubtitle>{description}</IonCardSubtitle>} */}
                 </IonCardHeader>
-                {/* <IonCardContent>
-                    <Cluster align="center" justify="space-between">
+                <IonCardContent>
+                    {/* <Cluster align="center" justify="space-between">
                         <Label>{date}</Label>
-                        <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={theme}/>
-                    </Cluster>
-                </IonCardContent> */}
+                        <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date}/>
+                    </Cluster> */}
+                </IonCardContent>
             </Stack>
         </StyledCard>
     )

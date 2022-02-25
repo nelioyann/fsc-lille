@@ -23,7 +23,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import './theme/fonts.css';
 import Tabs, { ITab } from './ui/Content/Tabs/Tabs';
-import { calendar, home, mail, people } from 'ionicons/icons';
+import { calendar, home, informationCircle, mail, people } from 'ionicons/icons';
 import MainRoutes, { BreakpointsEnum } from './ui/SplitPane/MainRoutes';
 import Programme from './pages/Programme';
 import Contact from './pages/Contact';
@@ -64,7 +64,7 @@ export const tabs: ITab[] = [
     id: 'contact',
     path: '/tabs/contact',
     label: 'Contact',
-    icon: mail,
+    icon: informationCircle,
     Component: Contact,
     isTab: true,
   },

@@ -116,7 +116,7 @@ export const Label = styled.p<ParagraphProps>`
         size === "default" &&
         css`
             font-size: 1.125rem !important;
-            font-weight: ${FontWeightEnum.REGULAR};
+            font-weight: ${FontWeightEnum.BOLD};
         `
     }
     ${({ size }) =>

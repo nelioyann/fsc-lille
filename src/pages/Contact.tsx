@@ -1,5 +1,5 @@
-import { IonPage, IonContent, IonCard } from '@ionic/react';
-import { logoFacebook, logoLinkedin, logoTwitter } from 'ionicons/icons';
+import { IonPage, IonContent, IonCard, IonRouterLink } from '@ionic/react';
+import { logoFacebook, logoLinkedin, logoTwitter, sendOutline } from 'ionicons/icons';
 import React from 'react';
 import Button from '../components/Buttons/Button';
 import Input from '../components/Forms/Input/Input';
@@ -18,17 +18,16 @@ const Contact = () => {
     return (
         <IonPage>
             <Content>
-            <Header mode="ios" label="Contact" />
                 <Cover minHeight="80vh" noPad>
                     <Stack space={SpacingEnum.s3}>
-
+                        <Header mode="ios" label="Contact" />
                         <Stack>
-                            <Heading level="4">Une question ? Contactez l'association CASC</Heading>
+                            <Heading level="3">Une question ? Contactez l'association CASC</Heading>
                             <Label>Pour toute question concernant l'événement, envoyez un mail</Label>
                             <Box borderWidth="0" padding="0">
-                                <Button fill="outline" href="mailto:contact@fsc-lille.com" label="Envoyer un email..." />
+                                <Button target='_self' icon={sendOutline} fill="outline" href="mailto:contact@fsc-lille.com" label="Envoyer un email..." />
                             </Box>
-                            <Heading level="4">Suivez les dernières informations sur le forum</Heading>
+                            <Heading level="3">Suivez les dernières informations sur le forum</Heading>
                             <Cluster space={SpacingEnum.s0}>
                                 <Button href="https://twitter.com/Podcasc" fill="outline" icon={logoTwitter} label="Twitter" />
                                 <Button href="https://www.facebook.com/CASC.association" fill="outline" icon={logoFacebook} label="Facebook" />
@@ -37,7 +36,7 @@ const Contact = () => {
                         </Stack>
 
                         <Stack>
-                            <Heading level="4">FSC</Heading>
+                            <Heading level="3">A propos</Heading>
                             <Label>
                                 Le Forum des Sciences Cognitives de Lille (FSC-Lille) est un événement dont le but est de
                                 mettre en valeur et de favoriser les échanges entre les actrices et acteurs des sciences
@@ -47,13 +46,11 @@ const Contact = () => {
                                 outils de la recherche, et des nombreuses questions passionnantes autour du fonctionnement
                                 de notre cerveau.
                             </Label>
+                            <Button label="Kit de communication" href="https://www.dropbox.com/sh/zqvc4cjrbxuu3w0/AAA22cYM5u15A3XXiuofWyCpa?dl=0" />
                             {/* <Box borderWidth="0" padding="0">
                                 <img src={CascBanner} />
                             </Box> */}
-                        </Stack>
 
-                        <Stack>
-                            <Heading level="4">FSC 2.0</Heading>
                             <Label>
                                 Avant une 2e édition hébergée par l’Université de Lille en 2023 consacrée à la réalité virtuelle,
                                 cette toute première édition est accueillie par l’Université Catholique de Lille, au sein des
@@ -61,9 +58,7 @@ const Contact = () => {
                                 que nous en percevons. Des illusions visuelles à l’influence de la musique sur le goût, vous
                                 découvrirez comment notre cerveau a souvent tendance à nous faire vivre une réalité qui n’est
                                 pas tout à fait, voire pas du tout, … la réalité !
-
                             </Label>
-                            <Heading level="4">FSC 2.0</Heading>
                             <Label>
                                 Autour de cette thématique, le FSC-Lille propose de retrouver en un lieu unique la richesse
                                 des travaux des laboratoires des Hauts de France, la variété des formations universitaires et
@@ -73,7 +68,7 @@ const Contact = () => {
                                 perception souvent biaisée que nous avons de notre environnement et sur les conséquences
                                 de nos actions ou de nos inactions !
                             </Label>
-                            <Heading level="4">FSC-Lille #2 (2023)</Heading>
+                            <Heading level="3">FSC-Lille #2 (2023)</Heading>
                             <Label>
                                 Le FSC-Lille est aussi une occasion pour les professionnel.le.s et scientifiques de se retrouver
                                 pour échanger simplement, en buvant un café ou en dégustant un des plats frais et locaux
@@ -89,7 +84,7 @@ const Contact = () => {
                         </Stack>
 
                         <Stack space={SpacingEnum.s3}>
-                            <Heading level="3">Partenaires</Heading>
+                            <Heading level="3">Structures participantes</Heading>
                             <Box borderWidth="0" padding="0">
                                 <PartenairesSlides />
                             </Box>
