@@ -30,10 +30,8 @@ const ProgrammeItem: React.FC = () => {
             <Content>
                 {event ? (
                     <Stack space={SpacingEnum.s5}>
-
                         <Stack data-centered>
                             <Box borderWidth='0' padding='0'>
-
                                 <Cluster space="0">
                                     {event?.speakersId.map(speakerId => (
                                         <StyledThumbnail key={`programmeItem_Image${speakerId}`}>
@@ -45,7 +43,6 @@ const ProgrammeItem: React.FC = () => {
                                     {event?.speakersId.map((speakerId, index) => (
                                         <Label size="large" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? "  & " : ""} ${getSpeakerSummary(speakerId)} `} </Label>
                                     ))}
-
                                 </Cluster>
                             </Box>
                             <Cluster align='center' space={SpacingEnum['s-3']}>

@@ -32,14 +32,14 @@ const events: IEvent[] = [
         date: "12h",
         theme: "SOCIETE",
     },
-    {
-        id: "5",
-        speakersId: ["dLaure"],
-        title: "Ecologie et action ",
-        description: "",
-        date: "12h",
-        theme: "SOCIETE",
-    },
+    // {
+    //     id: "5",
+    //     speakersId: ["dLaure"],
+    //     title: "Ecologie et action ",
+    //     description: "",
+    //     date: "12h",
+    //     theme: "SOCIETE",
+    // },
     {
         id: "6",
         speakersId: ["gPierre"],

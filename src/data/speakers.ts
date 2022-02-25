@@ -114,7 +114,7 @@ const speakers: ISpeaker[] = [
         lastName: "Berthaut",
         role: '',
         companyId: "junia",
-        photoUrl: "/assets/speakers/FSC.png",
+        photoUrl: "/assets/speakers/Florent.jpeg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -170,18 +170,6 @@ const speakers: ISpeaker[] = [
     }
     ,
     {
-        id: "dLaure",
-        firstName: 'Laure',
-        lastName: "Dobigny",
-        role: '',
-        companyId: "MEL",
-        photoUrl: "/assets/speakers/FSC.png",
-        twitter: "",
-        linkedin: "",
-        biography: ""
-    }
-    ,
-    {
         id: "gPierre",
         firstName: 'Pierre',
         lastName: "Giorgini",
@@ -196,8 +184,8 @@ const speakers: ISpeaker[] = [
 ]
 
 export const getSpeakers = () => speakers;
-export const getSpeaker = (id: string) => speakers.filter(speaker => speaker.id === id )[0];
-export const getSpeakerImage = (id: string) => speakers.filter(speaker => speaker.id === id )[0].photoUrl;
+export const getSpeaker = (id: string) => speakers.find(speaker => speaker.id === id );
+export const getSpeakerImage = (id: string) => speakers.filter(speaker => speaker.id === id )[0]?.photoUrl || "/assets/speakers/FSC.png";
 export const getSpeakerSummary = (id: string) => {
         let {firstName, lastName, role, companyId} = speakers.filter(speaker => speaker.id === id )[0];
         return `${firstName} ${lastName}`
