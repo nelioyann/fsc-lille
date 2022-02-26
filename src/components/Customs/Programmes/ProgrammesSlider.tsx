@@ -14,7 +14,8 @@ import { IonicSlides } from '@ionic/react';
 import Card from '../../Cards/Card';
 import ProgrammeCard from './ProgrammeCard';
 import { EventThemesEnum, getEvents } from '../../../data/events';
-import { Stack } from '../../../layouts';
+import { Stack, Switcher } from '../../../layouts';
+import { SpacingEnum } from '../../../theme/globalStyles';
 
 interface IProgrammesSlider {
     theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE";
@@ -30,7 +31,7 @@ const ProgrammesSlider: React.FC<IProgrammesSlider> = ({theme, id}) => {
     }
     console.log(theme, events)
     return (
-        <Stack>
+        <Switcher space={SpacingEnum['s0']}>
             {events?.length > 0 ? events
                 .filter(event => event.theme === theme)
                 .filter(event => event.id !== id)
@@ -39,7 +40,7 @@ const ProgrammesSlider: React.FC<IProgrammesSlider> = ({theme, id}) => {
                 )) : (
                     <p>Empty</p>
                 ) }
-        </Stack>
+        </Switcher>
     )
 }
 

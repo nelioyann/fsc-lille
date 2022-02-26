@@ -25,54 +25,6 @@ const speakers: ISpeaker[] = [
     }
     ,
     {
-        id: "dBeatrice",
-        firstName: 'Béatrice',
-        lastName: "Degraeve",
-        role: '',
-        companyId: "psycos",
-        photoUrl: "/assets/speakers/FSC.png",
-        twitter: "",
-        linkedin: "",
-        biography: ""
-    }
-    ,
-    {
-        id: "vMathilde",
-        firstName: 'Mathilde',
-        lastName: "Vandenberghe",
-        role: '',
-        companyId: "isa",
-        photoUrl: "/assets/speakers/FSC.png",
-        twitter: "",
-        linkedin: "",
-        biography: ""
-    }
-    ,
-    {
-        id: "cSylvie",
-        firstName: 'Sylvie',
-        lastName: "Chollet",
-        role: '',
-        companyId: "isa",
-        photoUrl: "/assets/speakers/FSC.png",
-        twitter: "",
-        linkedin: "",
-        biography: ""
-    }
-    ,
-    {
-        id: "dYvonne",
-        firstName: 'Yvonne',
-        lastName: "Delevoye",
-        role: '',
-        companyId: "scalab",
-        photoUrl: "/assets/speakers/Yvonne.jpg",
-        twitter: "",
-        linkedin: "",
-        biography: ""
-    }
-    ,
-    {
         id: "aMarie",
         firstName: 'Marie',
         lastName: "Auphan",
@@ -107,6 +59,33 @@ const speakers: ISpeaker[] = [
         linkedin: "",
         biography: ""
     }
+   
+    
+    ,
+    {
+        id: "cSylvie",
+        firstName: 'Sylvie',
+        lastName: "Chollet",
+        role: '',
+        companyId: "isa",
+        photoUrl: "/assets/speakers/FSC.png",
+        twitter: "",
+        linkedin: "",
+        biography: ""
+    }
+    ,
+    {
+        id: "dYvonne",
+        firstName: 'Yvonne',
+        lastName: "Delevoye",
+        role: '',
+        companyId: "scalab",
+        photoUrl: "/assets/speakers/Yvonne.jpg",
+        twitter: "",
+        linkedin: "",
+        biography: ""
+    }
+    
     ,
     {
         id: "bFlorent",
@@ -127,6 +106,30 @@ const speakers: ISpeaker[] = [
         role: '',
         companyId: "junia",
         photoUrl: "/assets/speakers/Fabien.jpg",
+        twitter: "",
+        linkedin: "",
+        biography: ""
+    }
+    ,
+    {
+        id: "dBeatrice",
+        firstName: 'Béatrice',
+        lastName: "Degraeve",
+        role: '',
+        companyId: "psycos",
+        photoUrl: "/assets/speakers/FSC.png",
+        twitter: "",
+        linkedin: "",
+        biography: ""
+    }
+    ,
+    {
+        id: "vMathilde",
+        firstName: 'Mathilde',
+        lastName: "Vandenberghe",
+        role: '',
+        companyId: "isa",
+        photoUrl: "/assets/speakers/FSC.png",
         twitter: "",
         linkedin: "",
         biography: ""

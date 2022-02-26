@@ -30,6 +30,7 @@ import Contact from './pages/Contact';
 import Intervenants from './pages/Intervenants';
 import Intervenant from './pages/Intervenant';
 import ProgrammeItem from './pages/ProgrammeItem';
+import Directions from './pages/Directions';
 
 
 setupIonicReact();
@@ -63,7 +64,7 @@ export const tabs: ITab[] = [
   {
     id: 'contact',
     path: '/tabs/contact',
-    label: 'Contact',
+    label: 'Informations',
     icon: informationCircle,
     Component: Contact,
     isTab: true,
@@ -83,6 +84,14 @@ export const tabs: ITab[] = [
     label: 'Programme',
     icon: people,
     Component: ProgrammeItem,
+    isTab: false,
+  },
+  {
+    id: 'directions',
+    path: '/tabs/accueil/directions',
+    label: 'Accéder au forum',
+    icon: people,
+    Component: Directions,
     isTab: false,
   },
 ]

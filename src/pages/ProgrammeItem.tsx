@@ -18,7 +18,8 @@ import ProgrammesSlider from '../components/Customs/Programmes/ProgrammesSlider'
 const StyledThumbnail = styled(IonThumbnail)`
     --size: clamp(6em ,100%, 10em);
     --border-radius: 1em;
-    box-shadow: 0 0 0 0.50rem ${ColorVariablesEnum.LIGHT};
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.193) 0px 1px 1px 0px;
+
 `
 
 const ProgrammeItem: React.FC = () => {
@@ -26,13 +27,13 @@ const ProgrammeItem: React.FC = () => {
     const event = getEvent(id);
     return (
         <IonPage>
-            <Header mode="ios"  backButtonLink="/tabs/programmes" withBackButton={true} />
+            <Header mode="ios" label='Conférence' backButtonLink="/tabs/programmes" withBackButton={true} />
             <Content>
                 {event ? (
-                    <Stack space={SpacingEnum.s5}>
-                        <Stack data-centered>
+                    <Stack space={SpacingEnum.s3}>
+                        <Stack space={SpacingEnum['s-3']}>
                             <Box borderWidth='0' padding='0'>
-                                <Cluster space="0">
+                                <Cluster space={SpacingEnum['s-3']}>
                                     {event?.speakersId.map(speakerId => (
                                         <StyledThumbnail key={`programmeItem_Image${speakerId}`}>
                                             <img src={getSpeakerImage(speakerId)} />
@@ -41,7 +42,7 @@ const ProgrammeItem: React.FC = () => {
                                 </Cluster>
                                 <Cluster>
                                     {event?.speakersId.map((speakerId, index) => (
-                                        <Label size="large" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? "  & " : ""} ${getSpeakerSummary(speakerId)} `} </Label>
+                                        <Label size="large" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)} `} </Label>
                                     ))}
                                 </Cluster>
                             </Box>
@@ -51,18 +52,16 @@ const ProgrammeItem: React.FC = () => {
                                     <Tag label={event.date} />
                                 </Box>
                             </Cluster>
-
-                            {/* <Heading level="4">Description</Heading> */}
                             <Label size="large">
                                 {event.description}
                             </Label>
                         </Stack>
-                        <Stack >
-                            <Heading level='5'>Dans la même catégorie</Heading>
+                        <Stack space={SpacingEnum['s-5']}>
+                            <Heading level='4'>Dans la même catégorie</Heading>
                             <ProgrammesSlider id={event.id} theme={event.theme} />
                         </Stack>
-                    </Stack>) :
-
+                    </Stack>
+                ) :
                     (
                         <Cover>
                             <Center>Cet évènement semble ne pas exister</Center>

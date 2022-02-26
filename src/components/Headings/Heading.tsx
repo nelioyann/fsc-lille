@@ -7,7 +7,7 @@ const Heading1 = styled.h1<ColoredProps>`
     font-family: ${FontTypeEnum['SANS-SERIF']};
     font-weight: ${FontWeightEnum.BOLD};
     color: ${props => props.color ? `${props.color}` : `var(--ion-color-dark)`};
-    font-size: 3.5rem;
+    font-size: 3rem;
     line-height: 105%;
     letter-spacing: -1px;
     white-space: normal;

@@ -16,13 +16,13 @@ const Intervenants = () => {
 
     return (
         <IonPage>
+            <Header mode="ios" label="Intervenants" />
             <Content>
                 <Stack>
 
-                <Header mode="ios" label="Intervenants" />
-                <Grid min="14em" space={SpacingEnum.s1}>
-                    {speakers.map(speaker => <SpeakerCard key={`speakerCard_${speaker.id}`} {...speaker} />)}
-                </Grid>
+                    <Grid min="14em" space={SpacingEnum.s1}>
+                        {speakers.map(speaker => <SpeakerCard key={`speakerCard_${speaker.id}`} {...speaker} />)}
+                    </Grid>
                 </Stack>
             </Content>
         </IonPage>

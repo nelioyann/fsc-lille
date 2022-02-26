@@ -10,6 +10,7 @@ import Tag from '../../Tag/Tag';
 const StyledCard = styled(IonCard)`
 margin-left: 0;
 margin-right: 0;
+margin-bottom: 0;
 
 &:focus, &:focus-within{
     box-shadow: 0 0 0 0.15rem ${ColorVariablesEnum.LIGHT}, 0 0 0 0.35rem ${ColorVariablesEnum.PRIMARY};

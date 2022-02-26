@@ -1,4 +1,4 @@
-import { IonCard, IonContent, IonItem, IonList, IonListHeader, IonModal, IonPage } from '@ionic/react';
+import { IonCard, IonContent, IonItem, IonList, IonListHeader, IonModal, IonPage, useIonRouter } from '@ionic/react';
 // import { SpacingEnum } from '../theme/globalStyles';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
@@ -34,14 +34,15 @@ const playerOptions = {
   keepLastFrame: true,
 }
 const Home: React.FC = () => {
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
+  const router = useIonRouter();
   useEffect(() => {
     console.log("Home")
   }, [])
   return (
     <IonPage>
+      <Header mode="ios" label="FSC-Lille #1" icon={locationOutline} iconOnclickHandler={() => router.push("/tabs/accueil/directions")} />
       <Content>
-      <Header mode="ios" label="FSC-Lille #1" icon={locationOutline} iconOnclickHandler={() => setShowModal(true)} />
         <Stack space={SpacingEnum.s5}>
           <Cover noPad minHeight='80vh'>
             <Box borderWidth="0" padding="0">
@@ -74,7 +75,7 @@ const Home: React.FC = () => {
               </Cluster>
             </Stack>
             <Cluster>
-              <Tag onClick={() => setShowModal(true)} label="JUNIA HEI" icon={locationOutline} />
+              <Tag onClick={() => router.push("/tabs/accueil/directions")} label="JUNIA HEI" icon={locationOutline} />
               <Tag label="SAM. 19 Mars, à partir de 10h00" icon={timeOutline} />
               <Tag label="Accès libre sur inscription" icon={ticketOutline} />
             </Cluster>
@@ -173,9 +174,9 @@ const Home: React.FC = () => {
                 <IonItem>
                   Les lignes L5 et la ligne 18 desservent l’arrêt “Université Catholique de Lille”, située à 3 minutes à pied de l’école. Arrêt situé face à la gare Lille Flandres et sur les grands axes.
                 </IonItem>
-                <IonItem>
+                {/* <IonItem>
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6442132342295!2d3.0429153157380493!3d50.633725879501085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d579573550df%3A0xaa9c89af983f58e9!2sJunia%20Hei%20Lille%20-%20School%20D&#39;ing%C3%A9nieur%20Lille!5e0!3m2!1sen!2sfr!4v1645571926708!5m2!1sen!2sfr" height="450" style={{ "border": 0, width: "100%" }} loading="lazy"></iframe>
-                </IonItem>
+                </IonItem> */}
               </IonList>
               <Button expand='block' label="Fermer" fill='outline' onClick={()=> setShowModal(false)}/>
             </Content>

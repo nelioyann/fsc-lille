@@ -46,9 +46,7 @@ const Tabs: React.FC<ITabs> = ({ tabs, contentId = "tabs", when = BreakpointsEnu
         // className={`ion-hide-${when}-up`}
         >
             <IonRouterOutlet>
-                <Route exact path="/">
-                    <Redirect to="/tabs/accueil" />
-                </Route>
+                
                 <Redirect exact path="/tabs" to="/tabs/accueil" />
                 {/* Using the render method prop cuts down the number of renders your components will have due to route changes.
                 Use the component prop when your component depends on the RouterComponentProps passed in automatically. */}
@@ -60,13 +58,15 @@ const Tabs: React.FC<ITabs> = ({ tabs, contentId = "tabs", when = BreakpointsEnu
                         return (<Route key={`route-${id}`} path={path} exact={true} component={Component} />)
                     }
                 })}
+                <Route exact path="/">
+                    <Redirect to="/tabs/accueil" />
+                </Route>
             </IonRouterOutlet>
             {/* <IonTabBar slot="bottom" style={{display: 'none'}}></IonTabBar> */}
             <IonTabBar color="primary" slot="bottom" style={{ "--border": noBorder ? "none" : "" }}>
                 {tabs.map(tab => {
                     if (tab.isTab) {
                         return (
-
                             <IonTabButton  key={`tabButton_${tab.id}`} layout="label-hide" tab={tab.id} href={tab.path}>
                                 <IonIcon id={tab.id} icon={tab.icon} />
                                 {/* <IonPopover alignment="center" mode="ios" side="top" showBackdrop={false} trigger={tab.id} triggerAction="click"  > */}

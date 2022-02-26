@@ -17,13 +17,12 @@ const Programme = () => {
     const [showCalendarPopOver, setShowCalendarPopOver] = useState(false);
     return (
         <IonPage>
+            <Header mode="ios" label="Programme" icon={calendarClearOutline} iconOnclickHandler={() => setShowCalendarPopOver(true)} />
+            <IonPopover isOpen={showCalendarPopOver} dismissOnSelect={true} onClick={() => setShowCalendarPopOver(false)}>
+                <Button fill='clear' size='small' icon={add} onClick={() => setShowCalendarPopOver(false)} label="Ajouter au calendrier" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Forum%20des%20Sciences%20Cognitives%20de%20Lille&dates=20220319T090000Z/20220319T170000Z&details=Le%20FSC-Lille%20est%20une%20conférence%20d'une%20journée%20consacrée%20aux%20sciences%20cognitives.%20L'événement%20aura%20lieu%20le%2019%20mars%202022%20à%20Lille.&location=13%20Rue%20de%20Toul,%2059000%20Lille,%20France&trp=true" />
+            </IonPopover>
             <Content>
                 <Stack space={SpacingEnum.s4}>
-                    <Header mode="ios" label="Programme" icon={calendarClearOutline} iconOnclickHandler={() => setShowCalendarPopOver(true)} >
-                        <IonPopover isOpen={showCalendarPopOver} dismissOnSelect={true} onClick={() => setShowCalendarPopOver(false)}>
-                            <Button fill='clear' size='small' icon={add} onClick={() => setShowCalendarPopOver(false)} label="Ajouter au calendrier" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Forum%20des%20Sciences%20Cognitives%20de%20Lille&dates=20220319T090000Z/20220319T170000Z&details=Le%20FSC-Lille%20est%20une%20conférence%20d'une%20journée%20consacrée%20aux%20sciences%20cognitives.%20L'événement%20aura%20lieu%20le%2019%20mars%202022%20à%20Lille.&location=13%20Rue%20de%20Toul,%2059000%20Lille,%20France&trp=true" />
-                        </IonPopover>
-                    </Header>
                     <Stack>
                         <Heading level="1">Cogni'Quiz</Heading>
                         <Label size="large">Pendant le forum des sciences cognitives la fédération française des sciences de la cognition (FRESCO) organise le Cogni’Quiz,

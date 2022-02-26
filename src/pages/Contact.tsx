@@ -17,10 +17,10 @@ import PartenairesSlides from '../components/Customs/Partenaires/PartenairesSlid
 const Contact = () => {
     return (
         <IonPage>
+            <Header mode="ios" label="Contact" />
             <Content>
                 <Cover minHeight="80vh" noPad>
                     <Stack space={SpacingEnum.s3}>
-                        <Header mode="ios" label="Contact" />
                         <Stack>
                             <Heading level="3">Une question ? Contactez l'association CASC</Heading>
                             <Label>Pour toute question concernant l'événement, envoyez un mail</Label>
