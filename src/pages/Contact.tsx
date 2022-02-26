@@ -1,5 +1,5 @@
 import { IonPage, IonContent, IonCard, IonRouterLink } from '@ionic/react';
-import { logoFacebook, logoLinkedin, logoTwitter, sendOutline } from 'ionicons/icons';
+import { logoFacebook, logoLinkedin, logoTwitter, mail } from 'ionicons/icons';
 import React from 'react';
 import Button from '../components/Buttons/Button';
 import Input from '../components/Forms/Input/Input';
@@ -7,7 +7,7 @@ import Textarea from '../components/Forms/Input/Textarea';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
 import { Box, Cluster, Cover, Stack } from '../layouts';
-import { Label, SpacingEnum } from '../theme/globalStyles';
+import { ColorLabelsEnum, Label, SpacingEnum } from '../theme/globalStyles';
 import CascBanner from "../data/images/casc_banner.jpg"
 import Card from '../components/Cards/Card';
 import Content from '../ui/Content/Content';
@@ -17,21 +17,21 @@ import PartenairesSlides from '../components/Customs/Partenaires/PartenairesSlid
 const Contact = () => {
     return (
         <IonPage>
-            <Header mode="ios" label="Contact" />
+            <Header mode="ios" label="A propos du forum" />
             <Content>
                 <Cover minHeight="80vh" noPad>
                     <Stack space={SpacingEnum.s3}>
                         <Stack>
                             <Heading level="3">Une question ? Contactez l'association CASC</Heading>
-                            <Label>Pour toute question concernant l'événement, envoyez un mail</Label>
-                            <Box borderWidth="0" padding="0">
-                                <Button target='_self' icon={sendOutline} fill="outline" href="mailto:contact@fsc-lille.com" label="Envoyer un email..." />
-                            </Box>
+                            <Label size='large'>Pour toute question concernant l'événement, envoyez un mail sur contact@fsc-lille.com</Label>
+                            {/* <Box borderWidth="0" padding="0"> */}
+                                <Button color={ColorLabelsEnum.TERTIARY} target='_self' icon={mail} fill="solid" href="mailto:contact@fsc-lille.com" label="Envoyer un email..." />
+                            {/* </Box> */}
                             <Heading level="3">Suivez les dernières informations sur le forum</Heading>
                             <Cluster space={SpacingEnum.s0}>
-                                <Button href="https://twitter.com/Podcasc" fill="outline" icon={logoTwitter} label="Twitter" />
-                                <Button href="https://www.facebook.com/CASC.association" fill="outline" icon={logoFacebook} label="Facebook" />
-                                <Button href="https://www.linkedin.com/company/casc-asso/" fill="outline" icon={logoLinkedin} label="LinkedIn" />
+                                <Button color={ColorLabelsEnum.TERTIARY} href="https://twitter.com/Podcasc" fill="outline" icon={logoTwitter} label="Twitter" />
+                                <Button color={ColorLabelsEnum.TERTIARY} href="https://www.facebook.com/CASC.association" fill="outline" icon={logoFacebook} label="Facebook" />
+                                <Button color={ColorLabelsEnum.TERTIARY} href="https://www.linkedin.com/company/casc-asso/" fill="outline" icon={logoLinkedin} label="LinkedIn" />
                             </Cluster>
                         </Stack>
 

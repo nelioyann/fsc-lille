@@ -9,13 +9,13 @@ import Content from '../ui/Content/Content'
 const Directions = () => {
     return (
         <IonPage>
-            <Header backButtonLink="/tabs/accueil" withBackButton={true} label="Se rendre au Forum" mode="ios" />
+            <Header backButtonLink="/tabs/accueil" withBackButton={true} label="Se rendre au forum" mode="ios" />
             <Content>
-                <Heading level="4">Comment accéder au lieu</Heading>
+                {/* <Heading level="2">Comment accéder au lieu</Heading> */}
+                <Tag disabled label="13 rue de Toul - 59000  Lille"/>
                 <Label size="large">
                     Située sur le campus de l'Université Catholique de Lille, HEI est accessible en voiture, en vélo ou en transports en commun
                 </Label>
-                {/* <Tag label=/> */}
                 <IonList>
                     <IonListHeader>
                         <Heading level="5">
@@ -43,7 +43,7 @@ const Directions = () => {
                     </IonItem>
                     <IonListHeader>
                         <Heading level="5">
-                            13 rue de Toul - 59000  Lille
+                            Carte
                         </Heading>
                     </IonListHeader>
                     <IonItem>

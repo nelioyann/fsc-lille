@@ -53,7 +53,7 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
                                 </StyledAvatar>
                             ))}
                         </Cluster>
-                        <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date} />
+                        {/* <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date} /> */}
 
                     </Cluster>
 

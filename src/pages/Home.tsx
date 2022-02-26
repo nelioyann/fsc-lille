@@ -44,7 +44,7 @@ const Home: React.FC = () => {
       <Header mode="ios" label="FSC-Lille #1" icon={locationOutline} iconOnclickHandler={() => router.push("/tabs/accueil/directions")} />
       <Content>
         <Stack space={SpacingEnum.s5}>
-          <Cover noPad minHeight='80vh'>
+          <Cover noPad minHeight='70vh'>
             <Box borderWidth="0" padding="0">
 
               <Label size="large">

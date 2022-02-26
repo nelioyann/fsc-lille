@@ -29,7 +29,7 @@ export interface IPartenairesSlides {
 }
 
 const options = {
-    autoplay: { delay: 10000 },
+    autoplay: { delay: 5000 },
     keyboard: true,
     pagination: false,
     scrollbar: false,

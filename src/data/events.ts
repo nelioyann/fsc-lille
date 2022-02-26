@@ -12,7 +12,7 @@ const events: IEvent[] = [
         id: "2",
         speakersId: ["lBruno", "dBeatrice"],
         title: "La conscience du temps nous fait positiver",
-        description: "",
+        description: "Cette étude, aux objectifs fondamentaux et cliniques, vise à évaluer la participation d’un biais de positivité aux déficits de reconnaissance des émotions dans la sclérose en plaques (SEP). Ce biais de positivité est la conséquence de changements motivationnels, liés à une conscience aiguë du temps de vie limité, se manifestant par une préférence pour l’information, en lien avec l’âge et certaines pathologies chroniques. ",
         date: "11h",
         theme: "INFLUENCE",
     },
@@ -101,12 +101,117 @@ const events: IEvent[] = [
     },
 ];
 
-const stands = {
-    INFLUENCE: ["SCALab", "PsyCos", "ISA", "Neurethic"],
-    MOUVEMENT: ["SCALab", "PsyCos", "ISA", "Neurethic"],
-    SOCIETE: ["Métropole Européenne de Lille", "Institut Catholique de Lille"],
-    EXPERIMENTATION: ["SCALab"],
+// const stands = {
+//     INFLUENCE: ["SCALab", "PsyCos", "ISA"],
+//     MOUVEMENT: ["SCALab", "PsyCos", "ISA"],
+//     SOCIETE: ["Métropole Européenne de Lille", "Institut Catholique de Lille"],
+//     EXPERIMENTATION: ["SCALab"],
+// };
+
+// define types for boolean isActive
+type standsLocations = "L1" | "L2" | "L3" | "L4" | "L5" | "L6" | "F1" | "F2" | "F3" | "R1" | "R2" | "P1" | "A1" | "A2";
+type standIds = "scalab" | "mint" | "psycos" | "isa" | "isen" | "mel" | "casc" | "fresco" | "catho" | "ppnsa" | "sce" | "xperium" | "gaze";
+type standNames = "SCALab"| "Equipe MINT"  | "PsyCos" | "ISA"| "ISEN" | "MEL" | "CASC" | "La Fresco" | "ICL" | "Master PPNSA" | "Master SCE" | "Xperium" | "Gaze intelligence";
+
+type IStand = {
+    id: standIds,
+    name: standNames,
+    longName: string,
+    location: standsLocations,
+    themes?: Themes[],
+    description?: string,
 };
+const stands: IStand[] = [
+    { 
+        id: "scalab",
+        name: "SCALab",
+        longName: "SCALab - Laboratoire",
+        location: "L1",
+        themes: ["INFLUENCE", "MOUVEMENT", "EXPERIMENTATION"],
+    },
+    {
+        id: "mint",
+        name: "Equipe MINT",
+        longName: "Equipe MINT  - CRISTAL - Laboratoire ",
+        location: "L2",
+    },
+    {
+        id: "psycos",
+        name: "PsyCos",
+        longName: "PsyCos -Neurethic",
+        location: "L4",
+        themes: ["INFLUENCE", "MOUVEMENT"],
+        description: "L’équipe PSyCOS (Processus Sociaux et Cognitifs dans les Organisations et la Santé) du laboratoire ETHICS (EA7446) développe une activité de recherche fondamentale et appliquée, visant à éclairer les processus sociaux et cognitifs impliqués dans le fonctionnement des individus et des groupes, dans les champs de la santé (au travail ou dans différentes pathologies neurologiques). En étroite collaboration avec le projet NEURETHIC, cette équipe développe des travaux combinant des mesures cognitivo-comportementales à divers signaux neurophysiologiques chez des sujets sains et auprès de patients souffrant de divers pathologies neurologiques."
+    },
+    {
+        id: "isa",
+        name: "ISA",
+        longName: "ISA - Junia",
+        themes: ["INFLUENCE", "MOUVEMENT"],
+        location: "L6",
+    },
+    {
+        id: "isen",
+        name: "ISEN",
+        longName: "ISEN - Junia",
+        location: "L5",
+    },
+    {
+        id: "mel",
+        name: "MEL",
+        longName: "Métropole Européenne de Lille",
+        themes: ["SOCIETE"],
+        location: "R1",
+    },
+    {
+        id: "catho",
+        name: "ICL",
+        longName: "Master de Neuropsychologie et de neurosciences cognitives",
+        location: "F3",
+        themes: ["SOCIETE"],
+        description: "Ce Master répond aux exigences cliniques et de recherche du métier de psychologue, spécialisé en neuropsychologie, en proposant une formation théorique et pratique dans le domaine de la neuropsychologie de l’enfant que de l’adulte, avec une visée diagnostique, de rééducation cognitive et d’accompagnement psychologique. Cette formation permet de répondre aux challenges de la neuropsychologie actuelle et de demain, en centrant sa formation sur l’apport de connaissances indispensables, tant à la pratique professionnelle qu’au développement et au suivi de recherches fondamentales en neurosciences cognitives"
+    },
+    {
+        id: "ppnsa",
+        name: "Master PPNSA",
+        longName: "Master PPNSA - Université de Lille",
+        location: "F2",
+    },
+    {
+        id: "sce",
+        name: "Master SCE",
+        longName: "Master Sciences cognitives pour l’Entreprise - Université de Lille",
+        location: "F1",
+        description: "Le Master Sciences Cognitives pour l’Entreprise (SCE), proposé par l’UFR de Psychologie de l’Université de Lille, vise à former des professionnels spécialisés dans la cognition humaine capables de réaliser des études en recherche appliquée, de concevoir des dispositifs l’interaction homme-machine en prenant en compte les contraintes physiques, physiologiques et psychologies des humainsLe Master Sciences Cognitives pour l’Entreprise (SCE), proposé par l’UFR de Psychologie de l’Université de Lille, vise à former des professionnels spécialisés dans la cognition humaine capables de réaliser des études en recherche appliquée, de concevoir des dispositifs l’interaction homme-machine en prenant en compte les contraintes physiques, physiologiques et psychologies des humains"
+    },
+    {
+        id: "casc",
+        name: "CASC",
+        longName: "CASC - Association",
+        location: "A2",
+    },
+    {
+        id: "fresco",
+        name: "La Fresco",
+        longName: "La Fresco - Association",
+        location: "A1",
+    },
+    {
+        id: "xperium",
+        name: "Xperium",
+        longName: "Xperium",
+        location: "R2",
+    },
+    {
+        id: "gaze",
+        name: "Gaze intelligence",
+        longName: "Gaze intelligence",
+        location: "P1",
+    },
+
+]
+// get a list of names from stands
+
 
 const workshops: IWorkshops = {
     INFLUENCE: [
@@ -146,22 +251,24 @@ interface IWorkshops {
     EXPERIMENTATION?: IWorkshop[];
 }
 
+// type for themes
+type Themes = "INFLUENCE" | "MOUVEMENT" | "SOCIETE" | "EXPERIMENTATION";
 export interface IEvent {
     id: string;
     speakersId: string[];
     title: string;
     description: string;
     date: string;
-    theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE";
+    theme: Themes;
 }
 
 export enum EventThemesEnum {
-    "INFLUENCE" = "La perception sous influence ! ",
-    "SOCIETE" = "Environnement et société : améliorer la perception pour passer à l’action",
-    "MOUVEMENT" = "Au-delà du mouvement",
-    "EXPERIMENTATION" = "Regards croisés sur l’expérimentation citoyenne et artistique",
+    "INFLUENCE" = "11h - La perception sous influence ! ",
+    "SOCIETE" = "12h -Environnement et société : améliorer la perception pour passer à l’action",
+    "MOUVEMENT" = "14h - Au-delà du mouvement",
+    "EXPERIMENTATION" = "15h - Regards croisés sur l’expérimentation citoyenne et artistique",
 }
 export const getEvents = () => events;
 export const getEvent = (id: string) => events.find((event) => event.id === id);
-export const filterStands = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE") => stands[theme];
+export const filterStands = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE") => stands.filter(stand => stand?.themes?.includes(theme))?.map((stand) => stand.name);
 // export const filterEvents = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE", id: string) => events.filter(event.theme === theme)
