@@ -26,25 +26,25 @@ const Programme = () => {
     return (
         <IonPage ref={pageRef}>
             <Header mode="ios" label="Programme" icon={calendarClearOutline} iconOnclickHandler={() => setShowCalendarModal(true)} />
-            <StyledModal
-                swipeToClose={true}
-                onDidDismiss={() => setShowCalendarModal(false)}
-                isOpen={showCalendarModal}
-                initialBreakpoint={0.3}
-                breakpoints={[0, 0.5, 1]}
-            >
-                <IonContent>
-                    <Cover >
-                        <Heading level='5'>Calendrier Google</Heading>
-                        <Label>Ajouter cet évènement à mon calendrier</Label>
-                        <Cluster justify='space-between'>
-                            <Button fill="outline" label="Annuler" onClick={() => setShowCalendarModal(false)} />
-                            <Button onClick={() => setShowCalendarModal(false)} label="Ajouter au calendrier" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Forum%20des%20Sciences%20Cognitives%20de%20Lille&dates=20220319T090000Z/20220319T170000Z&details=Le%20FSC-Lille%20est%20une%20conférence%20d'une%20journée%20consacrée%20aux%20sciences%20cognitives.%20L'événement%20aura%20lieu%20le%2019%20mars%202022%20à%20Lille.&location=13%20Rue%20de%20Toul,%2059000%20Lille,%20France&trp=true" />
-                        </Cluster>
-                    </Cover>
-                </IonContent>
-            </StyledModal>
             <Content>
+                <StyledModal
+                    swipeToClose={true}
+                    onDidDismiss={() => setShowCalendarModal(false)}
+                    isOpen={showCalendarModal}
+                    initialBreakpoint={0.3}
+                    breakpoints={[0, 0.5, 1]}
+                >
+                    <IonContent>
+                        <Cover >
+                            <Heading level='5'>Calendrier Google</Heading>
+                            <Label>Ajouter cet évènement à mon calendrier</Label>
+                            <Cluster justify='space-between'>
+                                <Button fill="outline" label="Annuler" onClick={() => setShowCalendarModal(false)} />
+                                <Button onClick={() => setShowCalendarModal(false)} label="Ajouter au calendrier" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Forum%20des%20Sciences%20Cognitives%20de%20Lille&dates=20220319T090000Z/20220319T170000Z&details=Le%20FSC-Lille%20est%20une%20conférence%20d'une%20journée%20consacrée%20aux%20sciences%20cognitives.%20L'événement%20aura%20lieu%20le%2019%20mars%202022%20à%20Lille.&location=13%20Rue%20de%20Toul,%2059000%20Lille,%20France&trp=true" />
+                            </Cluster>
+                        </Cover>
+                    </IonContent>
+                </StyledModal>
                 <Stack space={SpacingEnum.s4}>
 
                     {events?.length > 0
@@ -98,7 +98,7 @@ const Programme = () => {
                             d'être étudiant.e en sciences cognitives pour participer, toute personne motivée est la bienvenue !
                         </Label>
                         {/* <Box padding='0' borderWidth='0'> */}
-                            <Button color={ColorLabelsEnum.TERTIARY} fill='solid' icon={gameControllerOutline} label="Inscrivez vous" href="https://forms.gle/RecQuUuYLKvxfaz27" />
+                        <Button color={ColorLabelsEnum.TERTIARY} fill='solid' icon={gameControllerOutline} label="Inscrivez vous" href="https://forms.gle/RecQuUuYLKvxfaz27" />
                         {/* </Box> */}
                     </Stack>
                 </Stack>

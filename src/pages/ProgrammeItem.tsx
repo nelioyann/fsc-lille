@@ -1,4 +1,4 @@
-import { IonAvatar, IonContent, IonItem, IonPage, IonThumbnail, useIonRouter } from '@ionic/react';
+import { IonAvatar, IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonPage, IonThumbnail, useIonRouter } from '@ionic/react';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
 import { EventThemesEnum, getEvent } from '../data/events';
@@ -31,6 +31,11 @@ const ProgrammeItem: React.FC = () => {
             <Content>
                 {event ? (
                     <Stack space={SpacingEnum.s3}>
+                        <IonBreadcrumbs mode="ios">
+                            <IonBreadcrumb>Programmes</IonBreadcrumb>
+                            <IonBreadcrumb>Conférences</IonBreadcrumb>
+                            <IonBreadcrumb>#{id}</IonBreadcrumb>
+                        </IonBreadcrumbs>
                         <Stack space={SpacingEnum['s-3']}>
                             <Box borderWidth='0' padding='0'>
                                 <Cluster space={SpacingEnum['s-3']}>

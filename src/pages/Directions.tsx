@@ -1,4 +1,4 @@
-import { IonPage, IonList, IonListHeader, IonItem } from '@ionic/react'
+import { IonPage, IonList, IonListHeader, IonItem, IonBreadcrumb, IonBreadcrumbs } from '@ionic/react'
 import React from 'react'
 import Header from '../components/Headers/Header'
 import Heading from '../components/Headings/Heading'
@@ -12,7 +12,11 @@ const Directions = () => {
             <Header backButtonLink="/tabs/accueil" withBackButton={true} label="Se rendre au forum" mode="ios" />
             <Content>
                 {/* <Heading level="2">Comment accéder au lieu</Heading> */}
-                <Tag disabled label="13 rue de Toul - 59000  Lille"/>
+                <IonBreadcrumbs mode="ios">
+                    <IonBreadcrumb>Accueil</IonBreadcrumb>
+                    <IonBreadcrumb>Directions</IonBreadcrumb>
+                </IonBreadcrumbs>
+                <Tag disabled label="13 rue de Toul - 59000  Lille" />
                 <Label size="large">
                     Située sur le campus de l'Université Catholique de Lille, HEI est accessible en voiture, en vélo ou en transports en commun
                 </Label>

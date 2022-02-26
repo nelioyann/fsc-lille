@@ -16,7 +16,7 @@ $ npm run build
 $ npm run start
 ```
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/27715ddc-c20a-4abd-9235-ff5a5a58adc1/deploy-status)](https://app.netlify.com/sites/fsc-lille/deploys)
 
 ## Directories
 
