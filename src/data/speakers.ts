@@ -18,7 +18,7 @@ const speakers: ISpeaker[] = [
         lastName: 'Lenne',
         role: '',
         companyId: "psycos",
-        photoUrl: "/assets/speakers/FSC.png",
+        photoUrl: "/assets/speakers/FSC.svg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -68,7 +68,7 @@ const speakers: ISpeaker[] = [
         lastName: "Chollet",
         role: '',
         companyId: "isa",
-        photoUrl: "/assets/speakers/FSC.png",
+        photoUrl: "/assets/speakers/FSC.svg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -117,7 +117,7 @@ const speakers: ISpeaker[] = [
         lastName: "Degraeve",
         role: '',
         companyId: "psycos",
-        photoUrl: "/assets/speakers/FSC.png",
+        photoUrl: "/assets/speakers/FSC.svg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -129,7 +129,7 @@ const speakers: ISpeaker[] = [
         lastName: "Vandenberghe",
         role: '',
         companyId: "isa",
-        photoUrl: "/assets/speakers/FSC.png",
+        photoUrl: "/assets/speakers/FSC.svg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -141,7 +141,7 @@ const speakers: ISpeaker[] = [
     //     lastName: "Dobigny",
     //     role: '',
     //     companyId: "MEL",
-    //     photoUrl: "/assets/speakers/FSC.png",
+    //     photoUrl: "/assets/speakers/FSC.svg",
     //     twitter: "",
     //     linkedin: "",
     //     biography: ""
@@ -153,7 +153,7 @@ const speakers: ISpeaker[] = [
         lastName: "Huyghe",
         role: '',
         companyId: "",
-        photoUrl: "/assets/speakers/FSC.png",
+        photoUrl: "/assets/speakers/FSC.svg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -165,7 +165,7 @@ const speakers: ISpeaker[] = [
         lastName: "Prigent",
         role: '',
         companyId: "junia",
-        photoUrl: "/assets/speakers/FSC.png",
+        photoUrl: "/assets/speakers/FSC.svg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -177,7 +177,7 @@ const speakers: ISpeaker[] = [
         lastName: "Klimsza",
         role: '',
         companyId: "MEL",
-        photoUrl: "/assets/speakers/FSC.png",
+        photoUrl: "/assets/speakers/FSC.svg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -189,7 +189,7 @@ const speakers: ISpeaker[] = [
         lastName: "Giorgini",
         role: '',
         companyId: "icl",
-        photoUrl: "/assets/speakers/FSC.png",
+        photoUrl: "/assets/speakers/FSC.svg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -199,7 +199,7 @@ const speakers: ISpeaker[] = [
 
 export const getSpeakers = () => speakers;
 export const getSpeaker = (id: string) => speakers.find(speaker => speaker.id === id );
-export const getSpeakerImage = (id: string) => speakers.filter(speaker => speaker.id === id )[0]?.photoUrl || "/assets/speakers/FSC.png";
+export const getSpeakerImage = (id: string) => speakers.filter(speaker => speaker.id === id )[0]?.photoUrl || "/assets/speakers/FSC.svg";
 export const getSpeakerSummary = (id: string, full = false) => {
         let {firstName, lastName, role, companyId} = speakers.filter(speaker => speaker.id === id )[0];
         if (full) return `${firstName} ${lastName}, ${role}, getCompanyName${companyId}`

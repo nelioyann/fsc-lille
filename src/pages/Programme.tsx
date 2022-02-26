@@ -1,7 +1,6 @@
 import { IonContent, IonIcon, IonModal, IonPage, IonPopover, useIonRouter } from '@ionic/react';
-import { add, calendarClearOutline, gameControllerOutline, hourglassOutline, storefrontOutline } from 'ionicons/icons';
-import React, { useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router';
+import { add, calendarClearOutline, gameControllerOutline, hourglassOutline, easelOutline } from 'ionicons/icons';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import Button from '../components/Buttons/Button';
 import ProgrammeCard from '../components/Customs/Programmes/ProgrammeCard';
@@ -31,7 +30,6 @@ const Programme = () => {
                 swipeToClose={true}
                 onDidDismiss={() => setShowCalendarModal(false)}
                 isOpen={showCalendarModal}
-                presentingElement={pageRef.current}
                 initialBreakpoint={0.3}
                 breakpoints={[0, 0.5, 1]}
             >
@@ -74,7 +72,7 @@ const Programme = () => {
                                                     {/* <Label color={ColorVariablesEnum.MEDIUM}>Stands: </Label> */}
                                                     {stands.length > 0 && (
                                                         stands.map(stand => (
-                                                            <Tag key={`stands_${theme}_${stand}`} icon={storefrontOutline} color={ColorLabelsEnum.DARK} disabled label={stand} />
+                                                            <Tag key={`stands_${theme}_${stand}`} icon={easelOutline} color={ColorLabelsEnum.DARK} disabled label={stand} />
                                                         ))
                                                     )}
                                                 </Cluster>
