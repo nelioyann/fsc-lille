@@ -17,7 +17,7 @@ import PartenairesSlides from '../components/Customs/Partenaires/PartenairesSlid
 const Contact = () => {
     return (
         <IonPage>
-            <Header mode="ios" label="A propos du forum" />
+            <Header mode="ios" label="A propos" />
             <Content>
                 <Cover minHeight="80vh" noPad>
                     <Stack space={SpacingEnum.s3}>

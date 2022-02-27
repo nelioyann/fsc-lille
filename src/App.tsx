@@ -33,6 +33,12 @@ import ProgrammeItem from './pages/ProgrammeItem';
 import Directions from './pages/Directions';
 
 
+import HomeLottie from "./data/lotties/home.json";
+import CalendarLottie from "./data/lotties/calendar.json";
+import InfoLottie from "./data/lotties/info.json";
+import UsersLottie from "./data/lotties/users.json";
+
+
 setupIonicReact();
 
 export const tabs: ITab[] = [
@@ -40,15 +46,15 @@ export const tabs: ITab[] = [
     id: 'accueil',
     path: '/tabs/accueil',
     label: 'Accueil',
-    icon: home,
+    icon: HomeLottie,
     Component: Home,
     isTab: true,
   },
   {
     id: 'programmes',
     path: '/tabs/programmes',
-    label: 'Au programme',
-    icon: calendar,
+    label: 'Programme',
+    icon: CalendarLottie,
     Component: Programme,
     isTab: true,
   },
@@ -56,7 +62,7 @@ export const tabs: ITab[] = [
     id: 'intervenants',
     path: '/tabs/intervenants',
     label: 'Intervenants',
-    icon: people,
+    icon: UsersLottie,
     Component: Intervenants,
     isTab: true,
   }
@@ -65,7 +71,7 @@ export const tabs: ITab[] = [
     id: 'contact',
     path: '/tabs/contact',
     label: 'Informations',
-    icon: informationCircle,
+    icon: InfoLottie,
     Component: Contact,
     isTab: true,
   },
@@ -73,7 +79,7 @@ export const tabs: ITab[] = [
     id: 'intervenant',
     path: '/tabs/intervenants/:id',
     label: 'Intervenant',
-    icon: people,
+    icon: UsersLottie,
     Component: Intervenant,
     isTab: false,
   },
@@ -82,14 +88,14 @@ export const tabs: ITab[] = [
     id: 'programme',
     path: '/tabs/programmes/:id',
     label: 'Programme',
-    icon: people,
+    icon: CalendarLottie,
     Component: ProgrammeItem,
     isTab: false,
   },
   {
     id: 'directions',
     path: '/tabs/accueil/directions',
-    label: 'Accéder au forum',
+    label: 'Lieu',
     icon: people,
     Component: Directions,
     isTab: false,

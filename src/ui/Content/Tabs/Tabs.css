@@ -1,23 +1,27 @@
 ion-tab-bar {
   box-sizing: border-box;
-  width: clamp(5em, 95%, 45em);
+  width: clamp(5em, 95%, 70em);
   position: absolute;
   bottom: 1em;
   left: 50%;
   transform: translateX(-50%);
   padding: 0.5em;
   border-radius: 1em;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 0.5em;
-  background: rgba(0, 0, 0, 0.604);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: rgba(255, 255, 255, 0.304);
+  box-shadow: 0 8px 12px 0 rgba(31, 38, 135, 0.186);
+  /* box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px; */
+
   backdrop-filter: blur(5px);
-  border: 1px solid hsla(0, 0%, 93%);
+  border: 1px solid rgb(226, 226, 226);
 }
 
 ion-tab-button {
   border-radius: 1em;
-  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  border: 1px solid rgba(255, 255, 255, 0.603);
+  box-shadow: 0 8px 14px 0 rgba(31, 38, 135, 0.27);
+
   background-image: linear-gradient(
     45deg,
     hsl(0, 0%, 97.3%),
@@ -30,6 +34,44 @@ ion-tab-button {
   --color-selected: var(--ion-color-tertiary);
 }
 
+ion-tab-button:hover svg{
+  animation-name: wobble;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+
+}
+
 ion-tab-button.tab-selected {
   color: var(--ion-color-tertiary);
 }
+@keyframes wobble {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  15% {
+    transform: translate3d(-0.25em, 0, 0) rotate3d(0, 0, 1, -5deg);
+  }
+
+  30% {
+    transform: translate3d(0.20em, 0, 0) rotate3d(0, 0, 1, 3deg);
+  }
+
+  45% {
+    transform: translate3d(-0.15em, 0, 0) rotate3d(0, 0, 1, -3deg);
+  }
+
+  60% {
+    transform: translate3d(0.10em, 0, 0) rotate3d(0, 0, 1, 2deg);
+  }
+
+  75% {
+    transform: translate3d(-0.05em, 0, 0) rotate3d(0, 0, 1, -1deg);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+

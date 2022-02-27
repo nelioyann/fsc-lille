@@ -1,11 +1,13 @@
-import { IonIcon, IonLabel, IonPopover, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
+import { IonIcon, IonLabel, IonPopover, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs, useIonRouter } from '@ionic/react';
 
 import React from 'react';
 import { Route, Redirect } from 'react-router';
+import HomeLottie from "../../../data/lotties/home.json";
 import styled from 'styled-components';
-import "./Tabs.css"
+import "./Tabs.css";
 
 import { BreakpointsEnum } from '../../SplitPane/MainRoutes';
+import TabsAnimatedIcon from './TabsAnimatedIcon';
 
 const TabBarStyles = {
     width: "50%",
@@ -25,7 +27,7 @@ export interface ITab {
     id: string;
     path: string;
     label: string;
-    icon: string;
+    icon: string | object;
     activeicon?: string; //TODO:
     Component: React.FC<{}>;
     isTab: boolean;
@@ -40,13 +42,14 @@ interface ITabs {
 }
 
 const Tabs: React.FC<ITabs> = ({ tabs, contentId = "tabs", when = BreakpointsEnum.md, noBorder }) => {
-
+    const { pathname } = useIonRouter().routeInfo;
+    let pathnames = pathname.split("/");
     return (
         <IonTabs
         // className={`ion-hide-${when}-up`}
         >
             <IonRouterOutlet>
-                
+
                 <Redirect exact path="/tabs" to="/tabs/accueil" />
                 {/* Using the render method prop cuts down the number of renders your components will have due to route changes.
                 Use the component prop when your component depends on the RouterComponentProps passed in automatically. */}
@@ -67,12 +70,13 @@ const Tabs: React.FC<ITabs> = ({ tabs, contentId = "tabs", when = BreakpointsEnu
                 {tabs.map(tab => {
                     if (tab.isTab) {
                         return (
-                            <IonTabButton  key={`tabButton_${tab.id}`} layout="label-hide" tab={tab.id} href={tab.path}>
-                                <IonIcon id={tab.id} icon={tab.icon} />
+                            <IonTabButton key={`tabButton_${tab.id}`} layout="label-hide" tab={tab.id} href={tab.path}>
+                                {/* <IonIcon id={tab.id} icon={tab.icon} /> */}
+                                <TabsAnimatedIcon lottie={tab.icon} title={tab.label} isActive={pathnames?.includes(tab.id)} />
                                 {/* <IonPopover alignment="center" mode="ios" side="top" showBackdrop={false} trigger={tab.id} triggerAction="click"  > */}
-                                    <IonLabel>
-                                        {tab.label}
-                                        </IonLabel>
+                                <IonLabel>
+                                    {tab.label}
+                                </IonLabel>
                                 {/* </IonPopover> */}
                             </IonTabButton>
                         )

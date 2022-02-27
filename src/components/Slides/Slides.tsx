@@ -15,9 +15,7 @@ import '@ionic/react/css/ionic-swiper.css';
 import Container from '../../ui/Content/Content';
 import Slide from './Slide';
 
-import SurprisedEmoji from "../../data/lotties/surprised-emoji.json"
-import HappyEmoji from "../../data/lotties/happy-emoji.json"
-import CryingEmoji from "../../data/lotties/crying-emoji.json"
+
 
 export interface ISlides {
     children: React.ReactNode
@@ -36,13 +34,10 @@ const options = {
 
 const slidesContent = [{
     title: "1. Look around in awe",
-    lottie: SurprisedEmoji
 }, {
     title: "2. Hold your heart with care.",
-    lottie: HappyEmoji
 }, {
     title: "3. Cry your heart out",
-    lottie: CryingEmoji
 },
 
 ]
@@ -60,11 +55,11 @@ const Slides: React.FC<ISlides> = ({ }) => {
     }
     return (
         <Swiper onSwiper={(swiper) => { setSwiperInstance(swiper) }} modules={SwiperModules} {...options} onSlideChange={handleSlideChange}>
-            {slidesContent.map(({ title, lottie }, index) => (
+            {/* {slidesContent.map(({ title, lottie }, index) => (
                 <SwiperSlide key={`slide_${index}`}>
                     <Slide title={title} isActive={swiperInstance?.activeIndex === index} lottie={lottie} handleSwipeNext={handleSwipeNext} />
                 </SwiperSlide>
-            ))}
+            ))} */}
         </Swiper>
     )
 }

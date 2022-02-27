@@ -8,7 +8,6 @@ import Heading from '../Headings/Heading';
 import Button from '../Buttons/Button';
 import { ColorLabelsEnum, SpacingEnum } from '../../theme/globalStyles';
 import { Player } from '@lottiefiles/react-lottie-player';
-import LaughingEmoji from "../../data/lotties/laughing-emoji.json"
 import { AnimationItem } from 'lottie-web';
 import styled from 'styled-components';
 
@@ -26,7 +25,6 @@ const StyledPlayer = styled(Player)`
 
 const SlideDefaultProps = {
     title: "Lose your kack for losing things",
-    lottie: LaughingEmoji
 }
 
 const playerOptions = {
