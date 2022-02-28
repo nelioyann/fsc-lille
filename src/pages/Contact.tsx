@@ -25,13 +25,13 @@ const Contact = () => {
                             <Heading level="3">Une question ? Contactez l'association CASC</Heading>
                             <Label size='large'>Pour toute question concernant l'événement, envoyez un mail sur contact@fsc-lille.com</Label>
                             {/* <Box borderWidth="0" padding="0"> */}
-                                <Button color={ColorLabelsEnum.TERTIARY} target='_self' icon={mail} fill="solid" href="mailto:contact@fsc-lille.com" label="Envoyer un email..." />
+                                <Button color={ColorLabelsEnum.PRIMARY} target='_self' icon={mail} fill="solid" href="mailto:contact@fsc-lille.com" label="Envoyer un email..." />
                             {/* </Box> */}
                             <Heading level="3">Suivez les dernières informations sur le forum</Heading>
                             <Cluster space={SpacingEnum.s0}>
-                                <Button color={ColorLabelsEnum.TERTIARY} href="https://twitter.com/Podcasc" fill="outline" icon={logoTwitter} label="Twitter" />
-                                <Button color={ColorLabelsEnum.TERTIARY} href="https://www.facebook.com/CASC.association" fill="outline" icon={logoFacebook} label="Facebook" />
-                                <Button color={ColorLabelsEnum.TERTIARY} href="https://www.linkedin.com/company/casc-asso/" fill="outline" icon={logoLinkedin} label="LinkedIn" />
+                                <Button color={ColorLabelsEnum.PRIMARY} href="https://twitter.com/Podcasc" fill="outline" icon={logoTwitter} label="Twitter" />
+                                <Button color={ColorLabelsEnum.PRIMARY} href="https://www.facebook.com/CASC.association" fill="outline" icon={logoFacebook} label="Facebook" />
+                                <Button color={ColorLabelsEnum.PRIMARY} href="https://www.linkedin.com/company/casc-asso/" fill="outline" icon={logoLinkedin} label="LinkedIn" />
                             </Cluster>
                         </Stack>
 

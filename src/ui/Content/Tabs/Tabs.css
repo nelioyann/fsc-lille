@@ -31,7 +31,7 @@ ion-tab-button {
   );
   color: var(--ion-color-medium);
   --color-focused: var(--ion-color-secondary);
-  --color-selected: var(--ion-color-tertiary);
+  --color-selected: var(--ion-color-primary);
 }
 
 ion-tab-button:hover svg{

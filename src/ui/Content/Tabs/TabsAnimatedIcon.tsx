@@ -35,8 +35,8 @@ const StyledLottiePlayer = styled(Player) <{
     ${({ isActive }) => isActive && css`
         path{
             filter: saturate(1.4) ;
-            stroke: ${ColorVariablesEnum.TERTIARY};
-            fill: ${ColorVariablesEnum.TERTIARY};
+            stroke: ${ColorVariablesEnum.PRIMARY};
+            fill: ${ColorVariablesEnum.PRIMARY};
         }
     `}
     `
