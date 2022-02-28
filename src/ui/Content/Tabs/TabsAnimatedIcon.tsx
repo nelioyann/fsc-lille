@@ -46,12 +46,9 @@ const TabsAnimatedIcon: React.FC<ITabsAnimatedIcon> = ({ lottie, isActive, title
     const [animationLoaded, setAnimationLoaded] = useState(false);
     useLayoutEffect(() => {
         if (animationLoaded && isActive) {
-            console.log("Will play", title)
             player?.play();
         }
-        // else {
-        //     player?.stop();
-        // }
+
     }, [isActive, animationLoaded])
 
     return (

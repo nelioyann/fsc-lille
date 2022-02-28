@@ -42,11 +42,9 @@ const Modal: React.FC<IModal> = ({ Children, isOpen, dismissHandler, ...props })
 
     useEffect(() => {
         if (isOpen) {
-            console.log("happening", Children)
             present()
         };
         return () => {
-            console.log("clenaing up")
             handleDismiss()
         }
     }, [isOpen])
