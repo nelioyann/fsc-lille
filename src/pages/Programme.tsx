@@ -32,7 +32,7 @@ const Programme = () => {
                     onDidDismiss={() => setShowCalendarModal(false)}
                     isOpen={showCalendarModal}
                     initialBreakpoint={0.3}
-                    breakpoints={[0, 0.5, 1]}
+                    breakpoints={[0, 0.3, 1]}
                 >
                     <IonContent>
                         <Cover >

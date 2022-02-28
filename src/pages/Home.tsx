@@ -12,7 +12,6 @@ import Rubix from "../data/images/rubix.jpg"
 import Stands from "../data/images/stands.jpg"
 import Button from '../components/Buttons/Button';
 import Content from '../ui/Content/Content';
-import OpticalIllusion from "../data/lotties/optical-illusion.json"
 import { Player } from '@lottiefiles/react-lottie-player';
 import styled from 'styled-components';
 import { ReactComponent as France } from "../data/icons/France.svg"
@@ -36,9 +35,7 @@ const playerOptions = {
 const Home: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const router = useIonRouter();
-  useEffect(() => {
-    console.log("Home")
-  }, [])
+
   return (
     <IonPage>
       <Header mode="ios" label="FSC-Lille #1" icon={locationOutline} iconOnclickHandler={() => router.push("/tabs/accueil/directions")} />
@@ -138,8 +135,8 @@ const Home: React.FC = () => {
         <IonModal
           isOpen={showModal}
           swipeToClose={true}
-          initialBreakpoint={1}
-          breakpoints={[0, 0.5, 1]}
+          initialBreakpoint={0.8}
+          breakpoints={[0, 0.8, 1]}
           onDidDismiss={() => setShowModal(false)}
         >
           <IonPage>

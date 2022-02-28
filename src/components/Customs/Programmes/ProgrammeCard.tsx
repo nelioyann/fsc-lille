@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { getSpeakerImage, getSpeakerSummary } from '../../../data/speakers';
 import { Box, Cluster, Stack } from '../../../layouts';
-import { ColorLabelsEnum, ColorVariablesEnum, Label } from '../../../theme/globalStyles';
+import { ColorLabelsEnum, ColorVariablesEnum, Label, SpacingEnum } from '../../../theme/globalStyles';
 import Heading from '../../Headings/Heading';
 import Tag from '../../Tag/Tag';
 
@@ -46,7 +46,7 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
             <Stack space="0">
                 <IonCardHeader>
                     <Cluster justify='space-between' align='center'>
-                        <Cluster>
+                        <Cluster space={SpacingEnum['s-4']}>
                             {speakersId.map(speakerId => (
                                 <StyledAvatar key={`programmeCard_speaker${speakerId}`}>
                                     <img src={getSpeakerImage(speakerId)} />

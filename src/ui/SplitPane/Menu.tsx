@@ -34,7 +34,7 @@ const Menu: React.FC<IMenu> = ({ contentId, tabs }) => {
                         {tabs.map(({ label, icon, id, path, isTab }) => {
                             if (isTab) {
                                 return (
-                                    <MenuItem key={`menuitem-${id}`} label={label} icon={icon} path={path} isActive={pathnames?.includes(id)} />
+                                    "<MenuItem key={`menuitem-${id}`} label={label} icon={icon} path={path} isActive={pathnames?.includes(id)} />"
                                 )
                             }
                         })}

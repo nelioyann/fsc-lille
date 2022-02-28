@@ -29,7 +29,6 @@ const ProgrammesSlider: React.FC<IProgrammesSlider> = ({theme, id}) => {
     const handleSwipeNext = () => {
         swiperInstance?.slideNext();
     }
-    console.log(theme, events)
     return (
         <Switcher space={SpacingEnum['s0']}>
             {events?.length > 0 ? events
