@@ -2,7 +2,7 @@ import React from "react";
 import { IonBackButton, IonButton, IonButtons, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/react';
 // import { home } from "ionicons/icons";
 import Heading from "../Headings/Heading";
-import { ColorLabelsEnum, ColorVariablesEnum } from "../../theme/globalStyles";
+import { ColorLabelsEnum, ColorVariablesEnum, Label } from "../../theme/globalStyles";
 import IconButton from "../Buttons/IconButton";
 import styled from "styled-components";
 
@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ color = ColorLabelsEnum.LIGHT, mode = "
 
                 {/* Center side */}
                 {label && <IonTitle slot="">
-                    <Heading level="4" >{label}</Heading>
+                    <Label size="large">{label}</Label>
                 </IonTitle>}
 
                 {children}
