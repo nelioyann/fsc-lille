@@ -1,17 +1,8 @@
 import React from 'react';
+import { ISpeaker } from '../../../data/speakers';
 import Card from '../../Cards/Card';
 
-export interface ISpeaker  {
-    id: string;
-    firstName: string;
-    lastName: string;
-    role: string;
-    companyId?: string;
-    photoUrl?: string;
-    twitter?: string;
-    linkedin?: string;
-    biography?: string;
-}
+
 
 interface ISpeakerCard extends ISpeaker{
 }

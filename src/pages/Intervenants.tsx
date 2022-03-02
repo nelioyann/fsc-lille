@@ -1,6 +1,6 @@
 import { IonContent, IonModal, IonPage, useIonModal } from '@ionic/react';
 import React, { useState } from 'react';
-import SpeakerCard, { ISpeaker } from '../components/Customs/Programmes/SpeakerCard';
+import SpeakerCard from '../components/Customs/Programmes/SpeakerCard';
 import Header from '../components/Headers/Header';
 import { getSpeakers } from '../data/speakers';
 import { Box, Cluster, Grid, Stack } from '../layouts';

@@ -38,7 +38,7 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <Header mode="ios" label="FSC-Lille #1" icon={locationOutline} iconOnclickHandler={() => router.push("/tabs/accueil/directions")} />
+      <Header mode="ios" label="FSC Lille 2022" icon={locationOutline} iconOnclickHandler={() => router.push("/tabs/accueil/directions")} />
       <Content>
         <Stack space={SpacingEnum.s5}>
           <Cover noPad minHeight='70vh'>
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
               <Sidebar sideWidth="20em" >
                 <Stack space={SpacingEnum.s3}>
                   <Heading level="1">
-                    FORUM DES SCIENCES COGNITIVES DE LILLE
+                    Forum des Sciences Cognitives de Lille
                   </Heading>
                   {/* <Heading level="2" color={ColorLabelsEnum.TERTIARY}>“Méfions-nous des apparences, quelle réalité percevons-nous ?”.</Heading> */}
                   <Label size="large">
@@ -66,15 +66,15 @@ const Home: React.FC = () => {
                 {/* <Box> */}
               </Sidebar>
               <Cluster space={SpacingEnum['s-5']}>
-                <Button icon={ticketOutline} href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand="block" size="large" label="Réservez votre place" color={ColorLabelsEnum.TERTIARY} />
+                <Button icon={ticketOutline} href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand="block" size="large" label="Inscription gratuite" color={ColorLabelsEnum.TERTIARY} />
                 <Button icon={calendarOutline} routerLink="/tabs/programmes" expand="block" size="large" label="Découvrez le programme" fill="outline" color={ColorLabelsEnum.TERTIARY} />
                 {/* <Button routerLink="/tabs/programmes" expand="block" size="large" label="Ajouter au calendrier" fill="clear" color={ColorLabelsEnum.TERTIARY} /> */}
               </Cluster>
             </Stack>
             <Cluster>
-              <Tag onClick={() => router.push("/tabs/accueil/directions")} label="JUNIA HEI" icon={locationOutline} />
-              <Tag label="SAM. 19 Mars, à partir de 10h00" icon={timeOutline} />
-              <Tag label="Accès libre sur inscription" icon={ticketOutline} />
+              <Tag onClick={() => router.push("/tabs/accueil/directions")} label="13 rue de Toul - 59000 Lille" icon={locationOutline} />
+              {/* <Tag label="SAM. 19 Mars, à partir de 10h00" icon={timeOutline} /> */}
+              {/* <Tag label="Accès libre sur inscription" icon={ticketOutline} /> */}
             </Cluster>
           </Cover>
           {/* <Stack space={SpacingEnum.s3}>

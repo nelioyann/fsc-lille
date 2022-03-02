@@ -38,7 +38,7 @@ ion-tab-button:hover svg{
   animation-name: wobble;
   animation-duration: 1s;
   animation-iteration-count: 1;
-  animation-timing-function: linear;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 }
 
@@ -51,23 +51,23 @@ ion-tab-button.tab-selected {
   }
 
   15% {
-    transform: translate3d(-0.25em, 0, 0) rotate3d(0, 0, 1, -5deg);
+    transform: translate3d(-0.20em, 0, 0) rotate3d(0, 0, 1, -4deg);
   }
 
   30% {
-    transform: translate3d(0.20em, 0, 0) rotate3d(0, 0, 1, 3deg);
+    transform: translate3d(0.15em, 0, 0) rotate3d(0, 0, 1, 3deg);
   }
 
   45% {
-    transform: translate3d(-0.15em, 0, 0) rotate3d(0, 0, 1, -3deg);
+    transform: translate3d(-0.10em, 0, 0) rotate3d(0, 0, 1, -2deg);
   }
 
   60% {
-    transform: translate3d(0.10em, 0, 0) rotate3d(0, 0, 1, 2deg);
+    transform: translate3d(0.05em, 0, 0) rotate3d(0, 0, 1, 2deg);
   }
 
   75% {
-    transform: translate3d(-0.05em, 0, 0) rotate3d(0, 0, 1, -1deg);
+    transform: translate3d(-0.025em, 0, 0) rotate3d(0, 0, 1, -1deg);
   }
 
   to {

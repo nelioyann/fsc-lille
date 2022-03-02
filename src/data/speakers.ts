@@ -1,5 +1,17 @@
-import { ISpeaker } from "../components/Customs/Programmes/SpeakerCard";
+import { standIds } from "./events";
 
+
+export interface ISpeaker  {
+    id: string;
+    firstName: string;
+    lastName: string;
+    role: string;
+    companyId?: standIds;
+    photoUrl?: string;
+    twitter?: string;
+    linkedin?: string;
+    biography?: string;
+}
 const speakers: ISpeaker[] = [
     {
         id: "bVictor",
@@ -29,7 +41,7 @@ const speakers: ISpeaker[] = [
         firstName: 'Marie',
         lastName: "Auphan",
         role: '',
-        companyId: "Fresco",
+        companyId: "fresco",
         photoUrl: "/assets/speakers/Marie.png",
         twitter: "",
         linkedin: "",
@@ -41,7 +53,7 @@ const speakers: ISpeaker[] = [
         firstName: 'Jean-Michel',
         lastName: "Dagba",
         role: '',
-        companyId: "Fresco",
+        companyId: "fresco",
         photoUrl: "/assets/speakers/JM.png",
         twitter: "",
         linkedin: "",
@@ -53,14 +65,12 @@ const speakers: ISpeaker[] = [
         firstName: 'Nacim',
         lastName: "Ihaddadene",
         role: '',
-        companyId: "junia",
+        companyId: "isen",
         photoUrl: "/assets/speakers/Nacim.jpg",
         twitter: "",
         linkedin: "",
         biography: ""
     }
-   
-    
     ,
     {
         id: "cSylvie",
@@ -68,7 +78,7 @@ const speakers: ISpeaker[] = [
         lastName: "Chollet",
         role: '',
         companyId: "isa",
-        photoUrl: "/assets/speakers/cSylvie.svg",
+        photoUrl: "/assets/speakers/Sylvie.jpg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -92,7 +102,7 @@ const speakers: ISpeaker[] = [
         firstName: 'Florent',
         lastName: "Berthaut",
         role: '',
-        companyId: "junia",
+        companyId: "mint",
         photoUrl: "/assets/speakers/Florent.jpeg",
         twitter: "",
         linkedin: "",
@@ -103,8 +113,7 @@ const speakers: ISpeaker[] = [
         id: "zFabien",
         firstName: 'Fabien',
         lastName: "Zocco",
-        role: '',
-        companyId: "junia",
+        role: 'Artiste',
         photoUrl: "/assets/speakers/Fabien.jpg",
         twitter: "",
         linkedin: "",
@@ -129,7 +138,7 @@ const speakers: ISpeaker[] = [
         lastName: "Vandenberghe",
         role: '',
         companyId: "isa",
-        photoUrl: "/assets/speakers/vMathilde.svg",
+        photoUrl: "/assets/speakers/Mathilde.jpg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -152,7 +161,7 @@ const speakers: ISpeaker[] = [
         firstName: 'Catherine',
         lastName: "Huyghe",
         role: '',
-        companyId: "",
+        companyId: "isen",
         photoUrl: "/assets/speakers/hCatherine.svg",
         twitter: "",
         linkedin: "",
@@ -164,7 +173,7 @@ const speakers: ISpeaker[] = [
         firstName: 'Eric',
         lastName: "Prigent",
         role: '',
-        companyId: "junia",
+        companyId: "catho",
         photoUrl: "/assets/speakers/pEric.svg",
         twitter: "",
         linkedin: "",
@@ -176,7 +185,7 @@ const speakers: ISpeaker[] = [
         firstName: 'Jerome',
         lastName: "Klimsza",
         role: '',
-        companyId: "MEL",
+        companyId: "mel",
         photoUrl: "/assets/speakers/kJerome.svg",
         twitter: "",
         linkedin: "",
@@ -188,7 +197,7 @@ const speakers: ISpeaker[] = [
         firstName: 'Pierre',
         lastName: "Giorgini",
         role: '',
-        companyId: "icl",
+        companyId: "catho",
         photoUrl: "/assets/speakers/gPierre.svg",
         twitter: "",
         linkedin: "",

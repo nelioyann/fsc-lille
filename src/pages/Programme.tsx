@@ -86,7 +86,7 @@ const Programme = () => {
                             <p>Rien pour le moment, revennez plus tard</p>
                         )}
                     <Stack>
-                        <Heading color={ColorVariablesEnum.PRIMARY} level="2">Animations</Heading>
+                        {/* <Heading color={ColorVariablesEnum.PRIMARY} level="2">Animations</Heading> */}
                         <Heading level="3">16h - Cogni'Quiz</Heading>
                         <Label size="large">Le Cogni'Quizz est un quizz ludique au cours duquel des binômes s'affrontent sur des questions
                             portant sur les sciences de la cognition. Inspiré du célèbre jeu télévisé "Questions pour un
@@ -100,6 +100,9 @@ const Programme = () => {
                         {/* <Box padding='0' borderWidth='0'> */}
                         <Button color={ColorLabelsEnum.TERTIARY} fill='solid' icon={gameControllerOutline} label="Inscrivez vous" href="https://forms.gle/RecQuUuYLKvxfaz27" />
                         {/* </Box> */}
+                    </Stack>
+                    <Stack>
+                    <Heading level="3">17h - Table Ronde des alumnis</Heading>
                     </Stack>
                 </Stack>
 
