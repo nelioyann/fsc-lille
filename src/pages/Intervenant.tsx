@@ -1,15 +1,16 @@
-import { IonAvatar, IonContent, IonPage } from '@ionic/react';
+import { IonAvatar, IonBreadcrumb, IonBreadcrumbs, IonContent, IonPage } from '@ionic/react';
 import { logoLinkedin, logoTwitter } from 'ionicons/icons';
 import React from 'react';
 import { useParams } from 'react-router';
 import Button from '../components/Buttons/Button';
-import { ISpeaker } from '../components/Customs/Programmes/SpeakerCard';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
-import { getSpeaker } from '../data/speakers';
+import { getCompanyName } from '../data/events';
+import { getSpeaker, getSpeakerImage } from '../data/speakers';
 import { Box, Center, Cluster, Stack } from '../layouts';
 import { Label } from '../theme/globalStyles';
 import Content from '../ui/Content/Content';
+import { StyledThumbnail } from './ProgrammeItem';
 
 const Intervenant = () => {
     const { id } = useParams<{ id: string }>();
@@ -17,24 +18,32 @@ const Intervenant = () => {
     console.log("Speaker from Intervenant ", speaker);
     return (
         <IonPage>
-            <Header label="Intervenant" withBackButton={true} />
+            <Header mode='ios' label="Intervenant" withBackButton={true} />
             <Content>
-                {speaker ? (<Stack>
-                    <Box maxContent padding='0'>
-                        <IonAvatar>
-                            <img src={speaker.photoUrl} alt={`${speaker.firstName} ${speaker.lastName}`} />
-                        </IonAvatar>
-                    </Box>
-                    {/* <Box padding="0" borderWidth="0">
-                        <Heading level="4">{`${speaker.firstName} ${speaker.lastName}`}</Heading>
-                        <Label>{speaker.biography}</Label>
-                    </Box>
-                    <Cluster>
-                        {speaker.twitter && <Button icon={logoTwitter} label="Twitter" />}
-                        {speaker.linkedin && <Button icon={logoLinkedin} label="LinkedIn" />}
-                    </Cluster> */}
-                    {/* <iframe style={{minHeight: "600px"}} src="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" /> */}
-                </Stack>) : (
+                {speaker ? (
+                    <Stack>
+                        <IonBreadcrumbs mode="ios">
+                            <IonBreadcrumb>Intervenants</IonBreadcrumb>
+                            {/* <IonBreadcrumb>Conférences</IonBreadcrumb> */}
+                            <IonBreadcrumb>{`${speaker.firstName} ${speaker.lastName}`}</IonBreadcrumb>
+                        </IonBreadcrumbs>
+                        {/* <Box maxContent padding='0'> */}
+                        <StyledThumbnail key={`programmeItem_Image${id}`}>
+                            <img src={speaker.photoUrl} />
+                        </StyledThumbnail>
+                        {/* </Box> */}
+                        <Box padding="0" borderWidth="0">
+                            <Heading level="4">{`${speaker.firstName} ${speaker.lastName} ${speaker.companyId && `- ${getCompanyName(speaker.companyId)}`}`}</Heading>
+                            {speaker.companyId && <Label size="large">{getCompanyName(speaker.companyId)}</Label>}
+                            <Label>{speaker.biography}</Label>
+                        </Box>
+                        {speaker.twitter || speaker.linkedin &&
+                            (<Cluster>
+                                {speaker.twitter && <Button icon={logoTwitter} label="Twitter" />}
+                                {speaker.linkedin && <Button icon={logoLinkedin} label="LinkedIn" />}
+                            </Cluster>)}
+                        {/* <iframe style={{minHeight: "600px"}} src="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" /> */}
+                    </Stack>) : (
                     <Stack>
                         <Heading level="2">Intervenant</Heading>
                     </Stack>

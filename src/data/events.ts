@@ -20,7 +20,7 @@ const events: IEvent[] = [
         id: "3",
         speakersId: ["vMathilde", "cSylvie"],
         title: "Le goût de la bière et la musique",
-        description: "",
+        description: "Pourquoi, les habitants de Chavignol accompagnent-ils leur crottin de Sancerre ? Plusieurs équipes de chercheurs ont mis en évidence des règles ou des principes d’association, expliquant l’harmonie entre deux aliments. Ces règles sont-elles transposables à deux sens différents comme l’ouïe et le goût par exemple ? C’est ce que nous avons voulu investiguer à travers une étude sur l’harmonie entre une bière et une musique provenant d’une même zone géographique.",
         date: "11h",
         theme: "INFLUENCE",
     },
@@ -108,9 +108,84 @@ const events: IEvent[] = [
 //     EXPERIMENTATION: ["SCALab"],
 // };
 
+
+// interface ICompany{
+//     id: string;
+//     name: string;
+//     longName: string;
+// }
+
+// const companies: ICompany[] = [
+//     { 
+//         id: "scalab",
+//         name: "SCALab",
+//         longName: "SCALab - Laboratoire",
+//     },
+//     {
+//         id: "mint",
+//         name: "Equipe MINT",
+//         longName: "Equipe MINT  - CRISTAL - Laboratoire ",
+//     },
+//     {
+//         id: "psycos",
+//         name: "PsyCos",
+//         longName: "PsyCos - Neurethic",
+//     },
+//     {
+//         id: "isa",
+//         name: "ISA",
+//         longName: "ISA - Junia",
+//     },
+//     {
+//         id: "isen",
+//         name: "ISEN",
+//         longName: "ISEN - Junia",
+//     },
+//     {
+//         id: "mel",
+//         name: "MEL",
+//         longName: "Métropole Européenne de Lille",
+//     },
+//     {
+//         id: "catho",
+//         name: "ICL",
+//         longName: "Master de Neuropsychologie et de neurosciences cognitives",
+//     },
+//     {
+//         id: "ppnsa",
+//         name: "Master PPNSA",
+//         longName: "Master PPNSA - Université de Lille",
+//     },
+//     {
+//         id: "sce",
+//         name: "Master SCE",
+//         longName: "Master Sciences cognitives pour l’Entreprise - Université de Lille",
+//     },
+//     {
+//         id: "casc",
+//         name: "CASC",
+//         longName: "CASC - Association",
+//     },
+//     {
+//         id: "fresco",
+//         name: "La Fresco",
+//         longName: "La Fresco - Association",
+//     },
+//     {
+//         id: "xperium",
+//         name: "Xperium",
+//         longName: "Xperium",
+//     },
+//     {
+//         id: "gaze",
+//         name: "Gaze intelligence",
+//         longName: "Gaze intelligence",
+//     },
+
+// ]
 // define types for boolean isActive
 type standsLocations = "L1" | "L2" | "L3" | "L4" | "L5" | "L6" | "F1" | "F2" | "F3" | "R1" | "R2" | "P1" | "A1" | "A2";
-type standIds = "scalab" | "mint" | "psycos" | "isa" | "isen" | "mel" | "casc" | "fresco" | "catho" | "ppnsa" | "sce" | "xperium" | "gaze";
+export type standIds = "scalab" | "mint" | "psycos" | "isa" | "isen" | "mel" | "casc" | "fresco" | "catho" | "ppnsa" | "sce" | "xperium" | "gaze";
 type standNames = "SCALab"| "Equipe MINT"  | "PsyCos" | "ISA"| "ISEN" | "MEL" | "CASC" | "La Fresco" | "ICL" | "Master PPNSA" | "Master SCE" | "Xperium" | "Gaze intelligence";
 
 type IStand = {
@@ -138,7 +213,7 @@ const stands: IStand[] = [
     {
         id: "psycos",
         name: "PsyCos",
-        longName: "PsyCos -Neurethic",
+        longName: "PsyCos - Neurethic",
         location: "L4",
         themes: ["INFLUENCE", "MOUVEMENT"],
         description: "L’équipe PSyCOS (Processus Sociaux et Cognitifs dans les Organisations et la Santé) du laboratoire ETHICS (EA7446) développe une activité de recherche fondamentale et appliquée, visant à éclairer les processus sociaux et cognitifs impliqués dans le fonctionnement des individus et des groupes, dans les champs de la santé (au travail ou dans différentes pathologies neurologiques). En étroite collaboration avec le projet NEURETHIC, cette équipe développe des travaux combinant des mesures cognitivo-comportementales à divers signaux neurophysiologiques chez des sujets sains et auprès de patients souffrant de divers pathologies neurologiques."
@@ -149,6 +224,7 @@ const stands: IStand[] = [
         longName: "ISA - Junia",
         themes: ["INFLUENCE", "MOUVEMENT"],
         location: "L6",
+        description: "Vous vous demandez si des interactions existent entre nos sens, pourquoi la musique est si forte dans les bars, si la musique influence notre perception lorsque nous buvons une boisson, ou plus largement quels éléments guident notre ressenti lorsque nous dégustons une bière ? Venez participer à une expérience sensorielle."
     },
     {
         id: "isen",
@@ -271,4 +347,7 @@ export enum EventThemesEnum {
 export const getEvents = () => events;
 export const getEvent = (id: string) => events.find((event) => event.id === id);
 export const filterStands = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE") => stands.filter(stand => stand?.themes?.includes(theme))?.map((stand) => stand.name);
+
+
+export const getCompanyName = (id: standIds) => stands.find((stand) => stand.id === id)?.name || "";
 // export const filterEvents = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE", id: string) => events.filter(event.theme === theme)
