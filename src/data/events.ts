@@ -7,6 +7,7 @@ const events: IEvent[] = [
             "Vous vous êtes sans doute déjà trouvés face à une illusion d'optique qui vous a fait douter de votre vue. Quelle est la science derrière ces illusions ? Et comment perçoit-on une image ? Vous vous doutez probablement que c'est grâce à vos yeux, mais en êtes-vous sûrs ? Les yeux ne sont que le point de départ de notre système visuel et si vous souhaiter en savoir plus, venez découvrir comment vos yeux et votre cerveau perçoivent le monde qui vous entoure.",
         date: "11h",
         theme: "INFLUENCE",
+        standId: "scalab"
     },
     {
         id: "2",
@@ -15,6 +16,7 @@ const events: IEvent[] = [
         description: "Cette étude, aux objectifs fondamentaux et cliniques, vise à évaluer la participation d’un biais de positivité aux déficits de reconnaissance des émotions dans la sclérose en plaques (SEP). Ce biais de positivité est la conséquence de changements motivationnels, liés à une conscience aiguë du temps de vie limité, se manifestant par une préférence pour l’information, en lien avec l’âge et certaines pathologies chroniques. ",
         date: "11h",
         theme: "INFLUENCE",
+        standId: "psycos"
     },
     {
         id: "3",
@@ -23,6 +25,7 @@ const events: IEvent[] = [
         description: "Pourquoi, les habitants de Chavignol accompagnent-ils leur crottin de Sancerre ? Plusieurs équipes de chercheurs ont mis en évidence des règles ou des principes d’association, expliquant l’harmonie entre deux aliments. Ces règles sont-elles transposables à deux sens différents comme l’ouïe et le goût par exemple ? C’est ce que nous avons voulu investiguer à travers une étude sur l’harmonie entre une bière et une musique provenant d’une même zone géographique.",
         date: "11h",
         theme: "INFLUENCE",
+        standId: "isa"
     },
     {
         id: "4",
@@ -31,6 +34,7 @@ const events: IEvent[] = [
         description: "",
         date: "12h",
         theme: "SOCIETE",
+        standId: "mel"
     },
     // {
     //     id: "5",
@@ -56,6 +60,7 @@ const events: IEvent[] = [
             "S’engager dans la pratique d’une séance de sport requiert la capacité de gérer l’effort physique et mentale associée à l’exercice. Nous présenterons comment la musique permet de donner l’illusion de bouger plus rapidement ou plus lentement en fonction de l’énergie sonore perçue.",
         date: "14h",
         theme: "MOUVEMENT",
+        standId: "scalab"
     },
     {
         id: "8",
@@ -64,6 +69,7 @@ const events: IEvent[] = [
         description: "",
         date: "14h",
         theme: "MOUVEMENT",
+        standId: "isen"
     },
     {
         id: "9",
@@ -72,6 +78,7 @@ const events: IEvent[] = [
         description: "Lors de concerts de musique électronique, il est souvent difficile de comprendre ce que font exactement les musiciens : Quel est le lien entres les gestes qu'ils effectuent et la musique produite ? Quelle est leur implication réelle dans la performance ? Nous présenterons ici des travaux cherchant à évaluer ce que perçoivent et comprennent les spectateurs et proposant des techniques de visualisation en réalité augmentée pour enrichir leur expérience.",
         date: "14h",
         theme: "MOUVEMENT",
+        standId: "mint"
     },
     {
         id: "10",
@@ -80,6 +87,7 @@ const events: IEvent[] = [
         description: "",
         date: "15h",
         theme: "EXPERIMENTATION",
+        standId: "scalab"
     },
     {
         id: "11",
@@ -336,6 +344,7 @@ export interface IEvent {
     description: string;
     date: string;
     theme: Themes;
+    standId?: standIds;
 }
 
 export enum EventThemesEnum {
@@ -344,10 +353,15 @@ export enum EventThemesEnum {
     "MOUVEMENT" = "14h - Au-delà du mouvement",
     "EXPERIMENTATION" = "15h - Regards croisés sur l’expérimentation citoyenne et artistique",
 }
+export enum EventThemesEnumShort {
+    "INFLUENCE" = "La perception sous influence ! ",
+    "SOCIETE" = "Environnement et société : améliorer la perception pour passer à l’action",
+    "MOUVEMENT" = "Au-delà du mouvement",
+    "EXPERIMENTATION" = "Regards croisés sur l’expérimentation citoyenne et artistique",
+}
 export const getEvents = () => events;
 export const getEvent = (id: string) => events.find((event) => event.id === id);
-export const filterStands = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE") => stands.filter(stand => stand?.themes?.includes(theme))?.map((stand) => stand.name);
-
-
+// export const getStandsByThemes = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE") => stands.filter(stand => stand?.themes?.includes(theme))?.map((stand) => stand.name);
+export const getStand = (id: standIds) => stands.find((stand) => stand.id === id);
 export const getCompanyName = (id: standIds) => stands.find((stand) => stand.id === id)?.name || "";
 // export const filterEvents = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE", id: string) => events.filter(event.theme === theme)
