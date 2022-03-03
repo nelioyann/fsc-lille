@@ -1,4 +1,4 @@
-import { IonContent, IonIcon, IonModal, IonPage, IonPopover, useIonRouter } from '@ionic/react';
+import { IonContent, IonIcon, IonModal, IonNote, IonPage, IonPopover, useIonRouter } from '@ionic/react';
 import { add, calendarClearOutline, gameControllerOutline, hourglassOutline, easelOutline } from 'ionicons/icons';
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
@@ -7,7 +7,7 @@ import ProgrammeCard from '../components/Customs/Programmes/ProgrammeCard';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
 import Tag from '../components/Tag/Tag';
-import { EventThemesEnum, filterStands, getEvents } from '../data/events';
+import { EventThemesEnum, getEvents } from '../data/events';
 import { Box, Center, Cluster, Cover, Stack } from '../layouts';
 import { ColorLabelsEnum, ColorVariablesEnum, Label, SpacingEnum } from '../theme/globalStyles';
 import Content from '../ui/Content/Content';
@@ -64,18 +64,9 @@ const Programme = () => {
                                 {/* <Button target="_self" href="/tabs/programmes/#mouvement" label="Mouvement"/> */}
                                 <Stack space={SpacingEnum.s4}>
                                     {(Object.keys(EventThemesEnum) as Array<keyof typeof EventThemesEnum>).map((theme) => {
-                                        let stands = filterStands(theme);
                                         return (
                                             <Stack space={SpacingEnum.s0} id={theme.toLowerCase()} key={`ThemeGroup_${theme}`}>
                                                 <Heading level="3">{EventThemesEnum[theme]}</Heading>
-                                                <Cluster align="center">
-                                                    {/* <Label color={ColorVariablesEnum.MEDIUM}>Stands: </Label> */}
-                                                    {stands.length > 0 && (
-                                                        stands.map(stand => (
-                                                            <Tag key={`stands_${theme}_${stand}`} icon={easelOutline} color={ColorLabelsEnum.DARK} disabled label={stand} />
-                                                        ))
-                                                    )}
-                                                </Cluster>
                                                 {events.filter(event => event.theme === theme).map((event, index) => <ProgrammeCard key={`programmeCard_${event.id}`} {...event} />)}
                                             </Stack>)
                                     })}
@@ -86,7 +77,6 @@ const Programme = () => {
                             <p>Rien pour le moment, revennez plus tard</p>
                         )}
                     <Stack>
-                        {/* <Heading color={ColorVariablesEnum.PRIMARY} level="2">Animations</Heading> */}
                         <Heading level="3">16h - Cogni'Quiz</Heading>
                         <Label size="large">Le Cogni'Quizz est un quizz ludique au cours duquel des binômes s'affrontent sur des questions
                             portant sur les sciences de la cognition. Inspiré du célèbre jeu télévisé "Questions pour un
@@ -97,12 +87,14 @@ const Programme = () => {
                             et qui souhaitent tester leurs connaissances de façon ludique ! Il n'est, bien sûr, pas nécessaire
                             d'être étudiant.e en sciences cognitives pour participer, toute personne motivée est la bienvenue !
                         </Label>
-                        {/* <Box padding='0' borderWidth='0'> */}
                         <Button color={ColorLabelsEnum.TERTIARY} fill='solid' icon={gameControllerOutline} label="Inscrivez vous" href="https://forms.gle/RecQuUuYLKvxfaz27" />
-                        {/* </Box> */}
                     </Stack>
                     <Stack>
-                    <Heading level="3">17h - Table Ronde des alumnis</Heading>
+                        <Heading level="3">17h - Table Ronde des alumnis</Heading>
+                        <Label size="large">Afin de connaître les débouchés après une licence/un master autour des sciences co à Lille,
+                            5 à 6 alumni répondront aux questions des étudiant·e·s sur leur métier au quotidien, leurs parcours académique et professionnel et donneront leurs conseils avisés.
+
+                        </Label>
                     </Stack>
                 </Stack>
 

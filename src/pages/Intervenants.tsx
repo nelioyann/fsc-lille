@@ -19,7 +19,6 @@ const Intervenants = () => {
             <Header mode="ios" label="Intervenants" />
             <Content>
                 <Stack>
-
                     <Grid min="14em" space={SpacingEnum.s1}>
                         {speakers.map(speaker => <SpeakerCard key={`speakerCard_${speaker.id}`} {...speaker} />)}
                     </Grid>

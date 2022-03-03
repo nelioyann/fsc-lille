@@ -1,9 +1,9 @@
 import { IonAvatar, IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonPage, IonThumbnail, useIonRouter } from '@ionic/react';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
-import { EventThemesEnum, getEvent } from '../data/events';
+import { EventThemesEnum, EventThemesEnumShort, getEvent, getStand } from '../data/events';
 import { getSpeakerImage, getSpeakerSummary } from '../data/speakers';
-import { Box, Center, Cluster, Cover, Stack } from '../layouts';
+import { Box, Center, Cluster, Cover, Sidebar, Stack } from '../layouts';
 import { useParams } from 'react-router';
 import Content from '../ui/Content/Content';
 import Card from '../components/Cards/Card';
@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import { ColorVariablesEnum, Label, SpacingEnum } from '../theme/globalStyles';
 import Tag from '../components/Tag/Tag';
 import Button from '../components/Buttons/Button';
-import { arrowForwardOutline } from 'ionicons/icons';
+import { arrowForwardOutline, easelOutline, locationOutline } from 'ionicons/icons';
 import ProgrammesSlider from '../components/Customs/Programmes/ProgrammesSlider';
 
 
@@ -25,6 +25,7 @@ export const StyledThumbnail = styled(IonThumbnail)`
 const ProgrammeItem: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const event = getEvent(id);
+
     return (
         <IonPage>
             <Header mode="ios" label='Conférence' backButtonLink="/tabs/programmes" withBackButton={true} />
@@ -51,18 +52,34 @@ const ProgrammeItem: React.FC = () => {
                                     ))}
                                 </Cluster>
                             </Box>
-                            <Cluster align='center' space={SpacingEnum['s-3']}>
-                                <Heading level="3" color={ColorVariablesEnum.TERTIARY}>{event.title}</Heading>
-                                <Box padding='0' borderWidth='0'>
-                                    <Tag label={event.date} />
+                            <Sidebar contentMin='70%' space={SpacingEnum.s2}>
+                                <Box borderWidth='0' padding='0'>
+                                    <Heading level="3" color={ColorVariablesEnum.DARK}>{`${event.title} - ${event.date} `}</Heading>
+                                    <Label size="large">
+                                        {event.description}
+                                    </Label>
                                 </Box>
-                            </Cluster>
-                            <Label size="large">
-                                {event.description}
-                            </Label>
+                                {
+                                    event.standId && (
+                                        <Box borderWidth='0' padding='0'>
+                                            <Stack space={SpacingEnum['s-3']}>
+                                                <Heading level="4" color={ColorVariablesEnum.PRIMARY}>Pour en découvrir plus sur le sujet...</Heading>
+                                                <Box padding='0' borderWidth='0'>
+                                                    <Label>
+                                                        {getStand(event.standId)?.description}
+                                                    </Label>
+                                                    <Tag disabled icon={easelOutline} label={`Stand ${getStand(event.standId)?.name}`} />
+                                                    <Tag disabled icon={locationOutline} label={`Emplacement ${getStand(event.standId)?.location}`} />
+                                                </Box>
+                                            </Stack>
+                                        </Box>
+                                    )
+                                }
+                            </Sidebar>
                         </Stack>
+
                         <Stack space={SpacingEnum['s-5']}>
-                            <Heading level='4'>Dans la même catégorie</Heading>
+                            <Heading level='4' color={ColorVariablesEnum.TERTIARY}>{`Autres conférences sur la même thématique  (${EventThemesEnumShort[event.theme]})`}</Heading>
                             <ProgrammesSlider id={event.id} theme={event.theme} />
                         </Stack>
                     </Stack>

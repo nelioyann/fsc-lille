@@ -1,6 +1,8 @@
 import { IonAvatar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, useIonRouter } from '@ionic/react';
+import { easelOutline } from 'ionicons/icons';
 import React from 'react';
 import styled from 'styled-components';
+import { getStand, standIds } from '../../../data/events';
 import { getSpeakerImage, getSpeakerSummary } from '../../../data/speakers';
 import { Box, Cluster, Stack } from '../../../layouts';
 import { ColorLabelsEnum, ColorVariablesEnum, Label, SpacingEnum } from '../../../theme/globalStyles';
@@ -25,9 +27,10 @@ export interface IProgrammeCard {
     id: string;
     speakersId: string[];
     title: string;
-    description?: string;
-    date?: string;
+    description: string;
+    date: string;
     speakerThumbnail?: string;
+    standId?: standIds;
     theme: string;
 }
 
@@ -38,7 +41,7 @@ export let EventsThemeColorEnum: { [x: string]: ColorLabelsEnum | undefined; } =
     "MOUVEMENT": ColorLabelsEnum.WARNING
 }
 
-const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id, speakersId, theme, ...props }) => {
+const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id, speakersId, theme, standId, ...props }) => {
     const router = useIonRouter();
 
     return (
@@ -54,7 +57,13 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
                             ))}
                         </Cluster>
                         {/* <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date} /> */}
-
+                        {
+                            standId && (
+                                <Box padding='0' borderWidth='0'>
+                                    <Tag color={EventsThemeColorEnum[theme]} icon={easelOutline} disabled label={getStand(standId)?.name} />
+                                </Box>
+                            )
+                        }
                     </Cluster>
 
                     {/* {description && description !== "" && <IonCardSubtitle>{description}</IonCardSubtitle>} */}

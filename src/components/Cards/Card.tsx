@@ -50,6 +50,13 @@ const StyledCard = styled(IonCard) <CardProps>`
         $size !== undefined &&
         css`
             max-width: ${CardSizesEnum[$size]};
+            `
+    }
+    ${({ $size }) =>
+        $size === undefined &&
+        css`
+        max-width: ${CardSizesEnum["small"]};
+            width: 100%;
         `
     }
     ${({ routerLink }) =>
@@ -94,7 +101,6 @@ const CardDefaultProps: ICard = {
     header: true,
     title: "",
     subtitle: "",
-    size: "small",
     imageUrl: "https://picsum.photos/300"
 }
 
