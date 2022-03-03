@@ -23,6 +23,18 @@ const TabBarStyles = {
     background: "#474a4c40"
 }
 
+const StyledLabel = styled(IonLabel)`
+/* visually hidden */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+
+`
 export interface ITab {
     id: string;
     path: string;
@@ -70,13 +82,13 @@ const Tabs: React.FC<ITabs> = ({ tabs, contentId = "tabs", when = BreakpointsEnu
                 {tabs.map(tab => {
                     if (tab.isTab) {
                         return (
-                            <IonTabButton key={`tabButton_${tab.id}`} layout="label-hide" tab={tab.id} href={tab.path}>
+                            <IonTabButton key={`tabButton_${tab.id}`}  tab={tab.id} href={tab.path}>
                                 {/* <IonIcon id={tab.id} icon={tab.icon} /> */}
                                 <TabsAnimatedIcon lottie={tab.icon} title={tab.label} isActive={pathnames?.includes(tab.id)} />
                                 {/* <IonPopover alignment="center" mode="ios" side="top" showBackdrop={false} trigger={tab.id} triggerAction="click"  > */}
-                                <IonLabel>
+                                <StyledLabel>
                                     {tab.label}
-                                </IonLabel>
+                                </StyledLabel>
                                 {/* </IonPopover> */}
                             </IonTabButton>
                         )
