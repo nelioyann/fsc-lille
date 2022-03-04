@@ -47,7 +47,7 @@ const events: IEvent[] = [
     {
         id: "6",
         speakersId: ["gPierre"],
-        title: "ECOPOSS : agir pour un futur désirable",
+        title: "Éloge de la prosp’active",
         description: "",
         date: "12h",
         theme: "SOCIETE",
@@ -194,7 +194,7 @@ const events: IEvent[] = [
 // define types for boolean isActive
 type standsLocations = "L1" | "L2" | "L3" | "L4" | "L5" | "L6" | "F1" | "F2" | "F3" | "R1" | "R2" | "P1" | "A1" | "A2";
 export type standIds = "scalab" | "mint" | "psycos" | "isa" | "isen" | "mel" | "casc" | "fresco" | "catho" | "ppnsa" | "sce" | "xperium" | "gaze";
-type standNames = "SCALab"| "Equipe MINT"  | "PsyCos" | "ISA"| "ISEN" | "MEL" | "CASC" | "La Fresco" | "ICL" | "Master PPNSA" | "Master SCE" | "Xperium" | "Gaze intelligence";
+type standNames = "SCALab" | "Equipe MINT" | "PsyCos" | "ISA" | "ISEN" | "MEL" | "CASC" | "La Fresco" | "ICL" | "Master PPNSA" | "Master SCE" | "Xperium" | "Gaze intelligence";
 
 type IStand = {
     id: standIds,
@@ -205,7 +205,7 @@ type IStand = {
     description?: string,
 };
 const stands: IStand[] = [
-    { 
+    {
         id: "scalab",
         name: "SCALab",
         longName: "SCALab - Laboratoire",
@@ -297,43 +297,37 @@ const stands: IStand[] = [
 // get a list of names from stands
 
 
-const workshops: IWorkshops = {
-    INFLUENCE: [
-        {
-            speakersId: ["jM", "aMarie"],
-            title: "Dark patterns et design éthique",
-            description:
-                "Être addict à son smartphone est de plus en plus courant, et pour cause ! Les géants du numérique font tout pour nous rendre accros, quitte à utiliser notre cerveau contre nous. En effet, les interfaces de nos sites et applications préférées sont pleines de pièges et astuces appelés dark patterns. Les dark patterns sont notamment basés sur nos biais cognitifs ce qui les rend particulièrement redoutables. Pour lutter contre, de plus en plus de designers dénoncent ces usages et prônent un design éthique, qui ne profite pas de notre cerveau pour nous détourner de nos intentions d’origine. Pour vous sensibiliser à ce sujet, nous vous proposons de participer en groupe à notre atelier qui prendra la forme d’un jeu de société inspiré du saboteur ! Vous pourrez ainsi tenter de concevoir une interface utilisateur éthique… à moins que les Dark UX de l’équipe ne vous en empêchent !",
-        },
-    ],
-    MOUVEMENT: [
-        {
-            speakersId: ["bFlorent"],
-            title: "Augmentations visuelles pour la musique numérique",
-            description: "",
-        },
-        {
-            speakersId: ["hCatherine"],
-            title:
-                "Reconnaissance d'actions humaines dans un environnement robotique d'assistance à la personne",
-            description: "",
-        },
-    ],
-    SOCIETE: [],
-    EXPERIMENTATION: [],
-};
+const workshops: IWorkshop[] = [
+    {
+        speakersId: ["jM", "aMarie"],
+        title: "Dark patterns et design éthique",
+        description:
+            "Être addict à son smartphone est de plus en plus courant, et pour cause ! Les géants du numérique font tout pour nous rendre accros, quitte à utiliser notre cerveau contre nous. En effet, les interfaces de nos sites et applications préférées sont pleines de pièges et astuces appelés dark patterns. Les dark patterns sont notamment basés sur nos biais cognitifs ce qui les rend particulièrement redoutables. Pour lutter contre, de plus en plus de designers dénoncent ces usages et prônent un design éthique, qui ne profite pas de notre cerveau pour nous détourner de nos intentions d’origine. Pour vous sensibiliser à ce sujet, nous vous proposons de participer en groupe à notre atelier qui prendra la forme d’un jeu de société inspiré du saboteur ! Vous pourrez ainsi tenter de concevoir une interface utilisateur éthique… à moins que les Dark UX de l’équipe ne vous en empêchent !",
+    },
+    {
+        speakersId: ["bFlorent"],
+        title: "Augmentations visuelles pour la musique numérique",
+        description: "",
+    },
+    {
+        speakersId: ["hCatherine"],
+        title:
+            "Reconnaissance d'actions humaines dans un environnement robotique d'assistance à la personne",
+        description: "",
+    }
+]
 
 interface IWorkshop {
     speakersId: string[];
     title: string;
     description?: string;
 }
-interface IWorkshops {
-    INFLUENCE?: IWorkshop[];
-    MOUVEMENT?: IWorkshop[];
-    SOCIETE?: IWorkshop[];
-    EXPERIMENTATION?: IWorkshop[];
-}
+// interface IWorkshops {
+//     INFLUENCE?: IWorkshop[];
+//     MOUVEMENT?: IWorkshop[];
+//     SOCIETE?: IWorkshop[];
+//     EXPERIMENTATION?: IWorkshop[];
+// }
 
 // type for themes
 type Themes = "INFLUENCE" | "MOUVEMENT" | "SOCIETE" | "EXPERIMENTATION";
@@ -349,7 +343,7 @@ export interface IEvent {
 
 export enum EventThemesEnum {
     "INFLUENCE" = "11h - La perception sous influence ! ",
-    "SOCIETE" = "12h -Environnement et société : améliorer la perception pour passer à l’action",
+    "SOCIETE" = "12h - Environnement et société : améliorer la perception pour passer à l’action",
     "MOUVEMENT" = "14h - Au-delà du mouvement",
     "EXPERIMENTATION" = "15h - Regards croisés sur l’expérimentation citoyenne et artistique",
 }
@@ -360,6 +354,7 @@ export enum EventThemesEnumShort {
     "EXPERIMENTATION" = "Regards croisés sur l’expérimentation citoyenne et artistique",
 }
 export const getEvents = () => events;
+export const getWorkshops = () => workshops;
 export const getEvent = (id: string) => events.find((event) => event.id === id);
 // export const getStandsByThemes = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE") => stands.filter(stand => stand?.themes?.includes(theme))?.map((stand) => stand.name);
 export const getStand = (id: standIds) => stands.find((stand) => stand.id === id);

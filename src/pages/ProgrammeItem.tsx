@@ -63,7 +63,7 @@ const ProgrammeItem: React.FC = () => {
                                     event.standId && (
                                         <Box borderWidth='0' padding='0'>
                                             <Stack space={SpacingEnum['s-3']}>
-                                                <Heading level="4" color={ColorVariablesEnum.PRIMARY}>Pour en découvrir plus sur le sujet...</Heading>
+                                                <Heading level="4" color={ColorVariablesEnum.PRIMARY}>Pour en découvrir plus sur le sujet visitez ce stand...</Heading>
                                                 <Box padding='0' borderWidth='0'>
                                                     <Label>
                                                         {getStand(event.standId)?.description}

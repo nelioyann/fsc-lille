@@ -13,6 +13,9 @@ const StyledCard = styled(IonCard)`
 margin-left: 0;
 margin-right: 0;
 margin-bottom: 0;
+&:hover{
+    transform: translateY(-0.25em);
+}
 
 &:focus, &:focus-within{
     box-shadow: 0 0 0 0.15rem ${ColorVariablesEnum.LIGHT}, 0 0 0 0.35rem ${ColorVariablesEnum.PRIMARY};
@@ -46,9 +49,11 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
 
     return (
         <StyledCard style={{ borderLeft: `3px solid var(--ion-color-${EventsThemeColorEnum[theme]})` }} mode="ios" button={true} onClick={() => router.push(`/tabs/programmes/${id}`, "forward", "push")} {...props}>
-            <Stack space="0">
-                <IonCardHeader>
-                    <Cluster justify='space-between' align='center'>
+            <Box borderWidth='0'>
+
+                <Stack space="0">
+                    {/* <IonCardHeader> */}
+                    <Cluster justify='flex-start' align='center' space={SpacingEnum['s-1']}>
                         <Cluster space={SpacingEnum['s-4']}>
                             {speakersId.map(speakerId => (
                                 <StyledAvatar key={`programmeCard_speaker${speakerId}`}>
@@ -56,36 +61,43 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
                                 </StyledAvatar>
                             ))}
                         </Cluster>
-                        {/* <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date} /> */}
-                        {
+                        <Cluster space={SpacingEnum['s-4']}>
+                            {speakersId.map((speakerId, index) => (
+                                <Label size="large" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)} `} </Label>
+                            ))}
+                            {/* {
                             standId && (
-                                <Box padding='0' borderWidth='0'>
+                                // <Box padding='0' borderWidth='0'>
                                     <Tag color={EventsThemeColorEnum[theme]} icon={easelOutline} disabled label={getStand(standId)?.name} />
-                                </Box>
+                                // </Box>
                             )
-                        }
+                        } */}
+                        </Cluster>
+                        {/* <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date} /> */}
                     </Cluster>
 
                     {/* {description && description !== "" && <IonCardSubtitle>{description}</IonCardSubtitle>} */}
-                </IonCardHeader>
-                <IonCardContent>
-                    <Cluster>
-                        {speakersId.map((speakerId, index) => (
-                            <Label size="large" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)} `} </Label>
-                        ))}
-                    </Cluster>
-                    {title && title !== "" && <IonCardTitle>{title}</IonCardTitle>}
+                    {/* </IonCardHeader> */}
+                    {/* <IonCardContent> */}
                     {/* <Cluster>
                         {speakersId.map((speakerId, index) => (
                             <Label size="large" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)} `} </Label>
-                        ))}
-                    </Cluster> */}
+                            ))}
+                        </Cluster> */}
+                    {/* <Cluster>
+                        {speakersId.map((speakerId, index) => (
+                            <Label size="large" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)} `} </Label>
+                            ))}
+                        </Cluster> */}
                     {/* <Cluster align="center" justify="space-between">
                         <Label>{date}</Label>
                         <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date}/>
                     </Cluster> */}
-                </IonCardContent>
-            </Stack>
+                    {title && title !== "" && <IonCardTitle>{title}</IonCardTitle>}
+
+                    {/* </IonCardContent> */}
+                </Stack>
+            </Box>
         </StyledCard>
     )
 };
