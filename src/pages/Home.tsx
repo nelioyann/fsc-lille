@@ -45,7 +45,7 @@ const Home: React.FC = () => {
             <Box borderWidth="0" padding="0">
 
               <Label size="large">
-                CASC et la FRESCO présentent la première édition du
+                CASC et la Fresco présentent la première édition du
               </Label>
             </Box>
 
