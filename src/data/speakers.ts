@@ -174,7 +174,7 @@ const speakers: ISpeaker[] = [
         lastName: "Prigent",
         role: '',
         companyId: "catho",
-        photoUrl: "/assets/speakers/pEric.svg",
+        photoUrl: "/assets/speakers/Eric.jpg",
         twitter: "",
         linkedin: "",
         biography: ""
