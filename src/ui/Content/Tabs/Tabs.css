@@ -1,6 +1,6 @@
 ion-tab-bar {
   box-sizing: border-box;
-  width: clamp(5em, 95%, 70em);
+  width: clamp(5em, calc(100% - 2em), 70em);
   position: absolute;
   bottom: 1em;
   left: 50%;
@@ -10,17 +10,17 @@ ion-tab-bar {
   justify-content: space-evenly;
   gap: 0.5em;
   background: rgba(255, 255, 255, 0.304);
-  box-shadow: 0 8px 12px 0 rgba(31, 38, 135, 0.186);
-  /* box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px; */
+  /* box-shadow: 0 8px 12px 0 rgba(31, 38, 135, 0.186); */
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 
   backdrop-filter: blur(5px);
-  border: 1px solid rgb(226, 226, 226);
+  border: 1px solid rgba(0, 0, 0, 0.13);
 }
 
 ion-tab-button {
   border-radius: 1em;
   border: 1px solid rgba(255, 255, 255, 0.603);
-  box-shadow: 0 8px 14px 0 rgba(31, 38, 135, 0.27);
+  box-shadow: 0 4px 8px 0 rgba(31, 38, 135, 0.27);
 
   background-image: linear-gradient(
     45deg,

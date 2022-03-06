@@ -1,15 +1,14 @@
-import { IonAccordion, IonAccordionGroup, IonAvatar, IonContent, IonIcon, IonItem, IonList, IonModal, IonNote, IonPage, IonPopover, useIonRouter } from '@ionic/react';
-import { add, calendarClearOutline, gameControllerOutline, hourglassOutline, easelOutline } from 'ionicons/icons';
+import { IonAccordion, IonAccordionGroup, IonContent, IonItem, IonModal, IonPage } from '@ionic/react';
+import { calendarClearOutline, gameControllerOutline} from 'ionicons/icons';
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import Button from '../components/Buttons/Button';
 import ProgrammeCard from '../components/Customs/Programmes/ProgrammeCard';
+import WorkshopCard from '../components/Customs/Programmes/WorkshopCard';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
-import Tag from '../components/Tag/Tag';
 import { EventThemesEnum, getEvents, getWorkshops } from '../data/events';
-import { getSpeakerImage } from '../data/speakers';
-import { Box, Center, Cluster, Cover, Stack } from '../layouts';
+import { Box,  Cluster, Cover, Stack } from '../layouts';
 import { ColorLabelsEnum, ColorVariablesEnum, Label, SpacingEnum } from '../theme/globalStyles';
 import Content from '../ui/Content/Content';
 import "./Programme.css"
@@ -19,11 +18,6 @@ const StyledModal = styled(IonModal)`
     --box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.193) 0px 1px 1px 0px;
 
 `
-const StyledAvatar = styled(IonAvatar)`
-  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.193) 0px 1px 1px 0px;
-    width: 2em ;
-    height: 2em ;
-  `
 const Programme = () => {
     const events = getEvents();
     const workshops = getWorkshops();
@@ -54,51 +48,30 @@ const Programme = () => {
                 <Stack space={SpacingEnum.s4}>
                     {events?.length > 0
                         ? (
-                            <Stack id="hello" space={SpacingEnum.s2}>
-                                {/* <Label size="large">
-                                    Au programme, ateliers, démonstrations, mini-conférences, stands des formations universitaires des sciences de la cognition, discussions publiques avec les scientifiques, table ronde d'alumni...
-                                </Label> */}
+                            <Stack space={SpacingEnum.s2}>
                                 <Box borderWidth='0' padding='0'>
                                     <Heading color={ColorVariablesEnum.PRIMARY} level="2"> Stands, ateliers et démos</Heading>
                                 </Box>
                                 <Stack space="0">
-
                                     <IonAccordionGroup>
-                                        {workshops.map((workshop, index) => (
-                                            <IonAccordion key={`workshop_Accordion${index}`} value={workshop.title}>
-                                                <IonItem slot='header'>
-                                                    {/* <Cluster align='center' space={SpacingEnum['s-3']}> */}
-
-                                                        <Label size='large'>{workshop.title}</Label>
-                                                    {/* </Cluster> */}
-                                                </IonItem>
-                                                <Box slot='content' borderWidth='0'>
-                                                    <Cluster >
-                                                        {workshop.speakersId.map((speakerId, index) => (
-                                                            <StyledAvatar key={`programme_workshop_speaker${speakerId}`}>
-                                                                <img src={getSpeakerImage(speakerId)} />
-                                                            </StyledAvatar>
-                                                        ))}
-                                                    </Cluster>
-                                                    <Label>
-                                                        {workshop.description ? workshop.description : 'Pas de description disponible'}
-                                                    </Label>
-                                                </Box>
-                                            </IonAccordion>
-                                        ))}
+                                        <IonAccordion value="workshops">
+                                            <IonItem slot='header'>
+                                                <Label size='large'>Ateliers et démonstrations</Label>
+                                            </IonItem>
+                                            <Box slot='content' borderWidth='0'>
+                                                {workshops.map((workshop, index) => (
+                                                    <WorkshopCard key={`workshop_Accordion${index}`}  {...workshop} />
+                                                ))}
+                                            </Box>
+                                        </IonAccordion>
                                     </IonAccordionGroup>
                                 </Stack>
                                 <Box borderWidth="0" padding="0">
                                     <Heading color={ColorVariablesEnum.PRIMARY} level="2">Mini-conférences</Heading>
-                                    {/* 
-                                    <Label >
-                                        Les mini-conférences sont des séries de trois présentations d’une douzaine de minutes suivie
-                                        d’une discussion entre les intervenant.e.s et le public.
-                                        Pour chaque thématique, le programme ci-dessous vous indique l’horaire de début de session,
-                                        ainsi que les contenus associés comme les ateliers ou les stands.
-                                    </Label> */}
+                                    <Label size='default' color={ColorVariablesEnum.INFO}>
+                                        Des illusions visuelles, à l'influence de la musique sur le goût de la bière, notre perception du monde est loin d'en être une restitution unique et partagée à l'identique. Alors, comment mieux percevoir la réalité pour mieux s’y adapter ? Comment l’expérimentation scientifique peut venir à la rescousse de la sensibilisation environnementale ? Et si le regard des artistes était une approche alternative incontournable ?
+                                    </Label>
                                 </Box>
-                                {/* <Button target="_self" href="/tabs/programmes/#mouvement" label="Mouvement"/> */}
                                 <Stack space="0">
                                     <IonAccordionGroup>
                                         {(Object.keys(EventThemesEnum) as Array<keyof typeof EventThemesEnum>).map((theme) => {

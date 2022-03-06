@@ -37,6 +37,7 @@ import HomeLottie from "./data/lotties/home.json";
 import CalendarLottie from "./data/lotties/calendar.json";
 import InfoLottie from "./data/lotties/info.json";
 import UsersLottie from "./data/lotties/users.json";
+import WorkshopItem from './pages/WorkshopItem';
 
 
 setupIonicReact();
@@ -90,6 +91,14 @@ export const tabs: ITab[] = [
     label: 'Programme',
     icon: CalendarLottie,
     Component: ProgrammeItem,
+    isTab: false,
+  },
+  {
+    id: 'workshop',
+    path: '/tabs/programmes/demos/:id',
+    label: 'Atelier',
+    icon: CalendarLottie,
+    Component: WorkshopItem,
     isTab: false,
   },
   {

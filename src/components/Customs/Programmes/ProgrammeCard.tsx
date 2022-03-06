@@ -9,7 +9,7 @@ import { ColorLabelsEnum, ColorVariablesEnum, Label, SpacingEnum } from '../../.
 import Heading from '../../Headings/Heading';
 import Tag from '../../Tag/Tag';
 
-const StyledCard = styled(IonCard)`
+export const StyledCard = styled(IonCard)`
 margin-left: 0;
 margin-right: 0;
 margin-bottom: 0;
@@ -22,15 +22,17 @@ margin-bottom: 0;
   }
 
   `
-const StyledAvatar = styled(IonAvatar)`
+export const StyledAvatar = styled(IonAvatar)`
+  --avatar-size: clamp(2em, 8vw, 3em);
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.193) 0px 1px 1px 0px;
-    
+  width: var(--avatar-size) ;
+  height: var(--avatar-size); 
   `
 export interface IProgrammeCard {
     id: string;
     speakersId: string[];
     title: string;
-    description: string;
+    description?: string;
     date: string;
     speakerThumbnail?: string;
     standId?: standIds;
@@ -44,7 +46,12 @@ export let EventsThemeColorEnum: { [x: string]: ColorLabelsEnum | undefined; } =
     "MOUVEMENT": ColorLabelsEnum.WARNING
 }
 
-const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id, speakersId, theme, standId, ...props }) => {
+export const SpeakerLabel = styled(Label)`
+    margin-top: 0 ;
+    margin-bottom: 0;
+    `
+
+const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, date, id, speakersId, theme, standId, ...props }) => {
     const router = useIonRouter();
 
     return (
@@ -63,7 +70,7 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
                         </Cluster>
                         <Cluster space={SpacingEnum['s-4']}>
                             {speakersId.map((speakerId, index) => (
-                                <Label size="large" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)} `} </Label>
+                                <SpeakerLabel color={ColorVariablesEnum.INFO} size="default" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)}`} </SpeakerLabel>
                             ))}
                             {/* {
                             standId && (
@@ -76,7 +83,7 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
                         {/* <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date} /> */}
                     </Cluster>
 
-                    {/* {description && description !== "" && <IonCardSubtitle>{description}</IonCardSubtitle>} */}
+                    {/* && description !== "" && <IonCardSubtitle>{description}</IonCardSubtitle>} */}
                     {/* </IonCardHeader> */}
                     {/* <IonCardContent> */}
                     {/* <Cluster>
@@ -93,7 +100,7 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, description, date, id,
                         <Label>{date}</Label>
                         <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date}/>
                     </Cluster> */}
-                    {title && title !== "" && <IonCardTitle>{title}</IonCardTitle>}
+                    {title && title !== "" && <Heading level='5'>{title}</Heading>}
 
                     {/* </IonCardContent> */}
                 </Stack>

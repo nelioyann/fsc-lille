@@ -31,6 +31,7 @@ const StyledLottiePlayer = styled(Player) <{
     path{
         stroke: ${ColorVariablesEnum.MEDIUM};
         fill: ${ColorVariablesEnum.MEDIUM};
+        opacity: 0.8 ;
     }
     ${({ isActive }) => isActive && css`
         path{

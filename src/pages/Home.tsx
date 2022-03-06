@@ -6,10 +6,7 @@ import SvgIcon from '../components/SvgIcon/SvgIcon';
 import { Box, Center, Cluster, Cover, Sidebar, Stack, Switcher } from '../layouts';
 import { ReactComponent as Logo } from "../data/icons/Logo.svg"
 import { ColorLabelsEnum, ColorVariablesEnum, Label, SpacingEnum } from '../theme/globalStyles';
-import Card from '../components/Cards/Card';
-import Chairs from "../data/images/chair_room.jpg"
-import Rubix from "../data/images/rubix.jpg"
-import Stands from "../data/images/stands.jpg"
+
 import Button from '../components/Buttons/Button';
 import Content from '../ui/Content/Content';
 import { Player } from '@lottiefiles/react-lottie-player';
@@ -17,9 +14,11 @@ import styled from 'styled-components';
 import { ReactComponent as France } from "../data/icons/France.svg"
 import PartenairesSlides from '../components/Customs/Partenaires/PartenairesSlides';
 import Tag from '../components/Tag/Tag';
-import { calendar, calendarOutline, close, locationOutline, map, pin, ticketOutline, timeOutline } from 'ionicons/icons';
+import { calendar, calendarOutline, chevronForward, close, locationOutline, map, pin, ticketOutline, timeOutline } from 'ionicons/icons';
 import Modal from '../components/Modal/Modal';
 import { useEffect, useState } from 'react';
+import { getEvent } from '../data/events';
+import ProgrammeCard from '../components/Customs/Programmes/ProgrammeCard';
 
 
 const StyledLottiePlayer = styled(Player)`
@@ -35,159 +34,87 @@ const playerOptions = {
 const Home: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const router = useIonRouter();
-
+  const illusionsEvent = getEvent("1");
+  const beerEvent = getEvent("3");
   return (
     <IonPage>
       <Header mode="ios" label="FSC Lille 2022" icon={locationOutline} iconOnclickHandler={() => router.push("/tabs/accueil/directions")} />
       <Content>
         <Stack space={SpacingEnum.s5}>
           <Cover noPad minHeight='70vh'>
-            <Box borderWidth="0" padding="0">
-
-              <Label size="large">
-                CASC et la Fresco présentent la première édition du
+              <Label size='default'>
+                Rendez-vous le 19 mars de 10h à 18h, dans l'atrium de
+              <Tag outline={false} onClick={() => router.push("/tabs/accueil/directions")} label="JUNIA HEI à Lille." icon={locationOutline} />
               </Label>
-            </Box>
-
             <Stack data-centered="true">
               <Sidebar sideWidth="20em" >
-                <Stack space={SpacingEnum.s3}>
-                  <Heading level="1">
-                    Forum des Sciences Cognitives de Lille
-                  </Heading>
-                  {/* <Heading level="2" color={ColorLabelsEnum.TERTIARY}>“Méfions-nous des apparences, quelle réalité percevons-nous ?”.</Heading> */}
-                  <Label size="large">
-                    Le FSC-Lille est une conférence d'une journée consacrée aux sciences cognitives. L'événement aura lieu le 19 mars 2022 à Lille.
-                  </Label>
+                <Stack space={SpacingEnum.s2}>
+                  <Box borderWidth='0' padding='0'>
+                    <Label size="default" color={ColorVariablesEnum.INFO}>
+                      CASC et la Fresco présentent la première édition du
+                    </Label>
+                    <Heading level="2" color={ColorVariablesEnum.PRIMARY}>
+                      Forum des Sciences Cognitives de Lille
+                    </Heading>
+                  </Box>
+                  <Label size="large" color={ColorVariablesEnum.TERTIARY}>« Méfions-nous des apparences, quelle réalité percevons-nous ? »</Label>
+                  <Stack space={SpacingEnum['s-3']}>
+                    <Label size="default">
+                      Bienvenue ! Pour cette toute première édition, nous devons vous avertir! Notre cerveau humain, pourtant si évolué,  a souvent tendance à nous faire vivre une réalité qui n’est pas tout à fait, voire pas du tout, … la réalité !
+                    </Label>
+                    <Label size="default">
+                      Au programme, ateliers, démonstrations, mini-conférences, stands des formations universitaires des sciences de la cognition, discussions publiques avec les scientifiques, table ronde d'alumni...
+                    </Label>
+
+                  </Stack>
                 </Stack>
                 {/* <StyledLottiePlayer {...playerOptions} src={OpticalIllusion} /> */}
-                <SvgIcon padding={SpacingEnum.s5} size="clamp(5em, 70vw, 20em )" Icon={Logo} />
-                
+                <SvgIcon padding={SpacingEnum.s5} size="clamp(5em, 20vw, 20em )" Icon={Logo} />
+
                 {/* <Box> */}
               </Sidebar>
-              <Cluster space={SpacingEnum['s-5']}>
-                <Button icon={ticketOutline} href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand="block" size="large" label="Inscription gratuite" color={ColorLabelsEnum.TERTIARY} />
-                <Button icon={calendarOutline} routerLink="/tabs/programmes" expand="block" size="large" label="Découvrez le programme" fill="outline" color={ColorLabelsEnum.TERTIARY} />
-                {/* <Button routerLink="/tabs/programmes" expand="block" size="large" label="Ajouter au calendrier" fill="clear" color={ColorLabelsEnum.TERTIARY} /> */}
+              {/* <Cluster space={SpacingEnum['s-5']}> */}
+              {/* <Button icon={calendarOutline} routerLink="/tabs/programmes" expand="block" size="default" label="Découvrez le programme" fill="clear" color={ColorLabelsEnum.TERTIARY} /> */}
+              {/* <Button routerLink="/tabs/programmes" expand="block" size="large" label="Ajouter au calendrier" fill="clear" color={ColorLabelsEnum.TERTIARY} /> */}
+              {/* </Cluster> */}
+            </Stack>
+            <Button icon={ticketOutline} href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand="block" size="large" label="Inscription gratuite" color={ColorLabelsEnum.PRIMARY} />
+
+          </Cover>
+
+          {/* <Stack space={SpacingEnum.s1}>
+            <Heading color={ColorVariablesEnum.PRIMARY} level="3">Mini-Conférences</Heading>
+            <Label size='default' color={ColorVariablesEnum.INFO}>
+              Des illusions visuelles, à l'influence de la musique sur le goût de la bière, notre perception du monde est loin d'en être une restitution unique et partagée à l'identique. Alors, comment mieux percevoir la réalité pour mieux s’y adapter ? Comment l’expérimentation scientifique peut venir à la rescousse de la sensibilisation environnementale ? Et si le regard des artistes était une approche alternative incontournable ?
+            </Label>
+            <Stack>
+              {illusionsEvent && <ProgrammeCard {...illusionsEvent} />}
+              {beerEvent && <ProgrammeCard {...beerEvent} />}
+              <Cluster justify='space-between' align='center'>
+                <Heading color={ColorVariablesEnum.PRIMARY} level="5"> </Heading>
+                <Button iconSlot='end' icon={chevronForward} fill="clear" label='voir plus' routerLink='/tabs/programmes' />
               </Cluster>
             </Stack>
-            <Cluster>
-              <Tag onClick={() => router.push("/tabs/accueil/directions")} label="13 rue de Toul - 59000 Lille" icon={locationOutline} />
-              {/* <Tag label="SAM. 19 Mars, à partir de 10h00" icon={timeOutline} /> */}
-              {/* <Tag label="Accès libre sur inscription" icon={ticketOutline} /> */}
-            </Cluster>
-          </Cover>
-          {/* <Stack space={SpacingEnum.s3}>
-            <Heading level="3">Thématique</Heading>
-            <IonList>
-              <IonListHeader>
-                Méfions-nous des apparences, quelle réalité percevons-nous ?
-              </IonListHeader>
-              <IonItem>
-                Pourquoi et comment notre cerveau transforme-t-il la réalité ?
-              </IonItem>
-              <IonItem>
-                Peut-on prendre conscience de ces biais de perception pour mieux agir ?
-              </IonItem>
-              <IonItem>
-                Quelle contribution des approches expérimentales et artistiques
-              </IonItem>
-            </IonList>
           </Stack>
-          <Stack space={SpacingEnum.s3}>
-            <Heading level="3">Une journée de vulgarisation 🧠</Heading>
-            <IonCard mode="ios" className="ion-padding-vertical">
-              <Sidebar side="left" sideWidth="15em">
-                <SvgIcon Icon={France} />
-                <Label>Pour la première fois en France, 7 Forums des sciences cognitives auront lieu durant l’année universitaire !
-                  La journée est rythmée par des conférences, des stands, des animations ludiques, des débats,
-                  des présentations de métiers et des posters scientifiques.
-                </Label>
-              </Sidebar>
+          <Stack space={SpacingEnum.s1}>
+            <Heading level="3">Accès libre sur inscription</Heading>
+            <IonCard mode="ios" href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022">
+              <Box borderWidth='0'>
+                <Stack>
+                  <Sidebar side="left" sideWidth="12em">
+                    <SvgIcon Icon={Logo} />
+                    <Label size='default' color={ColorVariablesEnum.INFO}>Pour répondre et discuter avec vous de ces questions, nous vous invitions à nous rejoindre le 19 mars de 10h à 18h, dans l'atrium de JUNIA HEI à Lille.
+                      Accès libre sur inscription.
+                    </Label>
+                  </Sidebar>
+                </Stack>
+              </Box>
             </IonCard>
-          </Stack>
-
-
-          <Stack space={SpacingEnum.s3}>
-            <Heading level="3">Organisateurs</Heading>
-            <IonCard mode="ios" className="ion-padding-vertical">
-              <Sidebar side="left" sideWidth="15em">
-                <SvgIcon color={ColorVariablesEnum.LIGHT} Icon={Logo} />
-                <Label>Cette année le forum des sciences cognitives de Lille est organisée par l'association de Sciences Cognitives de Lille (CASC) en collaboration de la fédération française des étudiants et jeunes chercheurs en sciences de la cognition (FRESCO).</Label>
-              </Sidebar>
-            </IonCard>
-          </Stack>
-
-          <Stack space={SpacingEnum.s3}>
-            <Heading level="3">Cogni'Quiz</Heading>
-            <Label>Pendant le forum des sciences cognitives la fédération française des sciences de la cognition (FRESCO) organise le Cogni’Quiz,
-              un «question pour un champion» version sciences cognitives </Label>
-            <Button label="Participer" />
-          </Stack>
-
-          <Stack space={SpacingEnum.s3}>
-            <Heading level="3">Partenaires</Heading>
-            <Box borderWidth="0" padding="0">
-              <PartenairesSlides />
-            </Box>
           </Stack> */}
         </Stack>
-        <IonModal
-          isOpen={showModal}
-          swipeToClose={true}
-          initialBreakpoint={0.8}
-          breakpoints={[0, 0.8, 1]}
-          onDidDismiss={() => setShowModal(false)}
-        >
-          <IonPage>
-            <Header label="Se rendre au Forum" mode="ios" icon={close} iconOnclickHandler={() => setShowModal(false)} />
-            <Content>
-              <Heading level="4">Comment accéder au lieu</Heading>
-              <Label size="large">
-                Située sur le campus de l'Université Catholique de Lille, HEI est accessible en voiture, en vélo ou en transports en commun
-              </Label>
-              <IonList>
-                <IonListHeader>
-                  <Heading level="5">
-                    EN METRO
-                  </Heading>
-                </IonListHeader>
-                <IonItem>
-                  Les arrêts Cormontaigne ou Port de Lille sont les plus proches d’HEI. Ils se situent à une dizaine de minutes à pied de l’école.
-                </IonItem>
-                <IonListHeader>
-                  <Heading level="5">
-                    EN TRAIN
-                  </Heading>
-                </IonListHeader>
-                <IonItem>
-                  HEI est située à une vingtaine de minutes à pied des gares Lille Flandres et Lille Europe.
-                </IonItem>
-                <IonListHeader>
-                  <Heading level="5">
-                    EN BUS
-                  </Heading>
-                </IonListHeader>
-                <IonItem>
-                  Les lignes L5 et la ligne 18 desservent l’arrêt “Université Catholique de Lille”, située à 3 minutes à pied de l’école. Arrêt situé face à la gare Lille Flandres et sur les grands axes.
-                </IonItem>
-                {/* <IonItem>
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6442132342295!2d3.0429153157380493!3d50.633725879501085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d579573550df%3A0xaa9c89af983f58e9!2sJunia%20Hei%20Lille%20-%20School%20D&#39;ing%C3%A9nieur%20Lille!5e0!3m2!1sen!2sfr!4v1645571926708!5m2!1sen!2sfr" height="450" style={{ "border": 0, width: "100%" }} loading="lazy"></iframe>
-                </IonItem> */}
-              </IonList>
-              <Button expand='block' label="Fermer" fill='outline' onClick={()=> setShowModal(false)}/>
-            </Content>
-          </IonPage>
-        </IonModal>
-
-
       </Content>
     </IonPage>
   );
 };
 
 export default Home;
-{/* Photo by <a href="https://unsplash.com/@everhooder?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ål nik</a> on <a href="https://unsplash.com/s/photos/conference?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*/ }
-{/* Photo by <a href="https://unsplash.com/@olav_ahrens?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olav Ahrens Røtne</a> on <a href="https://unsplash.com/s/photos/quiz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */ }
-// Photo by <a href="https://unsplash.com/@kvalifik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kvalifik</a> on <a href="https://unsplash.com/s/photos/workshop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-

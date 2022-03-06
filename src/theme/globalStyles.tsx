@@ -43,6 +43,7 @@ export enum ColorVariablesEnum {
     "SUCCESS" = "var(--ion-color-success)",
     "DANGER" = "var(--ion-color-danger)",
     "WARNING" = "var(--ion-color-warning)",
+    "INFO" = "var(--ion-color-step-600, #666666)",
 }
 export enum ColorLabelsEnum {
     "PRIMARY" = "primary",

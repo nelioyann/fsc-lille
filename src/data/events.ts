@@ -31,24 +31,15 @@ const events: IEvent[] = [
         id: "4",
         speakersId: ["kJerome"],
         title: "Perception de la météo et stress hydrique",
-        description: "",
+        
         date: "12h",
         theme: "SOCIETE",
         standId: "mel"
     },
-    // {
-    //     id: "5",
-    //     speakersId: ["dLaure"],
-    //     title: "Ecologie et action ",
-    //     description: "",
-    //     date: "12h",
-    //     theme: "SOCIETE",
-    // },
     {
         id: "6",
         speakersId: ["gPierre"],
         title: "Éloge de la prosp’active",
-        description: "",
         date: "12h",
         theme: "SOCIETE",
     },
@@ -66,7 +57,6 @@ const events: IEvent[] = [
         id: "8",
         speakersId: ["iNacim"],
         title: "Perception artificielle et mouvement",
-        description: "",
         date: "14h",
         theme: "MOUVEMENT",
         standId: "isen"
@@ -84,7 +74,6 @@ const events: IEvent[] = [
         id: "10",
         speakersId: ["bVictor"],
         title: "L’ XPERIUM la vulgarisation scientifique par l’expérimentation",
-        description: "",
         date: "15h",
         theme: "EXPERIMENTATION",
         standId: "scalab"
@@ -94,7 +83,6 @@ const events: IEvent[] = [
         speakersId: ["pEric"],
         title:
             "Les collaborations artistes/laboratoires dans la création contemporaine",
-        description: "",
         date: "15h",
         theme: "EXPERIMENTATION",
     },
@@ -109,88 +97,6 @@ const events: IEvent[] = [
     },
 ];
 
-// const stands = {
-//     INFLUENCE: ["SCALab", "PsyCos", "ISA"],
-//     MOUVEMENT: ["SCALab", "PsyCos", "ISA"],
-//     SOCIETE: ["Métropole Européenne de Lille", "Institut Catholique de Lille"],
-//     EXPERIMENTATION: ["SCALab"],
-// };
-
-
-// interface ICompany{
-//     id: string;
-//     name: string;
-//     longName: string;
-// }
-
-// const companies: ICompany[] = [
-//     { 
-//         id: "scalab",
-//         name: "SCALab",
-//         longName: "SCALab - Laboratoire",
-//     },
-//     {
-//         id: "mint",
-//         name: "Equipe MINT",
-//         longName: "Equipe MINT  - CRISTAL - Laboratoire ",
-//     },
-//     {
-//         id: "psycos",
-//         name: "PsyCos",
-//         longName: "PsyCos - Neurethic",
-//     },
-//     {
-//         id: "isa",
-//         name: "ISA",
-//         longName: "ISA - Junia",
-//     },
-//     {
-//         id: "isen",
-//         name: "ISEN",
-//         longName: "ISEN - Junia",
-//     },
-//     {
-//         id: "mel",
-//         name: "MEL",
-//         longName: "Métropole Européenne de Lille",
-//     },
-//     {
-//         id: "catho",
-//         name: "ICL",
-//         longName: "Master de Neuropsychologie et de neurosciences cognitives",
-//     },
-//     {
-//         id: "ppnsa",
-//         name: "Master PPNSA",
-//         longName: "Master PPNSA - Université de Lille",
-//     },
-//     {
-//         id: "sce",
-//         name: "Master SCE",
-//         longName: "Master Sciences cognitives pour l’Entreprise - Université de Lille",
-//     },
-//     {
-//         id: "casc",
-//         name: "CASC",
-//         longName: "CASC - Association",
-//     },
-//     {
-//         id: "fresco",
-//         name: "La Fresco",
-//         longName: "La Fresco - Association",
-//     },
-//     {
-//         id: "xperium",
-//         name: "Xperium",
-//         longName: "Xperium",
-//     },
-//     {
-//         id: "gaze",
-//         name: "Gaze intelligence",
-//         longName: "Gaze intelligence",
-//     },
-
-// ]
 // define types for boolean isActive
 type standsLocations = "L1" | "L2" | "L3" | "L4" | "L5" | "L6" | "F1" | "F2" | "F3" | "R1" | "R2" | "P1" | "A1" | "A2";
 export type standIds = "scalab" | "mint" | "psycos" | "isa" | "isen" | "mel" | "casc" | "fresco" | "catho" | "ppnsa" | "sce" | "xperium" | "gaze";
@@ -299,17 +205,20 @@ const stands: IStand[] = [
 
 const workshops: IWorkshop[] = [
     {
+        id: "1",
         speakersId: ["jM", "aMarie"],
         title: "Dark patterns et design éthique",
         description:
             "Être addict à son smartphone est de plus en plus courant, et pour cause ! Les géants du numérique font tout pour nous rendre accros, quitte à utiliser notre cerveau contre nous. En effet, les interfaces de nos sites et applications préférées sont pleines de pièges et astuces appelés dark patterns. Les dark patterns sont notamment basés sur nos biais cognitifs ce qui les rend particulièrement redoutables. Pour lutter contre, de plus en plus de designers dénoncent ces usages et prônent un design éthique, qui ne profite pas de notre cerveau pour nous détourner de nos intentions d’origine. Pour vous sensibiliser à ce sujet, nous vous proposons de participer en groupe à notre atelier qui prendra la forme d’un jeu de société inspiré du saboteur ! Vous pourrez ainsi tenter de concevoir une interface utilisateur éthique… à moins que les Dark UX de l’équipe ne vous en empêchent !",
     },
     {
+        id: "2",
         speakersId: ["bFlorent"],
         title: "Augmentations visuelles pour la musique numérique",
         description: "",
     },
     {
+        id: "3",
         speakersId: ["hCatherine"],
         title:
             "Reconnaissance d'actions humaines dans un environnement robotique d'assistance à la personne",
@@ -317,7 +226,8 @@ const workshops: IWorkshop[] = [
     }
 ]
 
-interface IWorkshop {
+export interface IWorkshop {
+    id: string;
     speakersId: string[];
     title: string;
     description?: string;
@@ -335,7 +245,7 @@ export interface IEvent {
     id: string;
     speakersId: string[];
     title: string;
-    description: string;
+    description?: string;
     date: string;
     theme: Themes;
     standId?: standIds;
@@ -356,6 +266,7 @@ export enum EventThemesEnumShort {
 export const getEvents = () => events;
 export const getWorkshops = () => workshops;
 export const getEvent = (id: string) => events.find((event) => event.id === id);
+export const getWorkshop = (id: string) => workshops.find((workshop) => workshop.id === id);
 // export const getStandsByThemes = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE") => stands.filter(stand => stand?.themes?.includes(theme))?.map((stand) => stand.name);
 export const getStand = (id: standIds) => stands.find((stand) => stand.id === id);
 export const getCompanyName = (id: standIds) => stands.find((stand) => stand.id === id)?.name || "";

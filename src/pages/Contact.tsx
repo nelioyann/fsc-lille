@@ -12,6 +12,7 @@ import CascBanner from "../data/images/casc_banner.jpg"
 import Card from '../components/Cards/Card';
 import Content from '../ui/Content/Content';
 import PartenairesSlides from '../components/Customs/Partenaires/PartenairesSlides';
+import Tag from '../components/Tag/Tag';
 
 
 const Contact = () => {
@@ -23,10 +24,12 @@ const Contact = () => {
                     <Stack space={SpacingEnum.s3}>
                         <Stack>
                             <Heading level="3">Une question ? Contactez l'association CASC</Heading>
-                            <Label size='large'>Pour toute question concernant l'événement, envoyez un mail sur contact@fsc-lille.com</Label>
-                            {/* <Box borderWidth="0" padding="0"> */}
-                                <Button color={ColorLabelsEnum.PRIMARY} target='_self' icon={mail} fill="solid" href="mailto:contact@fsc-lille.com" label="Envoyer un email..." />
-                            {/* </Box> */}
+                            <Label size='large'>Pour toute question concernant l'événement, envoyez un mail sur 
+                                <IonRouterLink href="mailto:contact@fsc-lille.com" >
+                                    <Tag label="contact@fsc-lille.com" />
+                                </IonRouterLink>
+                            </Label>
+
                             <Heading level="3">Suivez les dernières informations sur le forum</Heading>
                             <Cluster space={SpacingEnum.s0}>
                                 <Button color={ColorLabelsEnum.PRIMARY} href="https://twitter.com/Podcasc" fill="outline" icon={logoTwitter} label="Twitter" />
