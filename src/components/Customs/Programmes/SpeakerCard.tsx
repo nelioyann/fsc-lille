@@ -11,7 +11,9 @@ const SpeakerCard: React.FC<ISpeakerCard> = ({ ...speaker}) => {
         <Card 
         // routerLink={`/tabs/intervenants/${speaker.id}`}
         size="full"
-        imageUrl={speaker.photoUrl} title={`${speaker.firstName} ${speaker.lastName}`} subtitle={`${speaker.role}`}/>
+        imageUrl={speaker.photoUrl} 
+        title={`${speaker.firstName} ${speaker.lastName}`} 
+        subtitle={`${speaker.role}`}/>
 
     )
 };

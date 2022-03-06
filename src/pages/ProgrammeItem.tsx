@@ -16,8 +16,8 @@ import ProgrammesSlider from '../components/Customs/Programmes/ProgrammesSlider'
 
 
 export const StyledThumbnail = styled(IonThumbnail)`
-    --size: clamp(6em ,100%, 15em);
-    --border-radius: 1em;
+    --size: clamp(6em ,100%, 10em);
+    --border-radius: ${SpacingEnum.subtleCurve};
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.193) 0px 1px 1px 0px;
 
 `
@@ -37,7 +37,7 @@ const ProgrammeItem: React.FC = () => {
                             <IonBreadcrumb>Conférences</IonBreadcrumb>
                             <IonBreadcrumb>#{id}</IonBreadcrumb>
                         </IonBreadcrumbs>
-                        <Stack space={SpacingEnum['s-3']}>
+                        <Stack space={SpacingEnum['s3']}>
                             <Box borderWidth='0' padding='0'>
                                 <Cluster space={SpacingEnum['s-3']}>
                                     {event?.speakersId.map(speakerId => (
@@ -52,18 +52,18 @@ const ProgrammeItem: React.FC = () => {
                                     ))}
                                 </Cluster>
                             </Box>
-                            <Sidebar contentMin='70%' space={SpacingEnum.s2}>
-                                <Box borderWidth='0' padding='0'>
-                                    <Heading level="3" color={ColorVariablesEnum.DARK}>{`${event.title} - ${event.date} `}</Heading>
-                                    <Label size="large">
-                                        {event.description}
+                            <Stack space={SpacingEnum.s2}>
+                                <Stack >
+                                    <Heading level="3" color={ColorVariablesEnum.PRIMARY}>{`${event.title} - ${event.date} `}</Heading>
+                                    <Label size="large" color={ColorVariablesEnum.INFO}>
+                                        {event.description ?? "(Pas de description pour le moment)"}
                                     </Label>
-                                </Box>
+                                </Stack>
                                 {
                                     event.standId && (
                                         <Box borderWidth='0' padding='0'>
                                             <Stack space={SpacingEnum['s-3']}>
-                                                <Heading level="4" color={ColorVariablesEnum.PRIMARY}>Pour en découvrir plus sur le sujet...</Heading>
+                                                <Heading level="4" color={ColorVariablesEnum.PRIMARY}>Pour en découvrir plus sur le sujet visitez leur stand</Heading>
                                                 <Box padding='0' borderWidth='0'>
                                                     <Label>
                                                         {getStand(event.standId)?.description}
@@ -75,7 +75,7 @@ const ProgrammeItem: React.FC = () => {
                                         </Box>
                                     )
                                 }
-                            </Sidebar>
+                            </Stack>
                         </Stack>
 
                         <Stack space={SpacingEnum['s-5']}>
