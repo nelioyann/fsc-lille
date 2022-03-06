@@ -23,11 +23,12 @@ const WorkshopCard: React.FC<IWorkshop> = ({ title, description, speakersId, id,
                                 </StyledAvatar>
                             ))}
                         </Cluster>
-                        <Cluster space={SpacingEnum['s-4']}>
-                            {speakersId.map((speakerId, index) => (
-                                <SpeakerLabel size="default" color={ColorVariablesEnum.INFO} key={`workshopItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)} `} </SpeakerLabel>
-                            ))}
-                        </Cluster>
+                        <SpeakerLabel color={ColorVariablesEnum.INFO} size="default" >
+                            {speakersId.reduce((summaries: string[], speakerId, index) => {
+                                summaries.push(getSpeakerSummary(speakerId));
+                                return summaries;
+                            }, []).join(' & ')}
+                        </SpeakerLabel>
                     </Cluster>
                     {title && title !== "" && <Heading level='5'>{title}</Heading>}
                 </Stack>

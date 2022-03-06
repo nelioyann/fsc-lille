@@ -57,9 +57,7 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, date, id, speakersId, 
     return (
         <StyledCard style={{ borderLeft: `3px solid var(--ion-color-${EventsThemeColorEnum[theme]})` }} mode="ios" button={true} onClick={() => router.push(`/tabs/programmes/${id}`, "forward", "push")} {...props}>
             <Box borderWidth='0'>
-
                 <Stack space="0">
-                    {/* <IonCardHeader> */}
                     <Cluster justify='flex-start' align='center' space={SpacingEnum['s-1']}>
                         <Cluster space={SpacingEnum['s-4']}>
                             {speakersId.map(speakerId => (
@@ -68,41 +66,14 @@ const ProgrammeCard: React.FC<IProgrammeCard> = ({ title, date, id, speakersId, 
                                 </StyledAvatar>
                             ))}
                         </Cluster>
-                        <Cluster space={SpacingEnum['s-4']}>
-                            {speakersId.map((speakerId, index) => (
-                                <SpeakerLabel color={ColorVariablesEnum.INFO} size="default" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)}`} </SpeakerLabel>
-                            ))}
-                            {/* {
-                            standId && (
-                                // <Box padding='0' borderWidth='0'>
-                                    <Tag color={EventsThemeColorEnum[theme]} icon={easelOutline} disabled label={getStand(standId)?.name} />
-                                // </Box>
-                            )
-                        } */}
-                        </Cluster>
-                        {/* <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date} /> */}
+                        <SpeakerLabel color={ColorVariablesEnum.INFO} size="default" >
+                            {speakersId.reduce((summaries: string[], speakerId, index) => {
+                                summaries.push(getSpeakerSummary(speakerId));
+                                return summaries;
+                            }, []).join(' & ')}
+                        </SpeakerLabel>
                     </Cluster>
-
-                    {/* && description !== "" && <IonCardSubtitle>{description}</IonCardSubtitle>} */}
-                    {/* </IonCardHeader> */}
-                    {/* <IonCardContent> */}
-                    {/* <Cluster>
-                        {speakersId.map((speakerId, index) => (
-                            <Label size="large" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)} `} </Label>
-                            ))}
-                        </Cluster> */}
-                    {/* <Cluster>
-                        {speakersId.map((speakerId, index) => (
-                            <Label size="large" key={`programmeItem_Summary${speakerId}`}>{`${index > 0 ? ", " : ""} ${getSpeakerSummary(speakerId)} `} </Label>
-                            ))}
-                        </Cluster> */}
-                    {/* <Cluster align="center" justify="space-between">
-                        <Label>{date}</Label>
-                        <Tag color={EventsThemeColorEnum[theme]} icon={undefined} disabled label={date}/>
-                    </Cluster> */}
                     {title && title !== "" && <Heading level='5'>{title}</Heading>}
-
-                    {/* </IonCardContent> */}
                 </Stack>
             </Box>
         </StyledCard>
