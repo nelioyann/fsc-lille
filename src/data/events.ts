@@ -31,7 +31,7 @@ const events: IEvent[] = [
         id: "4",
         speakersId: ["kJerome"],
         title: "Perception de la météo et stress hydrique",
-        
+        description: "Le succès de la transition écologique passe notamment par le développement de comportements de consommation des habitants plus économes, plus sobres. Cela passe par plusieurs étapes : la connaissance du problème, la conscience que l’on peut agir, savoir quoi faire, vouloir le faire et enfin le faire concrètement au quotidien. Fin 2021 et début 2022, un groupement de designers, chercheurs en sciences humaines et sociales et évaluateur des politiques publiques ont accompagnés une douzaine de ménages de la MEL vers une consommation plus économe d’eau potable. Les enseignements de cette expérimentation sont riches et encouragean ",
         date: "12h",
         theme: "SOCIETE",
         standId: "mel"
@@ -40,6 +40,7 @@ const events: IEvent[] = [
         id: "6",
         speakersId: ["gPierre"],
         title: "Éloge de la prosp’active",
+        description: "Comment échapper au chronos porteur de la malédiction écologique pour envahir le Kaïros, source de joie et de mobilisation contributive. Tous prosp’activistes.",
         date: "12h",
         theme: "SOCIETE",
     },
@@ -72,9 +73,10 @@ const events: IEvent[] = [
     },
     {
         id: "10",
-        speakersId: ["bVictor"],
+        speakersId: ["pSophie"],
         title: "L’ XPERIUM la vulgarisation scientifique par l’expérimentation",
         date: "15h",
+        description: "Vitrine de la recherche partenariale réalisée dans les laboratoires de l’Université de Lille, Xperium est un lieu qui se visite, en classe ou en groupe non scolaire, et permet la rencontre entre les chercheurs et différents publics. Autour d'un thème central unique et interdisciplinaire, diverses démonstrations et expériences pédagogiques, interactives, étonnantes sont présentées par des doctorants. Xperium est l’un des trois pôles d’activité de LILLIAD Learning center Innovation, situé au cœur du campus Cité scientifique. En savoir plus : https://lilliad.univ-lille.fr/a-propos-dxperium",
         theme: "EXPERIMENTATION",
         standId: "scalab"
     },

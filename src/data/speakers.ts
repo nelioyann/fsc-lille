@@ -186,7 +186,7 @@ const speakers: ISpeaker[] = [
         lastName: "Klimsza",
         role: '',
         companyId: "mel",
-        photoUrl: "/assets/speakers/kJerome.svg",
+        photoUrl: "/assets/speakers/Jerome.jpg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -198,7 +198,18 @@ const speakers: ISpeaker[] = [
         lastName: "Giorgini",
         role: '',
         companyId: "catho",
-        photoUrl: "/assets/speakers/gPierre.svg",
+        photoUrl: "/assets/speakers/Pierre.jpg",
+        twitter: "",
+        linkedin: "",
+        biography: ""
+    },
+    {
+        id: "pSophie",
+        firstName: 'Sophie',
+        lastName: "Picart",
+        role: '',
+        companyId: "xperium",
+        photoUrl: "/assets/speakers/Sophie.jpg",
         twitter: "",
         linkedin: "",
         biography: ""
