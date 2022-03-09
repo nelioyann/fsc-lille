@@ -13,6 +13,7 @@ import Tag from '../components/Tag/Tag';
 import Button from '../components/Buttons/Button';
 import { arrowForwardOutline, easelOutline, locationOutline } from 'ionicons/icons';
 import ProgrammesSlider from '../components/Customs/Programmes/ProgrammesSlider';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 
 
 export const StyledThumbnail = styled(IonThumbnail)`
@@ -25,18 +26,23 @@ export const StyledThumbnail = styled(IonThumbnail)`
 const ProgrammeItem: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const event = getEvent(id);
-
+    const breadcrumbs = [
+        {
+            path: '/tabs/programmes',
+            label: 'Programmes'
+        },
+        {
+            path: `/tabs/programmes/${id}`,
+            label: `Conférence ${id}` 
+        }
+    ];
     return (
         <IonPage>
             <Header mode="ios" label='Conférence' backButtonLink="/tabs/programmes" withBackButton={true} />
             <Content>
                 {event ? (
                     <Stack space={SpacingEnum.s3}>
-                        <IonBreadcrumbs mode="ios">
-                            <IonBreadcrumb>Programmes</IonBreadcrumb>
-                            <IonBreadcrumb>Conférences</IonBreadcrumb>
-                            <IonBreadcrumb>#{id}</IonBreadcrumb>
-                        </IonBreadcrumbs>
+                        <Breadcrumbs breadcrumbs={breadcrumbs}/>
                         <Stack space={SpacingEnum['s3']}>
                             <Box borderWidth='0' padding='0'>
                                 <Cluster space={SpacingEnum['s-3']}>

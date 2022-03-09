@@ -9,22 +9,28 @@ import Content from '../ui/Content/Content';
 import { ColorVariablesEnum, Label, SpacingEnum } from '../theme/globalStyles';
 import { StyledThumbnail } from './ProgrammeItem';
 import { SpeakerLabel } from '../components/Customs/Programmes/ProgrammeCard';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
 
 const WorkshopItem: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const workshop = getWorkshop(id);
-
+    const breadcrumbs = [
+        {
+            path: '/tabs/programmes',
+            label: 'Programmes'
+        },
+        {
+            path: `/tabs/programmes/demos/${id}`,
+            label: `Atelier ${id}` 
+        }
+    ];
     return (
         <IonPage>
             <Header mode="ios" label='Atelier' backButtonLink="/tabs/programmes" withBackButton={true} />
             <Content>
                 {workshop ? (
                     <Stack space={SpacingEnum.s3}>
-                        <IonBreadcrumbs mode="ios">
-                            <IonBreadcrumb>Programmes</IonBreadcrumb>
-                            <IonBreadcrumb>Ateliers</IonBreadcrumb>
-                            <IonBreadcrumb>#{id}</IonBreadcrumb>
-                        </IonBreadcrumbs>
+                        <Breadcrumbs breadcrumbs={breadcrumbs}/>
                         <Stack space={SpacingEnum['s-3']}>
                             <Box borderWidth='0' padding='0'>
                                 <Cluster space={SpacingEnum['s-3']}>

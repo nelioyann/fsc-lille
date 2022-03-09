@@ -1,4 +1,4 @@
-import { standIds } from "./events";
+import { getCompanyName, standIds } from "./events";
 
 
 const speakers: ISpeaker[] = [
@@ -41,11 +41,11 @@ const speakers: ISpeaker[] = [
         id: "jM",
         firstName: 'Jean-Michel',
         lastName: "Dagba",
-        role: 'Doctorant en économie comportementale',
+        role: 'Doctorant CIFRE en économie comportementale',
         companyId: "fresco",
         photoUrl: "/assets/speakers/JM.png",
         twitter: "",
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/jean-michel-dagba/",
         biography: ""
     }
     ,
@@ -210,7 +210,7 @@ export const getSpeaker = (id: string) => speakers.find(speaker => speaker.id ==
 export const getSpeakerImage = (id: string) => speakers.filter(speaker => speaker.id === id )[0]?.photoUrl || "/assets/speakers/FSC.svg";
 export const getSpeakerSummary = (id: string, fullSummary = false) => {
         let {firstName, lastName, role, companyId} = speakers.filter(speaker => speaker.id === id )[0];
-        if (fullSummary) return `${firstName} ${lastName}, ${role}, getCompanyName${companyId}`
+        if (fullSummary) return `${firstName} ${lastName}, ${role}, ${companyId ? getCompanyName(companyId) : ""}`
         return `${firstName} ${lastName}`
 };
 
