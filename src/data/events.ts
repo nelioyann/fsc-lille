@@ -11,7 +11,7 @@ type IStand = {
     id: standIds,
     name: standNames,
     longName: string,
-    location: standsLocations,
+    location?: standsLocations,
     themes?: Themes[],
     description?: string,
 };
@@ -48,10 +48,12 @@ export enum EventThemesEnumShort {
 
 export const getEvents = () => events;
 export const getWorkshops = () => workshops;
+export const getSpeakerWorkshops = (speakerId: string) => (workshops.filter(w => w.speakersId.includes(speakerId)));
 export const getEvent = (id: string) => events.find((event) => event.id === id);
+export const getSpeakerEvents = (speakerId: string) => events.filter((event) => event.speakersId.includes(speakerId));
 export const getWorkshop = (id: string) => workshops.find((workshop) => workshop.id === id);
 export const getStand = (id: standIds) => stands.find((stand) => stand.id === id);
-export const getCompanyName = (id: standIds) => stands.find((stand) => stand.id === id)?.name || "";
+export const getCompanyName = (id: standIds) => stands.find((stand) => stand.id === id)?.name ?? "";
 
 
 
@@ -252,6 +254,12 @@ const stands: IStand[] = [
         id: "gaze",
         name: "Gaze intelligence",
         longName: "Gaze intelligence",
+        location: "P1",
+    },
+    {
+        id: "fresnoy",
+        name: "Le Fresnoy",
+        longName: "Le Fresnoy",
         location: "P1",
     }
 ]
