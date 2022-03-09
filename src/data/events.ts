@@ -1,3 +1,60 @@
+
+// Various stands loactions
+type standsLocations = "L1" | "L2" | "L3" | "L4" | "L5" | "L6" | "F1" | "F2" | "F3" | "R1" | "R2" | "P1" | "A1" | "A2";
+// Teams full names
+type standNames = "SCALab" | "Equipe MINT" | "Le Fresnoy" | "Anthropo-Lab"| "PsyCos" | "ISA" | "ISEN" | "MEL" | "CASC" | "La Fresco" | "ICL" | "Master PPNSA" | "Master SCE" | "Xperium" | "Gaze intelligence";
+// Teams ids
+export type standIds = "scalab" | "mint" | "fresnoy" | "anthropo" | "psycos" | "isa" | "isen" | "mel" | "casc" | "fresco" | "catho" | "ppnsa" | "sce" | "xperium" | "gaze";
+
+
+type IStand = {
+    id: standIds,
+    name: standNames,
+    longName: string,
+    location: standsLocations,
+    themes?: Themes[],
+    description?: string,
+};
+export interface IWorkshop {
+    id: string;
+    speakersId: string[];
+    title: string;
+    description?: string;
+}
+// type for themes
+type Themes = "INFLUENCE" | "MOUVEMENT" | "SOCIETE" | "EXPERIMENTATION";
+export interface IEvent {
+    id: string;
+    speakersId: string[];
+    title: string;
+    description?: string;
+    date: string;
+    theme: Themes;
+    standId?: standIds;
+}
+
+export enum EventThemesEnum {
+    "INFLUENCE" = "11h - La perception sous influence ! ",
+    "SOCIETE" = "12h - Environnement et société : améliorer la perception pour passer à l’action",
+    "MOUVEMENT" = "14h - Au-delà du mouvement",
+    "EXPERIMENTATION" = "15h - Regards croisés sur l’expérimentation citoyenne et artistique",
+}
+export enum EventThemesEnumShort {
+    "INFLUENCE" = "La perception sous influence ! ",
+    "SOCIETE" = "Environnement et société : améliorer la perception pour passer à l’action",
+    "MOUVEMENT" = "Au-delà du mouvement",
+    "EXPERIMENTATION" = "Regards croisés sur l’expérimentation citoyenne et artistique",
+}
+
+export const getEvents = () => events;
+export const getWorkshops = () => workshops;
+export const getEvent = (id: string) => events.find((event) => event.id === id);
+export const getWorkshop = (id: string) => workshops.find((workshop) => workshop.id === id);
+export const getStand = (id: standIds) => stands.find((stand) => stand.id === id);
+export const getCompanyName = (id: standIds) => stands.find((stand) => stand.id === id)?.name || "";
+
+
+
 const events: IEvent[] = [
     {
         id: "1",
@@ -12,7 +69,7 @@ const events: IEvent[] = [
     {
         id: "2",
         speakersId: ["lBruno", "dBeatrice"],
-        title: "La conscience du temps nous fait positiver",
+        title: "Biais de positivité : lorsque la conscience du temps qui passe nous fait positiver ?",
         description: "Cette étude, aux objectifs fondamentaux et cliniques, vise à évaluer la participation d’un biais de positivité aux déficits de reconnaissance des émotions dans la sclérose en plaques (SEP). Ce biais de positivité est la conséquence de changements motivationnels, liés à une conscience aiguë du temps de vie limité, se manifestant par une préférence pour l’information, en lien avec l’âge et certaines pathologies chroniques. ",
         date: "11h",
         theme: "INFLUENCE",
@@ -30,8 +87,8 @@ const events: IEvent[] = [
     {
         id: "4",
         speakersId: ["kJerome"],
-        title: "Perception de la météo et stress hydrique",
-        
+        title: "Design et expérimentation au service d’une consommation responsable de l’eau",
+        description: "Le succès de la transition écologique passe notamment par le développement de comportements de consommation des habitants plus économes, plus sobres. Cela passe par plusieurs étapes : la connaissance du problème, la conscience que l’on peut agir, savoir quoi faire, vouloir le faire et enfin le faire concrètement au quotidien. Fin 2021 et début 2022, un groupement de designers, chercheurs en sciences humaines et sociales et évaluateur des politiques publiques ont accompagnés une douzaine de ménages de la MEL vers une consommation plus économe d’eau potable. Les enseignements de cette expérimentation sont riches et encouragean ",
         date: "12h",
         theme: "SOCIETE",
         standId: "mel"
@@ -40,6 +97,7 @@ const events: IEvent[] = [
         id: "6",
         speakersId: ["gPierre"],
         title: "Éloge de la prosp’active",
+        description: "Comment échapper au chronos porteur de la malédiction écologique pour envahir le Kaïros, source de joie et de mobilisation contributive. Tous prosp’activistes.",
         date: "12h",
         theme: "SOCIETE",
     },
@@ -57,6 +115,7 @@ const events: IEvent[] = [
         id: "8",
         speakersId: ["iNacim"],
         title: "Perception artificielle et mouvement",
+        description: "Peut-on toujours se baser sur le mouvement pour identifier des évènements dans les contenus vidéo ?",
         date: "14h",
         theme: "MOUVEMENT",
         standId: "isen"
@@ -72,9 +131,10 @@ const events: IEvent[] = [
     },
     {
         id: "10",
-        speakersId: ["bVictor"],
+        speakersId: ["pSophie"],
         title: "L’ XPERIUM la vulgarisation scientifique par l’expérimentation",
         date: "15h",
+        description: "Vitrine de la recherche partenariale réalisée dans les laboratoires de l’Université de Lille, Xperium est un lieu qui se visite, en classe ou en groupe non scolaire, et permet la rencontre entre les chercheurs et différents publics. Autour d'un thème central unique et interdisciplinaire, diverses démonstrations et expériences pédagogiques, interactives, étonnantes sont présentées par des doctorants. Xperium est l’un des trois pôles d’activité de LILLIAD Learning center Innovation, situé au cœur du campus Cité scientifique. En savoir plus : https://lilliad.univ-lille.fr/a-propos-dxperium",
         theme: "EXPERIMENTATION",
         standId: "scalab"
     },
@@ -83,6 +143,7 @@ const events: IEvent[] = [
         speakersId: ["pEric"],
         title:
             "Les collaborations artistes/laboratoires dans la création contemporaine",
+        description: "Le Fresnoy, Studio national des arts contemporains est lieu de formation, de production et de recherche qui accueille des artistes venus du monde entier. Éric Prigent est le coordinateur des arts numériques pour Le Fresnoy. Il a très vite eu l’intuition que des ponts entre artistes et laboratoires scientifiques constituaient une approche singulière et féconde de notre rapport au monde, là encore entre perception et réalité... ",
         date: "15h",
         theme: "EXPERIMENTATION",
     },
@@ -97,19 +158,7 @@ const events: IEvent[] = [
     },
 ];
 
-// define types for boolean isActive
-type standsLocations = "L1" | "L2" | "L3" | "L4" | "L5" | "L6" | "F1" | "F2" | "F3" | "R1" | "R2" | "P1" | "A1" | "A2";
-export type standIds = "scalab" | "mint" | "psycos" | "isa" | "isen" | "mel" | "casc" | "fresco" | "catho" | "ppnsa" | "sce" | "xperium" | "gaze";
-type standNames = "SCALab" | "Equipe MINT" | "PsyCos" | "ISA" | "ISEN" | "MEL" | "CASC" | "La Fresco" | "ICL" | "Master PPNSA" | "Master SCE" | "Xperium" | "Gaze intelligence";
 
-type IStand = {
-    id: standIds,
-    name: standNames,
-    longName: string,
-    location: standsLocations,
-    themes?: Themes[],
-    description?: string,
-};
 const stands: IStand[] = [
     {
         id: "scalab",
@@ -123,6 +172,12 @@ const stands: IStand[] = [
         name: "Equipe MINT",
         longName: "Equipe MINT  - CRISTAL - Laboratoire ",
         location: "L2",
+    },
+    {
+        id: "anthropo",
+        name: "Anthropo-Lab",
+        longName: "Anthropo-Lab - Laboratoire",
+        location: "L3",
     },
     {
         id: "psycos",
@@ -166,6 +221,7 @@ const stands: IStand[] = [
         name: "Master PPNSA",
         longName: "Master PPNSA - Université de Lille",
         location: "F2",
+        description: "Le Master Psychologie parcours Psychologie des Processus Neurocognitifs et Sciences Affectives - PPNSA est un Master Européen (codiplômation avec les Universités de Naples-Italie et Minho-Portugal) qui vise à former des psychologues spécialistes du fonctionnement normal et pathologique des processus neurocognitifs et affectifs. Il vise également à fournir une formation approfondie sur la pratique de la recherche et prépare ainsi au Doctorat de psychologie."
     },
     {
         id: "sce",
@@ -197,12 +253,10 @@ const stands: IStand[] = [
         name: "Gaze intelligence",
         longName: "Gaze intelligence",
         location: "P1",
-    },
-
+    }
 ]
-// get a list of names from stands
 
-
+// Workshops and demos combined
 const workshops: IWorkshop[] = [
     {
         id: "1",
@@ -226,48 +280,3 @@ const workshops: IWorkshop[] = [
     }
 ]
 
-export interface IWorkshop {
-    id: string;
-    speakersId: string[];
-    title: string;
-    description?: string;
-}
-// interface IWorkshops {
-//     INFLUENCE?: IWorkshop[];
-//     MOUVEMENT?: IWorkshop[];
-//     SOCIETE?: IWorkshop[];
-//     EXPERIMENTATION?: IWorkshop[];
-// }
-
-// type for themes
-type Themes = "INFLUENCE" | "MOUVEMENT" | "SOCIETE" | "EXPERIMENTATION";
-export interface IEvent {
-    id: string;
-    speakersId: string[];
-    title: string;
-    description?: string;
-    date: string;
-    theme: Themes;
-    standId?: standIds;
-}
-
-export enum EventThemesEnum {
-    "INFLUENCE" = "11h - La perception sous influence ! ",
-    "SOCIETE" = "12h - Environnement et société : améliorer la perception pour passer à l’action",
-    "MOUVEMENT" = "14h - Au-delà du mouvement",
-    "EXPERIMENTATION" = "15h - Regards croisés sur l’expérimentation citoyenne et artistique",
-}
-export enum EventThemesEnumShort {
-    "INFLUENCE" = "La perception sous influence ! ",
-    "SOCIETE" = "Environnement et société : améliorer la perception pour passer à l’action",
-    "MOUVEMENT" = "Au-delà du mouvement",
-    "EXPERIMENTATION" = "Regards croisés sur l’expérimentation citoyenne et artistique",
-}
-export const getEvents = () => events;
-export const getWorkshops = () => workshops;
-export const getEvent = (id: string) => events.find((event) => event.id === id);
-export const getWorkshop = (id: string) => workshops.find((workshop) => workshop.id === id);
-// export const getStandsByThemes = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE") => stands.filter(stand => stand?.themes?.includes(theme))?.map((stand) => stand.name);
-export const getStand = (id: standIds) => stands.find((stand) => stand.id === id);
-export const getCompanyName = (id: standIds) => stands.find((stand) => stand.id === id)?.name || "";
-// export const filterEvents = (theme: "INFLUENCE" | "MOUVEMENT" | "EXPERIMENTATION" | "SOCIETE", id: string) => events.filter(event.theme === theme)

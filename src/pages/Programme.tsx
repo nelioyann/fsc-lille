@@ -121,15 +121,13 @@ const Programme = () => {
                                     <Label size='large'>17h - Table Ronde des alumnis</Label>
                                 </IonItem>
                                 <Box slot='content' borderWidth='0'>
-                                    <Label size="large">Afin de connaître les débouchés après une licence/un master autour des sciences co à Lille,
+                                    <Label size="large">
+                                        Afin de connaître les débouchés après une licence/un master autour des sciences co à Lille,
                                         5 à 6 alumni répondront aux questions des étudiant·e·s sur leur métier au quotidien, leurs parcours académique et professionnel et donneront leurs conseils avisés.
-
                                     </Label>
                                 </Box>
                             </IonAccordion>
                         </IonAccordionGroup>
-
-
                     </Stack>
 
                 </Stack>

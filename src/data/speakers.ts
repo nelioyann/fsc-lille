@@ -1,23 +1,12 @@
 import { standIds } from "./events";
 
 
-export interface ISpeaker  {
-    id: string;
-    firstName: string;
-    lastName: string;
-    role: string;
-    companyId?: standIds;
-    photoUrl?: string;
-    twitter?: string;
-    linkedin?: string;
-    biography?: string;
-}
 const speakers: ISpeaker[] = [
     {
         id: "bVictor",
         firstName: 'Victor',
         lastName: 'Brossard',
-        role: '',
+        role: 'Doctorant en psychologie cognitive',
         companyId: "scalab",
         photoUrl: "/assets/speakers/Victor.png",
         twitter: "",
@@ -28,7 +17,7 @@ const speakers: ISpeaker[] = [
         id: "lBruno",
         firstName: 'Bruno',
         lastName: 'Lenne',
-        role: '',
+        role: 'Enseignant chercheur',
         companyId: "psycos",
         photoUrl: "/assets/speakers/lBruno.svg",
         twitter: "",
@@ -40,7 +29,7 @@ const speakers: ISpeaker[] = [
         id: "aMarie",
         firstName: 'Marie',
         lastName: "Auphan",
-        role: '',
+        role: 'UX/UI Designer',
         companyId: "fresco",
         photoUrl: "/assets/speakers/Marie.png",
         twitter: "",
@@ -52,7 +41,7 @@ const speakers: ISpeaker[] = [
         id: "jM",
         firstName: 'Jean-Michel',
         lastName: "Dagba",
-        role: '',
+        role: 'Doctorant en économie comportementale',
         companyId: "fresco",
         photoUrl: "/assets/speakers/JM.png",
         twitter: "",
@@ -64,7 +53,7 @@ const speakers: ISpeaker[] = [
         id: "iNacim",
         firstName: 'Nacim',
         lastName: "Ihaddadene",
-        role: '',
+        role: 'Enseignant chercheur',
         companyId: "isen",
         photoUrl: "/assets/speakers/Nacim.jpg",
         twitter: "",
@@ -76,7 +65,7 @@ const speakers: ISpeaker[] = [
         id: "cSylvie",
         firstName: 'Sylvie',
         lastName: "Chollet",
-        role: '',
+        role: 'Enseignante chercheuse',
         companyId: "isa",
         photoUrl: "/assets/speakers/Sylvie.jpg",
         twitter: "",
@@ -88,7 +77,7 @@ const speakers: ISpeaker[] = [
         id: "dYvonne",
         firstName: 'Yvonne',
         lastName: "Delevoye",
-        role: '',
+        role: 'Professeure en psychologie cognitive',
         companyId: "scalab",
         photoUrl: "/assets/speakers/Yvonne.jpg",
         twitter: "",
@@ -101,7 +90,7 @@ const speakers: ISpeaker[] = [
         id: "bFlorent",
         firstName: 'Florent',
         lastName: "Berthaut",
-        role: '',
+        role: 'Enseignant chercheur',
         companyId: "mint",
         photoUrl: "/assets/speakers/Florent.jpeg",
         twitter: "",
@@ -124,7 +113,7 @@ const speakers: ISpeaker[] = [
         id: "dBeatrice",
         firstName: 'Béatrice',
         lastName: "Degraeve",
-        role: '',
+        role: 'Enseignante chercheuse',
         companyId: "psycos",
         photoUrl: "/assets/speakers/dBeatrice.svg",
         twitter: "",
@@ -136,31 +125,18 @@ const speakers: ISpeaker[] = [
         id: "vMathilde",
         firstName: 'Mathilde',
         lastName: "Vandenberghe",
-        role: '',
+        role: 'Enseignante chercheuse',
         companyId: "isa",
         photoUrl: "/assets/speakers/Mathilde.jpg",
         twitter: "",
         linkedin: "",
         biography: ""
-    }
-    // ,
-    // {
-    //     id: "dLaure",
-    //     firstName: 'Laure',
-    //     lastName: "Dobigny",
-    //     role: '',
-    //     companyId: "MEL",
-    //     photoUrl: "/assets/speakers/FSC.svg",
-    //     twitter: "",
-    //     linkedin: "",
-    //     biography: ""
-    // }
-    ,
+    },
     {
         id: "hCatherine",
         firstName: 'Catherine',
         lastName: "Huyghe",
-        role: '',
+        role: 'Doctorante en deep learning',
         companyId: "isen",
         photoUrl: "/assets/speakers/hCatherine.svg",
         twitter: "",
@@ -172,8 +148,8 @@ const speakers: ISpeaker[] = [
         id: "pEric",
         firstName: 'Eric',
         lastName: "Prigent",
-        role: '',
-        companyId: "catho",
+        role: 'Coordinateur arts numériques',
+        companyId: "fresnoy",
         photoUrl: "/assets/speakers/Eric.jpg",
         twitter: "",
         linkedin: "",
@@ -184,9 +160,9 @@ const speakers: ISpeaker[] = [
         id: "kJerome",
         firstName: 'Jerome',
         lastName: "Klimsza",
-        role: '',
+        role: 'Chef de projet',
         companyId: "mel",
-        photoUrl: "/assets/speakers/kJerome.svg",
+        photoUrl: "/assets/speakers/Jerome.jpg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -196,9 +172,20 @@ const speakers: ISpeaker[] = [
         id: "gPierre",
         firstName: 'Pierre',
         lastName: "Giorgini",
-        role: '',
+        role: 'Ingénieur, auteur, anc. prés. recteur',
         companyId: "catho",
-        photoUrl: "/assets/speakers/gPierre.svg",
+        photoUrl: "/assets/speakers/Pierre.jpg",
+        twitter: "",
+        linkedin: "",
+        biography: ""
+    },
+    {
+        id: "pSophie",
+        firstName: 'Sophie',
+        lastName: "Picart",
+        role: 'MCF en chimie organique - chargée de mission',
+        companyId: "xperium",
+        photoUrl: "/assets/speakers/Sophie.jpg",
         twitter: "",
         linkedin: "",
         biography: ""
@@ -206,12 +193,24 @@ const speakers: ISpeaker[] = [
     
 ]
 
+export interface ISpeaker  {
+    id: string;
+    firstName: string;
+    lastName: string;
+    role: string;
+    companyId?: standIds;
+    photoUrl?: string;
+    twitter?: string;
+    linkedin?: string;
+    biography?: string;
+}
+
 export const getSpeakers = () => speakers;
 export const getSpeaker = (id: string) => speakers.find(speaker => speaker.id === id );
 export const getSpeakerImage = (id: string) => speakers.filter(speaker => speaker.id === id )[0]?.photoUrl || "/assets/speakers/FSC.svg";
-export const getSpeakerSummary = (id: string, full = false) => {
+export const getSpeakerSummary = (id: string, fullSummary = false) => {
         let {firstName, lastName, role, companyId} = speakers.filter(speaker => speaker.id === id )[0];
-        if (full) return `${firstName} ${lastName}, ${role}, getCompanyName${companyId}`
+        if (fullSummary) return `${firstName} ${lastName}, ${role}, getCompanyName${companyId}`
         return `${firstName} ${lastName}`
 };
 

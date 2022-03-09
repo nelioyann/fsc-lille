@@ -83,12 +83,9 @@ const Contact = () => {
                             </Box> */}
                         </Stack>
 
-                        <Stack space={SpacingEnum.s3}>
-                            <Heading level="3">Structures participantes</Heading>
-                            <Box borderWidth="0" padding="0">
-                                <PartenairesSlides />
-                            </Box>
-                        </Stack>
+                        {/* <Stack space={SpacingEnum.s3}>
+                            
+                        </Stack> */}
                     </Stack>
                 </Cover>
             </Content>

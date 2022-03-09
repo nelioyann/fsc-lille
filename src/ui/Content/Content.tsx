@@ -26,7 +26,7 @@ const StyledContent = styled(IonContent) <{ onDesktop: boolean }>`
     ${PageContentWrapper}{
         height: 100vh;
         overflow: auto;
-        padding-top: 5em;
+        padding-top: 3em;
         /* Reserves the scrollbar space to avoid visual shifts */
         scrollbar-gutter: stable;
         &::-webkit-scrollbar {
