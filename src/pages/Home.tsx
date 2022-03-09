@@ -72,10 +72,10 @@ const Home: React.FC = () => {
                   </Box>
                   <Label size="large" color={ColorVariablesEnum.TERTIARY}>« Méfions-nous des apparences, quelle réalité percevons-nous ? »</Label>
                   <Cluster>
-                    <Tag onClick={() => agendaRef.current?.scrollIntoView(scrollOptions)} label="1 journée de vulgarisation" />
-                    <Tag onClick={() => conferencesRef.current?.scrollIntoView(scrollOptions)} label='11 conférences' />
-                    <Tag onClick={() => registrationRef.current?.scrollIntoView(scrollOptions)} label='Inscription gratuite' />
-                    <Tag onClick={() => router.push("/tabs/intervenants")} label='16 intervenant.e.s' />
+                    <Tag color={ColorLabelsEnum.PRIMARY} onClick={() => agendaRef.current?.scrollIntoView(scrollOptions)} label="1 journée de vulgarisation" />
+                    <Tag color={ColorLabelsEnum.SECONDARY} onClick={() => conferencesRef.current?.scrollIntoView(scrollOptions)} label='11 conférences' />
+                    <Tag color={ColorLabelsEnum.SUCCESS} onClick={() => registrationRef.current?.scrollIntoView(scrollOptions)} label='Inscription gratuite' />
+                    <Tag color={ColorLabelsEnum.DARK} onClick={() => router.push("/tabs/intervenants")} label='16 intervenant.e.s' />
                   </Cluster>
                   <Box borderWidth='0' padding='0'>
                     <Button icon={ticketOutline} href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand={undefined} size="large" label="Inscription gratuite" color={ColorLabelsEnum.PRIMARY} />
@@ -93,8 +93,6 @@ const Home: React.FC = () => {
 
             </Stack>
           </Cover>
-
-
 
 
           <Stack space={SpacingEnum.s1}>
