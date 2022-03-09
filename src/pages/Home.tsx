@@ -29,6 +29,12 @@ const StyledLottiePlayer = styled(Player)`
 `
 const PrimaryHeading = styled(Heading)`
   text-transform: uppercase ;
+`
+const StyledCard = styled(IonCard)`
+  margin-bottom:0 ;
+  margin-left:0 ;
+  margin-right:0 ;
+
 
 `
 const playerOptions = {
@@ -97,7 +103,7 @@ const Home: React.FC = () => {
 
           <Stack space={SpacingEnum.s1}>
             <Heading color={ColorVariablesEnum.PRIMARY} level="3">Première édition à Lille</Heading>
-            <IonCard mode="ios">
+            <StyledCard mode="ios">
               <Box borderWidth='0'>
                 <Sidebar side="left" sideWidth="12em">
                   <SvgIcon Icon={Logo} />
@@ -114,7 +120,7 @@ const Home: React.FC = () => {
             <Cluster justify='flex-end' align='center'>
               <Button iconSlot='end' icon={chevronForward} fill="clear" label="Découvrir le programme" onClick={() => agendaRef.current?.scrollIntoView(scrollOptions)} />
             </Cluster>
-            </IonCard>
+            </StyledCard>
           </Stack>
           {/* ----------------------------------------------- */}
           {/* <Stack ref={speakersRef} space={SpacingEnum.s1}>
@@ -156,7 +162,7 @@ const Home: React.FC = () => {
           </Stack>
           <Stack space={SpacingEnum.s1} ref={registrationRef}>
             <Heading color={ColorVariablesEnum.PRIMARY} level="3">Accès libre sur inscription</Heading>
-            <IonCard mode="ios" href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022">
+            <StyledCard mode="ios" href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022">
               <Box borderWidth='0'>
                 <Stack>
                   <Sidebar side="left" sideWidth="12em">
@@ -169,7 +175,7 @@ const Home: React.FC = () => {
 
                 </Stack>
               </Box>
-            </IonCard>
+            </StyledCard>
           </Stack>
           {/* ----------------------------------------------- */}
           <Stack space={SpacingEnum.s1}>
