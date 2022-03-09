@@ -73,7 +73,7 @@ const Home: React.FC = () => {
                   <Label size="large" color={ColorVariablesEnum.TERTIARY}>« Méfions-nous des apparences, quelle réalité percevons-nous ? »</Label>
                   <Cluster>
                     <Tag color={ColorLabelsEnum.PRIMARY} onClick={() => agendaRef.current?.scrollIntoView(scrollOptions)} label="1 journée de vulgarisation" />
-                    <Tag color={ColorLabelsEnum.SECONDARY} onClick={() => conferencesRef.current?.scrollIntoView(scrollOptions)} label='11 conférences' />
+                    <Tag color={ColorLabelsEnum.TERTIARY} onClick={() => conferencesRef.current?.scrollIntoView(scrollOptions)} label='11 conférences' />
                     <Tag color={ColorLabelsEnum.SUCCESS} onClick={() => registrationRef.current?.scrollIntoView(scrollOptions)} label='Inscription gratuite' />
                     <Tag color={ColorLabelsEnum.DARK} onClick={() => router.push("/tabs/intervenants")} label='16 intervenant.e.s' />
                   </Cluster>
