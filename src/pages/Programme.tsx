@@ -68,7 +68,7 @@ const Programme = () => {
                                 </Stack>
                                 <Box borderWidth="0" padding="0">
                                     <Heading color={ColorVariablesEnum.PRIMARY} level="2">Mini-conférences</Heading>
-                                    <Label size='default' color={ColorVariablesEnum.INFO}>
+                                    <Label  color={ColorVariablesEnum.INFO}>
                                         Des illusions visuelles, à l'influence de la musique sur le goût de la bière, notre perception du monde est loin d'en être une restitution unique et partagée à l'identique. Alors, comment mieux percevoir la réalité pour mieux s’y adapter ? Comment l’expérimentation scientifique peut venir à la rescousse de la sensibilisation environnementale ? Et si le regard des artistes était une approche alternative incontournable ?
                                     </Label>
                                 </Box>
@@ -104,11 +104,11 @@ const Programme = () => {
                                     <Label size='large'>16h - Cogni'Quiz</Label>
                                 </IonItem>
                                 <Box slot='content' borderWidth='0'>
-                                    <Label size="large">Le Cogni'Quizz est un quizz ludique au cours duquel des binômes s'affrontent sur des questions
+                                    <Label >Le Cogni'Quiz est un quizz ludique au cours duquel des binômes s'affrontent sur des questions
                                         portant sur les sciences de la cognition. Inspiré du célèbre jeu télévisé "Questions pour un
                                         champion", il se déroule en trois phases :
                                     </Label>
-                                    <Label size="large">
+                                    <Label >
                                         Il nécessite la formation d'une équipe de 2 personnes intéressées par les sciences de la cognition
                                         et qui souhaitent tester leurs connaissances de façon ludique ! Il n'est, bien sûr, pas nécessaire
                                         d'être étudiant.e en sciences cognitives pour participer, toute personne motivée est la bienvenue !
@@ -121,7 +121,7 @@ const Programme = () => {
                                     <Label size='large'>17h - Table Ronde des alumnis</Label>
                                 </IonItem>
                                 <Box slot='content' borderWidth='0'>
-                                    <Label size="large">
+                                    <Label >
                                         Afin de connaître les débouchés après une licence/un master autour des sciences co à Lille,
                                         5 à 6 alumni répondront aux questions des étudiant·e·s sur leur métier au quotidien, leurs parcours académique et professionnel et donneront leurs conseils avisés.
                                     </Label>

@@ -32,8 +32,8 @@ const speakers: ISpeaker[] = [
         role: 'UX/UI Designer',
         companyId: "fresco",
         photoUrl: "/assets/speakers/Marie.png",
-        twitter: "",
-        linkedin: "",
+        twitter: "https://twitter.com/marieauphan",
+        linkedin: "https://www.linkedin.com/in/marie-auphan/",
         biography: ""
     }
     ,
