@@ -76,7 +76,7 @@ const Contact = () => {
                                 La deuxième édition du FSC-Lille s’intéressera à la réalité virtuelle qui d’un point de vue
                                 cérébral n’a souvent de virtuelle que le nom. Le FSC-Lille #2 : « Réalité virtuelle, une réalité si
                                 irréelle ? » se tiendra en mars 2023 et sera hébergé par l’Université de Lille au sein de de
-                                l’Imaginarium de Tourcoing et de son plateau de recherche en psychologie cognitive IrDIVE
+                                l’Imaginarium de Tourcoing et de son plateau de recherche en psychologie cognitive de la Fédération de Recherche "Sciences et Cultures du visuel".
                             </Label>
 
                         </Stack>
