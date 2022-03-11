@@ -1,5 +1,5 @@
 import { IonAvatar, IonBreadcrumb, IonBreadcrumbs, IonContent, IonPage } from '@ionic/react';
-import { logoLinkedin, logoTwitter } from 'ionicons/icons';
+import { attachOutline, logoLinkedin, logoTwitter } from 'ionicons/icons';
 import React from 'react';
 import { useParams } from 'react-router';
 import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs';
@@ -47,25 +47,25 @@ const Intervenant = () => {
                         <Heading level="4">{getSpeakerSummary(speaker.id, true)}</Heading>
                         {/* <Heading level="4">{`${speaker.firstName} ${speaker.lastName} ${speaker.companyId && `- ${getCompanyName(speaker.companyId)}`}`}</Heading> */}
                         {/* {speaker.companyId && <Label size="large">{getCompanyName(speaker.companyId)}</Label>} */}
-                        <Label>{speaker.biography}</Label>
+                        {speaker.biography && <Label>{speaker.biography}</Label>}
                         {/* </Center> */}
                         {getSpeakerEvents(speaker.id).length > 0 && (
                             <>
-                                <Heading level="5">Intervient dans cette conférence</Heading>
+                                <Heading level="5">{`${speaker.firstName} interviendra lors de cette conférence`}</Heading>
                                 {getSpeakerEvents(speaker.id).map(event => (<ProgrammeCard key={`programmeCard_${event.id}`} {...event} />))}
                             </>
                         )}
+                        <Cluster>
+                            {speaker.twitter && <Button href={speaker.twitter} icon={logoTwitter} label="Twitter" />}
+                            {speaker.linkedin && <Button href={speaker.linkedin} icon={logoLinkedin} label="LinkedIn" />}
+                            {speaker.misc && <Button icon={attachOutline} label={speaker.misc.label} href={speaker.misc.url} />}
+                        </Cluster>
                         {getSpeakerWorkshops(speaker.id).length > 0 && (
                             <>
-                                <Heading level="5">Intervient lors de cet atelier</Heading>
+                                <Heading level="5">{`${speaker.firstName} interviendra lors de cet atelier`}</Heading>
                                 {getSpeakerWorkshops(speaker.id).map(workshop => (<WorkshopCard key={`programmeCard_${workshop.id}`} {...workshop} />))}
                             </>
                         )}
-                        {speaker.twitter || speaker.linkedin &&
-                            (<Cluster>
-                                {speaker.twitter && <Button icon={logoTwitter} label="Twitter" />}
-                                {speaker.linkedin && <Button icon={logoLinkedin} label="LinkedIn" />}
-                            </Cluster>)}
                     </Stack>) : (
                     <Stack>
                         <Heading level="2">Intervenant</Heading>

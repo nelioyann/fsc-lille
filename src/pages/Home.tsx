@@ -20,6 +20,8 @@ import { useEffect, useRef, useState } from 'react';
 import { getEvent } from '../data/events';
 import ProgrammeCard from '../components/Customs/Programmes/ProgrammeCard';
 import ProgrammeList from '../components/Customs/Programmes/ProgrammeList';
+import SpeakerCard from '../components/Customs/Programmes/SpeakerCard';
+import { getSpeaker } from '../data/speakers';
 
 
 const StyledLottiePlayer = styled(Player)`
@@ -55,6 +57,12 @@ const Home: React.FC = () => {
   const illusionsEvent = getEvent("1");
   const waterEvent = getEvent("4");
   const mouvementEvent = getEvent("7");
+
+
+  const aMarie = getSpeaker("aMarie");
+  const bVictor = getSpeaker("bVictor");
+  const pEric = getSpeaker("pEric");
+  const dYvonne = getSpeaker("dYvonne");
   return (
     <IonPage>
       <Header mode="ios" label="FSC Lille 2022" icon={locationOutline} iconOnclickHandler={() => router.push("/tabs/accueil/directions")} />
@@ -81,7 +89,7 @@ const Home: React.FC = () => {
                     <Tag color={ColorLabelsEnum.PRIMARY} onClick={() => agendaRef.current?.scrollIntoView(scrollOptions)} label="1 journée de vulgarisation" />
                     <Tag color={ColorLabelsEnum.TERTIARY} onClick={() => conferencesRef.current?.scrollIntoView(scrollOptions)} label='11 conférences' />
                     <Tag color={ColorLabelsEnum.SUCCESS} onClick={() => registrationRef.current?.scrollIntoView(scrollOptions)} label='Inscription gratuite' />
-                    <Tag color={ColorLabelsEnum.DARK} onClick={() => router.push("/tabs/intervenants")} label='16 intervenant.e.s' />
+                    <Tag color={ColorLabelsEnum.DARK} onClick={() => speakersRef.current?.scrollIntoView(scrollOptions)} label='16 intervenant.e.s' />
                   </Cluster>
                   <Box borderWidth='0' padding='0'>
                     <Button icon={ticketOutline} href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand={undefined} size="large" label="Inscription gratuite" color={ColorLabelsEnum.PRIMARY} />
@@ -123,9 +131,19 @@ const Home: React.FC = () => {
             </Cluster>
           </Stack>
           {/* ----------------------------------------------- */}
-          {/* <Stack ref={speakersRef} space={SpacingEnum.s1}>
-            <Heading color={ColorVariablesEnum.PRIMARY} level='3'>Rencontrez nos intervenant.es</Heading>
-          </Stack> */}
+          <Stack ref={speakersRef} space={SpacingEnum.s1}>
+            <Heading color={ColorVariablesEnum.PRIMARY} level='3'>Aperçu
+              des intervenant.es</Heading>
+            <Cluster space={SpacingEnum['s-3']} justify="space-between">
+              {aMarie !== undefined && <SpeakerCard {...aMarie} />}
+              {pEric !== undefined && <SpeakerCard {...pEric} />}
+              {dYvonne !== undefined && <SpeakerCard {...dYvonne} />}
+              {bVictor !== undefined && <SpeakerCard {...bVictor} />}
+            </Cluster>
+            <Cluster justify='flex-end' align='center'>
+              <Button iconSlot='end' icon={chevronForward} fill="clear" label="voir l'ensemble" routerLink='/tabs/intervenants' />
+            </Cluster>
+          </Stack>
 
           {/* ----------------------------------------------- */}
 
