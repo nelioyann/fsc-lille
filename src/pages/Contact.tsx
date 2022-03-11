@@ -7,7 +7,7 @@ import Textarea from '../components/Forms/Input/Textarea';
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
 import { Box, Cluster, Cover, Stack } from '../layouts';
-import { ColorLabelsEnum, Label, SpacingEnum } from '../theme/globalStyles';
+import { ColorLabelsEnum, ColorVariablesEnum, Label, SpacingEnum } from '../theme/globalStyles';
 import CascBanner from "../data/images/casc_banner.jpg"
 import Card from '../components/Cards/Card';
 import Content from '../ui/Content/Content';
@@ -24,7 +24,7 @@ const Contact = () => {
                     <Stack space={SpacingEnum.s3}>
                         <Stack>
                             <Heading level="3">Une question ? Contactez l'association CASC</Heading>
-                            <Label size='large'>Pour toute question concernant l'événement, envoyez un mail sur 
+                            <Label size='large'>Pour toute question concernant l'événement, envoyez un mail sur
                                 <IonRouterLink href="mailto:contact@fsc-lille.com" >
                                     <Tag label="contact@fsc-lille.com" />
                                 </IonRouterLink>
@@ -76,16 +76,17 @@ const Contact = () => {
                                 La deuxième édition du FSC-Lille s’intéressera à la réalité virtuelle qui d’un point de vue
                                 cérébral n’a souvent de virtuelle que le nom. Le FSC-Lille #2 : « Réalité virtuelle, une réalité si
                                 irréelle ? » se tiendra en mars 2023 et sera hébergé par l’Université de Lille au sein de de
-                                l’Imaginarium de Tourcoing et de son plateau de recherche en psychologie cognitive IrDIVE
+                                l’Imaginarium de Tourcoing et de son plateau de recherche en psychologie cognitive de la Fédération de Recherche "Sciences et Cultures du visuel".
                             </Label>
-                            {/* <Box borderWidth="0" padding="0">
-                                <img src={CascBanner} />
-                            </Box> */}
+
                         </Stack>
 
-                        {/* <Stack space={SpacingEnum.s3}>
-                            
-                        </Stack> */}
+                        <Stack space={SpacingEnum['s-4']}>
+                            <Heading color={ColorVariablesEnum.TERTIARY} level="6">Site Internet</Heading>
+                            <Label>Vous ne trouverez aucun cookies 🍪 sur ce site, mais il est possible d'en trouver pendant le forum.</Label>
+                            <Label>Dévéloppement par Yannick Nana (Casc).</Label>
+                            <Label>Copyright © 2022 FSC Lille.</Label>
+                        </Stack>
                     </Stack>
                 </Cover>
             </Content>

@@ -32,9 +32,13 @@ const speakers: ISpeaker[] = [
         role: 'UX/UI Designer',
         companyId: "fresco",
         photoUrl: "/assets/speakers/Marie.png",
-        twitter: "",
-        linkedin: "",
-        biography: ""
+        twitter: "https://twitter.com/marieauphan",
+        linkedin: "https://www.linkedin.com/in/marie-auphan/",
+        biography: "",
+        misc: {
+            label: "Portfolio",
+            url: "/assets/speakers/Marie.pdf"
+        }
     }
     ,
     {
@@ -172,7 +176,7 @@ const speakers: ISpeaker[] = [
         id: "gPierre",
         firstName: 'Pierre',
         lastName: "Giorgini",
-        role: 'Ingénieur, auteur, anc. prés. recteur',
+        role: 'Ingénieur, auteur, anc. prés. recteur UCL',
         companyId: "catho",
         photoUrl: "/assets/speakers/Pierre.jpg",
         twitter: "",
@@ -193,6 +197,10 @@ const speakers: ISpeaker[] = [
     
 ]
 
+type Misc = {
+    url: string;
+    label: string;
+}
 export interface ISpeaker  {
     id: string;
     firstName: string;
@@ -203,6 +211,7 @@ export interface ISpeaker  {
     twitter?: string;
     linkedin?: string;
     biography?: string;
+    misc?: Misc;
 }
 
 export const getSpeakers = () => speakers;

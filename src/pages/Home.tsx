@@ -20,6 +20,8 @@ import { useEffect, useRef, useState } from 'react';
 import { getEvent } from '../data/events';
 import ProgrammeCard from '../components/Customs/Programmes/ProgrammeCard';
 import ProgrammeList from '../components/Customs/Programmes/ProgrammeList';
+import SpeakerCard from '../components/Customs/Programmes/SpeakerCard';
+import { getSpeaker } from '../data/speakers';
 
 
 const StyledLottiePlayer = styled(Player)`
@@ -55,6 +57,12 @@ const Home: React.FC = () => {
   const illusionsEvent = getEvent("1");
   const waterEvent = getEvent("4");
   const mouvementEvent = getEvent("7");
+
+
+  const aMarie = getSpeaker("aMarie");
+  const bVictor = getSpeaker("bVictor");
+  const pEric = getSpeaker("pEric");
+  const dYvonne = getSpeaker("dYvonne");
   return (
     <IonPage>
       <Header mode="ios" label="FSC Lille 2022" icon={locationOutline} iconOnclickHandler={() => router.push("/tabs/accueil/directions")} />
@@ -81,7 +89,7 @@ const Home: React.FC = () => {
                     <Tag color={ColorLabelsEnum.PRIMARY} onClick={() => agendaRef.current?.scrollIntoView(scrollOptions)} label="1 journée de vulgarisation" />
                     <Tag color={ColorLabelsEnum.TERTIARY} onClick={() => conferencesRef.current?.scrollIntoView(scrollOptions)} label='11 conférences' />
                     <Tag color={ColorLabelsEnum.SUCCESS} onClick={() => registrationRef.current?.scrollIntoView(scrollOptions)} label='Inscription gratuite' />
-                    <Tag color={ColorLabelsEnum.DARK} onClick={() => router.push("/tabs/intervenants")} label='16 intervenant.e.s' />
+                    <Tag color={ColorLabelsEnum.DARK} onClick={() => speakersRef.current?.scrollIntoView(scrollOptions)} label='16 intervenant.e.s' />
                   </Cluster>
                   <Box borderWidth='0' padding='0'>
                     <Button icon={ticketOutline} href="https://www.helloasso.com/associations/casc/evenements/fsc-lille-2022" expand={undefined} size="large" label="Inscription gratuite" color={ColorLabelsEnum.PRIMARY} />
@@ -117,15 +125,25 @@ const Home: React.FC = () => {
                   </Stack>
                 </Sidebar>
               </Box>
+            </StyledCard>
             <Cluster justify='flex-end' align='center'>
               <Button iconSlot='end' icon={chevronForward} fill="clear" label="Découvrir le programme" onClick={() => agendaRef.current?.scrollIntoView(scrollOptions)} />
             </Cluster>
-            </StyledCard>
           </Stack>
           {/* ----------------------------------------------- */}
-          {/* <Stack ref={speakersRef} space={SpacingEnum.s1}>
-            <Heading color={ColorVariablesEnum.PRIMARY} level='3'>Rencontrez nos intervenant.es</Heading>
-          </Stack> */}
+          <Stack ref={speakersRef} space={SpacingEnum.s1}>
+            <Heading color={ColorVariablesEnum.PRIMARY} level='3'>Aperçu
+              des intervenant.es</Heading>
+            <Cluster space={SpacingEnum['s-3']} justify="space-between">
+              {aMarie !== undefined && <SpeakerCard {...aMarie} />}
+              {pEric !== undefined && <SpeakerCard {...pEric} />}
+              {dYvonne !== undefined && <SpeakerCard {...dYvonne} />}
+              {bVictor !== undefined && <SpeakerCard {...bVictor} />}
+            </Cluster>
+            <Cluster justify='flex-end' align='center'>
+              <Button iconSlot='end' icon={chevronForward} fill="clear" label="voir l'ensemble" routerLink='/tabs/intervenants' />
+            </Cluster>
+          </Stack>
 
           {/* ----------------------------------------------- */}
 
@@ -167,7 +185,8 @@ const Home: React.FC = () => {
                 <Stack>
                   <Sidebar side="left" sideWidth="12em">
                     <SvgIcon Icon={Logo} />
-                    <Label size='default' color={ColorVariablesEnum.INFO}>Pour répondre et discuter avec vous de ces questions, nous vous invitions à nous rejoindre le 19 mars de 10h à 18h, dans l'atrium de JUNIA HEI à Lille.
+                    <Label color={ColorVariablesEnum.INFO}>
+                      Pour répondre et discuter avec vous de ces questions, nous vous invitions à nous rejoindre le 19 mars de 10h à 18h, dans l'atrium de JUNIA HEI à Lille.
                       Accès libre sur inscription.
                     </Label>
                   </Sidebar>
@@ -176,6 +195,27 @@ const Home: React.FC = () => {
                 </Stack>
               </Box>
             </StyledCard>
+          </Stack>
+          <Stack space={SpacingEnum.s2}>
+            <Heading color={ColorVariablesEnum.PRIMARY} level="3">Comment venir à l'évènement </Heading>
+            <Sidebar>
+              <StyledCard style={{ marginTop: "0" }} mode='ios' routerLink='/tabs/accueil/directions'>
+                <Box borderWidth='0'>
+                  <Stack space={SpacingEnum['s-2']}>
+                    <Label size='large'>13 rue de Toul, 59000 Lille</Label>
+                    <Label >Metro : arrêts Cormontaigne ou Port de Lille</Label>
+                    <Label >Bus : lignes L5 et la ligne 18 </Label>
+                  </Stack>
+                </Box>
+              </StyledCard>
+              <Box borderWidth='0' padding='0'>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.6442132342295!2d3.0429153157380493!3d50.633725879501085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d579573550df%3A0xaa9c89af983f58e9!2sJunia%20Hei%20Lille%20-%20School%20D&#39;ing%C3%A9nieur%20Lille!5e0!3m2!1sen!2sfr!4v1645571926708!5m2!1sen!2sfr" style={{ "border": 0, width: "100%", minHeight: "150px", height: "100%" }} loading="lazy"></iframe>
+              </Box>
+            </Sidebar>
+            <Cluster justify='flex-end' align='center'>
+              {/* <Heading color={ColorVariablesEnum.PRIMARY} level="5">Aperçu</Heading> */}
+              <Button iconSlot='end' icon={chevronForward} fill="clear" label="plus de détails" routerLink='/tabs/accueil/directions' />
+            </Cluster>
           </Stack>
           {/* ----------------------------------------------- */}
           <Stack space={SpacingEnum.s1}>
