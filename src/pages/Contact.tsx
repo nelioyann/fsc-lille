@@ -13,7 +13,24 @@ import Card from '../components/Cards/Card';
 import Content from '../ui/Content/Content';
 import PartenairesSlides from '../components/Customs/Partenaires/PartenairesSlides';
 import Tag from '../components/Tag/Tag';
+import styled, { keyframes } from 'styled-components';
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const Rotate = styled.div`
+display: inline-block;
+  animation: ${rotate} 2s linear infinite;
+  transform-origin: 50% 50%;
+  font-size: 1.2rem;
+`;
 
 const Contact = () => {
     return (
@@ -83,7 +100,9 @@ const Contact = () => {
 
                         <Stack space={SpacingEnum['s-4']}>
                             <Heading color={ColorVariablesEnum.TERTIARY} level="6">Site Internet</Heading>
-                            <Label>Vous ne trouverez aucun cookies 🍪 sur ce site, mais il est possible d'en trouver pendant le forum.</Label>
+                            <Label>Ce site n'utilise pas de cookies
+                                <Rotate>🍪</Rotate>
+                            </Label>
                             <Label>Dévéloppement par Yannick Nana (Casc).</Label>
                             <Label>Copyright © 2022 FSC Lille.</Label>
                         </Stack>
