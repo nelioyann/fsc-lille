@@ -35,20 +35,11 @@ const Intervenant = () => {
                 {speaker ? (
                     <Stack>
                         <Breadcrumbs breadcrumbs={breadcrumbs} />
-                        {/* <Center> */}
-                        {/* <Box maxContent padding='0'> */}
-                        {/* <Cluster justify='center'> */}
-
                         <StyledThumbnail key={`programmeItem_Image${id}`}>
                             <img src={speaker.photoUrl} />
                         </StyledThumbnail>
-                        {/* </Cluster> */}
-                        {/* </Box> */}
                         <Heading level="4">{getSpeakerSummary(speaker.id, true)}</Heading>
-                        {/* <Heading level="4">{`${speaker.firstName} ${speaker.lastName} ${speaker.companyId && `- ${getCompanyName(speaker.companyId)}`}`}</Heading> */}
-                        {/* {speaker.companyId && <Label size="large">{getCompanyName(speaker.companyId)}</Label>} */}
                         {speaker.biography && <Label>{speaker.biography}</Label>}
-                        {/* </Center> */}
                         {getSpeakerEvents(speaker.id).length > 0 && (
                             <>
                                 <Heading level="5">{`${speaker.firstName} interviendra lors de cette conférence`}</Heading>
