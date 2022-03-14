@@ -48,10 +48,10 @@ const Contact = () => {
                             </Label>
 
                             <Heading level="3">Suivez les dernières informations sur le forum</Heading>
-                            <Cluster space={SpacingEnum.s0}>
-                                <Button color={ColorLabelsEnum.PRIMARY} href="https://twitter.com/Podcasc" fill="outline" icon={logoTwitter} label="Twitter" />
-                                <Button color={ColorLabelsEnum.PRIMARY} href="https://www.facebook.com/CASC.association" fill="outline" icon={logoFacebook} label="Facebook" />
-                                <Button color={ColorLabelsEnum.PRIMARY} href="https://www.linkedin.com/company/casc-asso/" fill="outline" icon={logoLinkedin} label="LinkedIn" />
+                            <Cluster space={SpacingEnum['s-5']}>
+                                <Button size="small" color={ColorLabelsEnum.PRIMARY} href="https://twitter.com/Podcasc" fill="outline" icon={logoTwitter} label="Twitter" />
+                                <Button size="small" color={ColorLabelsEnum.PRIMARY} href="https://www.facebook.com/CASC.association" fill="outline" icon={logoFacebook} label="Facebook" />
+                                <Button size="small" color={ColorLabelsEnum.PRIMARY} href="https://www.linkedin.com/company/casc-asso/" fill="outline" icon={logoLinkedin} label="LinkedIn" />
                             </Cluster>
                         </Stack>
 
@@ -99,7 +99,7 @@ const Contact = () => {
                         </Stack>
 
                         <Stack space={SpacingEnum['s-4']}>
-                            <Heading color={ColorVariablesEnum.TERTIARY} level="6">Site Internet</Heading>
+                            {/* <Heading color={ColorVariablesEnum.TERTIARY} level="6">Site Internet</Heading> */}
                             <Label>Ce site n'utilise pas de cookies
                                 <Rotate>🍪</Rotate>
                             </Label>

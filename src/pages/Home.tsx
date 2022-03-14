@@ -3,7 +3,7 @@ import { IonCard, IonContent, IonItem, IonList, IonListHeader, IonModal, IonPage
 import Header from '../components/Headers/Header';
 import Heading from '../components/Headings/Heading';
 import SvgIcon from '../components/SvgIcon/SvgIcon';
-import { Box, Center, Cluster, Cover, Sidebar, Stack, Switcher } from '../layouts';
+import { Box, Center, Cluster, Cover, Grid, Sidebar, Stack, Switcher } from '../layouts';
 import { ReactComponent as Logo } from "../data/icons/Logo.svg"
 import { ColorLabelsEnum, ColorVariablesEnum, Label, SpacingEnum } from '../theme/globalStyles';
 
@@ -134,12 +134,12 @@ const Home: React.FC = () => {
           <Stack ref={speakersRef} space={SpacingEnum.s1}>
             <Heading color={ColorVariablesEnum.PRIMARY} level='3'>Aperçu
               des intervenant.es</Heading>
-            <Cluster space={SpacingEnum['s-3']} justify="space-between">
+            <Grid min="14em" space={SpacingEnum.s1} >
               {aMarie !== undefined && <SpeakerCard {...aMarie} />}
               {pEric !== undefined && <SpeakerCard {...pEric} />}
               {dYvonne !== undefined && <SpeakerCard {...dYvonne} />}
               {bVictor !== undefined && <SpeakerCard {...bVictor} />}
-            </Cluster>
+            </Grid>
             <Cluster justify='flex-end' align='center'>
               <Button iconSlot='end' icon={chevronForward} fill="clear" label="voir l'ensemble" routerLink='/tabs/intervenants' />
             </Cluster>
