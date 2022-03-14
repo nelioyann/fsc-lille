@@ -23,6 +23,8 @@ $ npm run start
 ### `data`
 
 The data directory contains our uncompiled assets such as images, icons or json files.
+- Speakers
+- Events
 
 
 ### `components`

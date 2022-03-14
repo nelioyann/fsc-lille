@@ -17,7 +17,7 @@ const Breadcrumbs: React.FC<IBreadcrumbs> = ({breadcrumbs}) => {
     const router = useIonRouter()
     console.log(breadcrumbs)
   return (
-    <IonBreadcrumbs>
+    <IonBreadcrumbs mode="ios">
         {breadcrumbs.map(({path, label}, index) => <StyledBreadcrumb key={label} onClick={() => router.push(path)}>{label}</StyledBreadcrumb>)}
     </IonBreadcrumbs>
   )

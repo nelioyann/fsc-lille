@@ -61,7 +61,7 @@ const ProgrammeItem: React.FC = () => {
                             <Stack space={SpacingEnum.s2}>
                                 <Stack >
                                     <Heading level="3" color={ColorVariablesEnum.PRIMARY}>{`${event.title} - ${event.date} `}</Heading>
-                                    <Label size="large" color={ColorVariablesEnum.INFO}>
+                                    <Label color={ColorVariablesEnum.INFO}>
                                         {event.description ?? "(Pas de description pour le moment)"}
                                     </Label>
                                 </Stack>
