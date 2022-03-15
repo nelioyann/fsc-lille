@@ -103,7 +103,11 @@ const Contact = () => {
                             <Label>Ce site n'utilise pas de cookies
                                 <Rotate>🍪</Rotate>
                             </Label>
-                            <Label>Dévéloppement par Yannick Nana (Casc).</Label>
+                            <Label>{`Dévéloppement par `} 
+                            <IonRouterLink target="_blank" href="https://yannicknana.fr">
+                                <Tag outline={false} label="Yannick Nana (CASC)" ></Tag>
+                            </IonRouterLink>
+                            </Label>
                             <Label>Copyright © 2022 FSC Lille.</Label>
                         </Stack>
                     </Stack>
