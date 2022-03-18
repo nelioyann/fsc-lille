@@ -90,7 +90,7 @@ const events: IEvent[] = [
         id: "4",
         speakersId: ["kJerome"],
         title: "Design et expérimentation au service d’une consommation responsable de l’eau",
-        description: "Le succès de la transition écologique passe notamment par le développement de comportements de consommation des habitants plus économes, plus sobres. Cela passe par plusieurs étapes : la connaissance du problème, la conscience que l’on peut agir, savoir quoi faire, vouloir le faire et enfin le faire concrètement au quotidien. Fin 2021 et début 2022, un groupement de designers, chercheurs en sciences humaines et sociales et évaluateur des politiques publiques ont accompagnés une douzaine de ménages de la MEL vers une consommation plus économe d’eau potable. Les enseignements de cette expérimentation sont riches et encouragean ",
+        description: "Le succès de la transition écologique passe notamment par le développement de comportements de consommation des habitants plus économes, plus sobres. Cela passe par plusieurs étapes : la connaissance du problème, la conscience que l’on peut agir, savoir quoi faire, vouloir le faire et enfin le faire concrètement au quotidien. Fin 2021 et début 2022, un groupement de designers, chercheurs en sciences humaines et sociales et évaluateur des politiques publiques ont accompagnés une douzaine de ménages de la MEL vers une consommation plus économe d’eau potable. Les enseignements de cette expérimentation sont riches et encourageantes. ",
         date: "12h",
         theme: "SOCIETE",
         standId: "mel"
