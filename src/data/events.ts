@@ -108,7 +108,7 @@ const events: IEvent[] = [
         speakersId: ["dYvonne"],
         title: "Musique et illusion dans l’effort physique",
         description:
-            "S’engager dans la pratique d’une séance de sport requiert la capacité de gérer l’effort physique et mentale associée à l’exercice. Nous présenterons comment la musique permet de donner l’illusion de bouger plus rapidement ou plus lentement en fonction de l’énergie sonore perçue.",
+            "S’engager dans la pratique d’une séance de sport requiert la capacité de gérer l’effort physique et mental associée à l’exercice. Nous présenterons comment la musique permet de donner l’illusion de bouger plus rapidement ou plus lentement en fonction de l’énergie sonore perçue.",
         date: "14h",
         theme: "MOUVEMENT",
         standId: "scalab"
